@@ -133,6 +133,24 @@
             from, to { opacity: 1 }
             50% { opacity: 0 }
         }
+
+        /* Carousel Dot Indicators */
+        .carousel-dots .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 9999px;
+            background-color: #d6d3d1; /* stone-300 */
+            transition: background-color 0.3s ease-in-out;
+        }
+        .dark .carousel-dots .dot {
+             background-color: #57534e; /* stone-600 */
+        }
+        .carousel-dots .dot.active {
+            background-color: #b45309; /* amber-600 */
+        }
+        .dark .carousel-dots .dot.active {
+            background-color: #d97706; /* amber-500 */
+        }
     </style>
 </head>
 <body class="bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-100 transition-colors duration-300">
@@ -295,7 +313,7 @@
 
         <!-- Projects Section -->
         <section id="projects" class="py-20 section">
-            <div class="container mx-auto px-6 md:px-12">
+            <div class="container mx-auto px-6 md:px-0">
                 <h2 class="text-4xl font-bold text-center mb-4 font-display">My Work</h2>
                 <p class="text-center text-lg text-stone-600 dark:text-stone-400 mb-12">A selection of projects that showcase my skills in action.</p>
 
@@ -309,12 +327,13 @@
                 
                 <div class="relative group">
                     <!-- Project Grid -->
-                    <div id="project-grid" class="flex gap-8 overflow-x-auto pb-4 hide-scrollbar">
+                    <div id="project-grid" class="flex gap-4 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory scroll-smooth px-6 md:px-0">
                         <!-- Project Card 1 -->
-                        <div class="project-card w-80 md:w-96 flex-shrink-0 cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden" 
+                        <div class="project-card w-[85%] sm:w-80 md:w-96 flex-shrink-0 snap-center cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden" 
                              data-category="automation"
                              data-title="Staffing Request Tool"
                              data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                             data-github-url="https://github.com"
                              data-tech="PowerApps,Power Automate,SharePoint,Dataverse,Power BI"
                              data-description="This project involved designing and deploying a comprehensive PowerApps solution to replace a manual, inefficient staffing approval process. The tool integrates Microsoft Forms, Teams Approvals, and SharePoint to create a secure, automated, multi-level approval workflow."
                              data-outcomes="• Increased workflow efficiency by 38%.|• Established a secure, centralized data hub on SharePoint with role-based permissions.|• Migrated from legacy MS Access to a scalable solution integrated with Power BI for real-time insights.|• Refined UI/UX based on positive feedback from cross-functional user acceptance testing."
@@ -327,15 +346,21 @@
                                     <span class="tag text-xs font-semibold bg-amber-100 text-amber-800 px-2 py-1 rounded-full">#automation</span>
                                     <span class="tag text-xs font-semibold bg-sky-100 text-sky-800 px-2 py-1 rounded-full">#power-platform</span>
                                 </div>
-                                <a href="#" class="font-semibold text-amber-600 dark:text-amber-500 hover:underline mt-4 inline-block">View Project &rarr;</a>
+                                <div class="mt-4 flex justify-between items-center">
+                                    <a href="#" class="view-project-link font-semibold text-amber-600 dark:text-amber-500 hover:underline">View Project &rarr;</a>
+                                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-link text-stone-500 hover:text-amber-600 dark:hover:text-amber-500 transition-colors">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
                         <!-- Project Card 2 -->
-                        <div class="project-card w-80 md:w-96 flex-shrink-0 cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                        <div class="project-card w-[85%] sm:w-80 md:w-96 flex-shrink-0 snap-center cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                              data-category="dataviz bi"
                              data-title="Employee Staffing Analytics Dashboard"
                              data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                             data-github-url="https://github.com"
                              data-tech="Power BI,SQL,PowerQuery,Python"
                              data-description="To address challenges in headcount tracking, I developed a dynamic Microsoft Power BI dashboard. This solution automates data integration from multiple sources using SQL, PowerQuery, and Python to provide real-time, accurate analytics for staffing and resource planning."
                              data-outcomes="• Optimized FTE allocation and improved headcount tracking for business objectives.|• Automated multi-source data integration to ensure real-time accuracy.|• Supported effective resource planning by validating staffing forecasts with solution-focused testing.|• Delivered actionable insights through dashboards designed in collaboration with key stakeholders."
@@ -349,15 +374,21 @@
                                     <span class="tag text-xs font-semibold bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full">#bi</span>
                                     <span class="tag text-xs font-semibold bg-rose-100 text-rose-800 px-2 py-1 rounded-full">#python</span>
                                 </div>
-                                <a href="#" class="font-semibold text-amber-600 dark:text-amber-500 hover:underline mt-4 inline-block">View Project &rarr;</a>
+                                <div class="mt-4 flex justify-between items-center">
+                                    <a href="#" class="view-project-link font-semibold text-amber-600 dark:text-amber-500 hover:underline">View Project &rarr;</a>
+                                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-link text-stone-500 hover:text-amber-600 dark:hover:text-amber-500 transition-colors">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         
                         <!-- Project Card 3 -->
-                        <div class="project-card w-80 md:w-96 flex-shrink-0 cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                        <div class="project-card w-[85%] sm:w-80 md:w-96 flex-shrink-0 snap-center cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                              data-category="dataviz automation"
                              data-title="Enterprise Organization Chart Tool"
                              data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                             data-github-url="https://github.com"
                              data-tech="Python (Pandas),Excel,Power BI"
                              data-description="This project addressed the need for an accurate, scalable way to visualize the company's structure for planning and analysis. I developed robust data pipelines using Python to clean, transform, and process large Excel datasets, feeding into an automated analytics tool for generating org charts."
                              data-outcomes="• Created a scalable tool that ensured accuracy for critical workforce planning and pay equity analysis.|• Developed robust data pipelines to handle complex data cleaning and transformation tasks.|• Delivered a solution that was recognized with the 'Innovator Award' for its impact on the organization.|• Provided clear visualizations for executive decision-making."
@@ -370,15 +401,21 @@
                                     <span class="tag text-xs font-semibold bg-purple-100 text-purple-800 px-2 py-1 rounded-full">#data-viz</span>
                                     <span class="tag text-xs font-semibold bg-amber-100 text-amber-800 px-2 py-1 rounded-full">#automation</span>
                                 </div>
-                                <a href="#" class="font-semibold text-amber-600 dark:text-amber-500 hover:underline mt-4 inline-block">View Project &rarr;</a>
+                                <div class="mt-4 flex justify-between items-center">
+                                    <a href="#" class="view-project-link font-semibold text-amber-600 dark:text-amber-500 hover:underline">View Project &rarr;</a>
+                                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-link text-stone-500 hover:text-amber-600 dark:hover:text-amber-500 transition-colors">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
                         <!-- New Project Card 4 -->
-                        <div class="project-card w-80 md:w-96 flex-shrink-0 cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                        <div class="project-card w-[85%] sm:w-80 md:w-96 flex-shrink-0 snap-center cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                              data-category="bi"
                              data-title="Financial Reporting Automation"
                              data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                             data-github-url="https://github.com"
                              data-tech="Python,SQL,Azure"
                              data-description="Automated the generation of monthly financial reports, reducing manual effort and improving data accuracy by creating a Python-based ETL pipeline."
                              data-outcomes="• Reduced report generation time by 65%.|• Improved data accuracy and consistency across reports."
@@ -391,7 +428,12 @@
                                     <span class="tag text-xs font-semibold bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full">#bi</span>
                                     <span class="tag text-xs font-semibold bg-rose-100 text-rose-800 px-2 py-1 rounded-full">#python</span>
                                 </div>
-                                <a href="#" class="font-semibold text-amber-600 dark:text-amber-500 hover:underline mt-4 inline-block">View Project &rarr;</a>
+                                <div class="mt-4 flex justify-between items-center">
+                                    <a href="#" class="view-project-link font-semibold text-amber-600 dark:text-amber-500 hover:underline">View Project &rarr;</a>
+                                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-link text-stone-500 hover:text-amber-600 dark:hover:text-amber-500 transition-colors">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -403,6 +445,8 @@
                          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                     </button>
                 </div>
+                 <!-- Dots Indicator -->
+                <div id="project-dots" class="carousel-dots flex md:hidden justify-center gap-2 mt-4"></div>
             </div>
         </section>
 
@@ -425,8 +469,12 @@
                         <p id="modal-description" class="text-stone-600 dark:text-stone-400"></p>
                     </div>
                     <div>
-                         <h4 class="font-bold text-lg mb-2 text-amber-600 dark:text-amber-500">Tech Stack</h4>
+                         <h4 class="font-bold text-lg mb-2 text-amber-600 dark:text-amber-500">Tech Stack & Links</h4>
                         <div id="modal-tech" class="flex flex-wrap gap-2"></div>
+                        <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-4 font-semibold text-amber-600 dark:text-amber-500 hover:underline">
+                            View on GitHub
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                        </a>
                     </div>
                      <div>
                         <h4 class="font-bold text-lg mb-2 text-amber-600 dark:text-amber-500">Key Outcomes</h4>
@@ -442,45 +490,45 @@
 
         <!-- The Lab Section -->
         <section id="lab" class="py-20 section">
-            <div class="container mx-auto px-6 md:px-12">
+            <div class="container mx-auto px-6 md:px-0">
                 <h2 class="text-4xl font-bold text-center mb-4 font-display">The Lab</h2>
                 <p class="text-center text-lg text-stone-600 dark:text-stone-400 mb-12">A peek into my digital sketchbook of ideas, experiments, and code snippets.</p>
                 <div class="relative group">
-                    <div id="lab-grid" class="flex gap-4 overflow-x-auto pb-4 max-w-6xl mx-auto hide-scrollbar">
-                        <div class="lab-item w-80 flex-shrink-0 p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
+                    <div id="lab-grid" class="flex gap-4 overflow-x-auto pb-4 max-w-6xl mx-auto hide-scrollbar snap-x snap-mandatory scroll-smooth px-6 md:px-0">
+                        <div class="lab-item w-[85%] sm:w-80 flex-shrink-0 snap-center p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
                             <h4 class="font-bold mb-2">🤖 Exploring Anomaly Detection</h4>
                             <p class="text-sm text-stone-600 dark:text-stone-400">
                                 Experimenting with Azure AI fundamentals to build a model that flags unusual patterns in service reporting data. The goal is to proactively identify potential issues before they impact performance metrics.
                             </p>
                         </div>
-                         <div class="lab-item w-80 flex-shrink-0 p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
+                         <div class="lab-item w-[85%] sm:w-80 flex-shrink-0 snap-center p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
                             <h4 class="font-bold mb-2">💡 Idea: Integrating Financial Data</h4>
                             <p class="text-sm text-stone-600 dark:text-stone-400">
                                 Thinking about a v2 for the Staffing Request Tool. I could extend the Power Automate flow to connect to a financial system's API, allowing for real-time budget validation during the approval process.
                             </p>
                         </div>
-                         <div class="lab-item w-80 flex-shrink-0 p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
+                         <div class="lab-item w-[85%] sm:w-80 flex-shrink-0 snap-center p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
                             <h4 class="font-bold mb-2">💡 Idea: Predictive Forecasting</h4>
                             <p class="text-sm text-stone-600 dark:text-stone-400">
                                 Could the staffing data from the Power BI dashboard be used to train a simple time-series model? It would be interesting to forecast departmental turnover rates for the next quarter.
                             </p>
                         </div>
                         <!-- New Lab Item 1 -->
-                         <div class="lab-item w-80 flex-shrink-0 p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
+                         <div class="lab-item w-[85%] sm:w-80 flex-shrink-0 snap-center p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
                             <h4 class="font-bold mb-2">⚙️ Experiment: Real-time Data Sync</h4>
                             <p class="text-sm text-stone-600 dark:text-stone-400">
                                Testing a new method for real-time data synchronization between SharePoint and a SQL database using a lightweight Python script and Azure Functions for better performance.
                             </p>
                         </div>
                         <!-- New Lab Item 2 -->
-                         <div class="lab-item w-80 flex-shrink-0 p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
+                         <div class="lab-item w-[85%] sm:w-80 flex-shrink-0 snap-center p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
                             <h4 class="font-bold mb-2">🎨 UI/UX: Dashboard Color Theory</h4>
                             <p class="text-sm text-stone-600 dark:text-stone-400">
                                 Researching color theory principles to apply to Power BI dashboards, aiming to improve readability and guide user attention to key metrics more effectively.
                             </p>
                         </div>
                         <!-- New Lab Item 3 -->
-                         <div class="lab-item w-80 flex-shrink-0 p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
+                         <div class="lab-item w-[85%] sm:w-80 flex-shrink-0 snap-center p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
                             <h4 class="font-bold mb-2">📈 Concept: Sentiment Analysis</h4>
                             <p class="text-sm text-stone-600 dark:text-stone-400">
                                Sketching out a concept for a tool that performs sentiment analysis on user feedback forms to automatically categorize and prioritize issues for development teams.
@@ -495,6 +543,8 @@
                          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
                     </button>
                 </div>
+                <!-- Dots Indicator -->
+                <div id="lab-dots" class="carousel-dots flex md:hidden justify-center gap-2 mt-4"></div>
             </div>
         </section>
 
@@ -652,6 +702,7 @@
             const modalLearnings = document.getElementById('modal-learnings');
             const modalTech = document.getElementById('modal-tech');
             const modalOutcomes = document.getElementById('modal-outcomes');
+            const modalGithubLink = document.getElementById('modal-github-link');
             
             if(filtersContainer) {
                 const filterBtns = filtersContainer.querySelectorAll('.filter-btn');
@@ -664,16 +715,27 @@
                     });
                     e.target.classList.add('active', 'bg-amber-600', 'text-white');
                     e.target.classList.remove('bg-stone-200', 'dark:bg-stone-800');
+
+                    const filter = e.target.dataset.filter;
+                    projectCards.forEach(card => {
+                        const categories = card.dataset.category.split(' ');
+                        const shouldShow = filter === 'all' || categories.includes(filter);
+                        card.classList.toggle('hidden', !shouldShow);
+                    });
                 });
             }
 
             projectGrid.addEventListener('click', (e) => {
+                if (e.target.closest('.github-link')) {
+                    return;
+                }
                 const card = e.target.closest('.project-card');
                 if (!card) return;
                 modalTitle.textContent = card.dataset.title;
                 modalVideo.src = card.dataset.videoUrl;
                 modalDescription.textContent = card.dataset.description;
                 modalLearnings.textContent = card.dataset.learnings;
+                modalGithubLink.href = card.dataset.githubUrl;
                 modalTech.innerHTML = '';
                 const techs = card.dataset.tech.split(',');
                 techs.forEach(tech => {
@@ -716,23 +778,37 @@
             const darkIcon = document.getElementById('theme-toggle-dark-icon');
             const lightIcon = document.getElementById('theme-toggle-light-icon');
 
-            const updateThemeIcons = () => {
-                if (document.documentElement.classList.contains('dark')) {
-                    darkIcon.classList.add('hidden');
+            // This function handles all theme-related updates
+            const applyTheme = (theme) => {
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
                     lightIcon.classList.remove('hidden');
+                    darkIcon.classList.add('hidden');
                 } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
                     darkIcon.classList.remove('hidden');
                     lightIcon.classList.add('hidden');
                 }
             };
-            
-            updateThemeIcons();
 
+            // Set the initial state of the icon on page load
+            const initialThemeIsDark = document.documentElement.classList.contains('dark');
+            if (initialThemeIsDark) {
+                lightIcon.classList.remove('hidden');
+                darkIcon.classList.add('hidden');
+            } else {
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            }
+
+            // Add click listener to the button
             themeToggleBtn.addEventListener('click', () => {
-                document.documentElement.classList.toggle('dark');
-                localStorage.setItem('color-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-                updateThemeIcons();
+                const isCurrentlyDark = document.documentElement.classList.contains('dark');
+                applyTheme(isCurrentlyDark ? 'light' : 'dark');
             });
+
 
             // --- Back to Top Button Logic ---
             const backToTopButton = document.getElementById('back-to-top');
@@ -743,39 +819,62 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            // --- Horizontal Scroll with Buttons ---
-            function setupHorizontalScroll(containerId, leftBtnId, rightBtnId) {
+            // --- Horizontal Scroll with Buttons & Dots ---
+            function setupCarousel(containerId, leftBtnId, rightBtnId, dotsId) {
                 const container = document.getElementById(containerId);
                 const leftBtn = document.getElementById(leftBtnId);
                 const rightBtn = document.getElementById(rightBtnId);
+                const dotsContainer = document.getElementById(dotsId);
 
-                if (!container || !leftBtn || !rightBtn) return;
+                if (!container) return;
 
-                const scrollAmount = 320; // How many pixels to scroll
+                const items = Array.from(container.children);
+                if (dotsContainer) {
+                    dotsContainer.innerHTML = '';
+                    items.forEach((item, i) => {
+                        const dot = document.createElement('button');
+                        dot.classList.add('dot');
+                        dot.addEventListener('click', () => {
+                            item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        });
+                        dotsContainer.appendChild(dot);
+                    });
+                }
 
-                const updateButtonVisibility = () => {
-                    const atStart = container.scrollLeft <= 0;
-                    const atEnd = container.scrollWidth - container.scrollLeft <= container.clientWidth + 1;
-                    leftBtn.classList.toggle('hidden', atStart);
-                    rightBtn.classList.toggle('hidden', atEnd);
+                const updateCarousel = () => {
+                    if (leftBtn && rightBtn) {
+                        const atStart = container.scrollLeft < 10;
+                        const atEnd = container.scrollWidth - container.scrollLeft <= container.clientWidth + 10;
+                        leftBtn.classList.toggle('hidden', atStart);
+                        rightBtn.classList.toggle('hidden', atEnd);
+                    }
+                    if (dotsContainer) {
+                        const dots = dotsContainer.children;
+                        const cardWidth = items[0].offsetWidth;
+                        const gap = parseInt(window.getComputedStyle(container).gap);
+                        const scrollPerItem = cardWidth + gap;
+                        const currentIndex = Math.round(container.scrollLeft / scrollPerItem);
+                        
+                        for(let i = 0; i < dots.length; i++) {
+                            dots[i].classList.toggle('active', i === currentIndex);
+                        }
+                    }
                 };
 
-                container.addEventListener('scroll', updateButtonVisibility);
-                leftBtn.addEventListener('click', () => {
-                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                });
-                rightBtn.addEventListener('click', () => {
-                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                });
+                if (leftBtn && rightBtn) {
+                    const scrollAmount = items[0]?.offsetWidth || 320;
+                    leftBtn.addEventListener('click', () => container.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
+                    rightBtn.addEventListener('click', () => container.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
+                }
 
-                // Initial check
-                updateButtonVisibility();
-                 // Re-check on window resize
-                new ResizeObserver(updateButtonVisibility).observe(container);
+                container.addEventListener('scroll', updateCarousel, { passive: true });
+                new ResizeObserver(updateCarousel).observe(container);
+                updateCarousel();
             }
 
-            setupHorizontalScroll('project-grid', 'project-scroll-left', 'project-scroll-right');
-            setupHorizontalScroll('lab-grid', 'lab-scroll-left', 'lab-scroll-right');
+            setupCarousel('project-grid', 'project-scroll-left', 'project-scroll-right', 'project-dots');
+            setupCarousel('lab-grid', 'lab-scroll-left', 'lab-scroll-right', 'lab-dots');
+
 
             // --- Typing Animation for Hero Subtitle ---
             const typingSubtitle = document.getElementById('typing-subtitle');
@@ -817,3 +916,4 @@
     </script>
 </body>
 </html>
+
