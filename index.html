@@ -324,6 +324,7 @@
                     <div id="project-grid" class="flex gap-4 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory scroll-smooth px-6 md:px-0">
                         <!-- Project Card 1 -->
                         <div class="project-card w-[85%] sm:w-80 md:w-96 flex-shrink-0 snap-center cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden" 
+                             data-project-id="staffing-request-tool"
                              data-category="automation"
                              data-title="Staffing Request Tool"
                              data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -351,6 +352,7 @@
 
                         <!-- Project Card 2 -->
                         <div class="project-card w-[85%] sm:w-80 md:w-96 flex-shrink-0 snap-center cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                             data-project-id="staffing-analytics-dashboard"
                              data-category="dataviz bi"
                              data-title="Employee Staffing Analytics Dashboard"
                              data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -379,6 +381,7 @@
                         
                         <!-- Project Card 3 -->
                         <div class="project-card w-[85%] sm:w-80 md:w-96 flex-shrink-0 snap-center cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                             data-project-id="org-chart-tool"
                              data-category="dataviz automation"
                              data-title="Enterprise Organization Chart Tool"
                              data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -406,6 +409,7 @@
 
                         <!-- New Project Card 4 -->
                         <div class="project-card w-[85%] sm:w-80 md:w-96 flex-shrink-0 snap-center cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                             data-project-id="financial-reporting-automation"
                              data-category="bi"
                              data-title="Financial Reporting Automation"
                              data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -465,10 +469,16 @@
                     <div>
                          <h4 class="font-bold text-lg mb-2 text-amber-600 dark:text-amber-500">Tech Stack & Links</h4>
                         <div id="modal-tech" class="flex flex-wrap gap-2"></div>
-                        <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-4 font-semibold text-amber-600 dark:text-amber-500 hover:underline">
-                            View on GitHub
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                        </a>
+                        <div class="flex items-center gap-4 mt-4">
+                            <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-semibold text-amber-600 dark:text-amber-500 hover:underline">
+                                View on GitHub
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                            </a>
+                            <button id="modal-share-btn" class="inline-flex items-center gap-2 font-semibold text-amber-600 dark:text-amber-500 hover:underline">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12s-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6.002l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.368a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path></svg>
+                                <span class="share-text">Share</span>
+                            </button>
+                        </div>
                     </div>
                      <div>
                         <h4 class="font-bold text-lg mb-2 text-amber-600 dark:text-amber-500">Key Outcomes</h4>
@@ -697,9 +707,11 @@
             const modalTech = document.getElementById('modal-tech');
             const modalOutcomes = document.getElementById('modal-outcomes');
             const modalGithubLink = document.getElementById('modal-github-link');
-            
+            const modalShareBtn = document.getElementById('modal-share-btn');
+            let currentProjectId = '';
+
             if(filtersContainer) {
-                 const filterBtns = filtersContainer.querySelectorAll('.filter-btn');
+                const filterBtns = filtersContainer.querySelectorAll('.filter-btn');
                 const projectCards = Array.from(projectGrid.children);
                 filtersContainer.addEventListener('click', (e) => {
                     if (!e.target.matches('.filter-btn')) return;
@@ -717,7 +729,7 @@
                     projectCards.forEach(card => {
                         const categories = card.dataset.category.split(' ');
                         const shouldShow = filter === 'all' || categories.includes(filter);
-                        card.classList.toggle('hidden', !shouldShow);
+                        card.style.display = shouldShow ? 'block' : 'none';
                         if(shouldShow && !firstVisibleCard) {
                             firstVisibleCard = card;
                         }
@@ -726,7 +738,6 @@
                     if(firstVisibleCard) {
                         firstVisibleCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
                     }
-                     // Dispatch a custom event to tell the carousel to update its dots
                     projectGrid.dispatchEvent(new Event('update-carousel-dots'));
                 });
             }
@@ -737,6 +748,7 @@
                 }
                 const card = e.target.closest('.project-card');
                 if (!card) return;
+                currentProjectId = card.dataset.projectId;
                 modalTitle.textContent = card.dataset.title;
                 modalVideo.src = card.dataset.videoUrl;
                 modalDescription.textContent = card.dataset.description;
@@ -769,6 +781,11 @@
                 modal.classList.add('hidden');
                 document.body.style.overflow = '';
                 modalVideo.src = ''; 
+                if (history.pushState) {
+                    history.pushState(null, null, window.location.pathname + window.location.search);
+                } else {
+                    location.hash = '';
+                }
             }
             
             modalCloseBtn.addEventListener('click', closeModal);
@@ -829,31 +846,47 @@
                 const dotsContainer = document.getElementById(dotsId);
 
                 if (!container) return;
+
+                const getVisibleItems = () => Array.from(container.children).filter(child => child.style.display !== 'none');
                 
                 const updateActiveDot = () => {
                     if (!dotsContainer) return;
-                    const visibleItems = Array.from(container.children).filter(child => !child.classList.contains('hidden'));
-                     if(visibleItems.length === 0) return;
+                    const visibleItems = getVisibleItems();
+                    if (visibleItems.length === 0) return;
+
                     const dots = dotsContainer.children;
                     const cardWidth = visibleItems[0].offsetWidth;
-                    const gap = parseInt(window.getComputedStyle(container).gap);
+                    const gap = parseInt(window.getComputedStyle(container).gap) || 0;
                     const scrollPerItem = cardWidth + gap;
-                    const currentIndex = Math.round(container.scrollLeft / scrollPerItem);
-                    
-                    for(let i = 0; i < dots.length; i++) {
-                        dots[i].classList.toggle('active', i === currentIndex);
+
+                    let closestIndex = 0;
+                    let smallestDistance = Infinity;
+
+                    visibleItems.forEach((item, index) => {
+                        const itemMidpoint = item.offsetLeft + cardWidth / 2;
+                        const containerMidpoint = container.scrollLeft + container.offsetWidth / 2;
+                        const distance = Math.abs(itemMidpoint - containerMidpoint);
+
+                        if (distance < smallestDistance) {
+                            smallestDistance = distance;
+                            closestIndex = index;
+                        }
+                    });
+
+                    for (let i = 0; i < dots.length; i++) {
+                        dots[i].classList.toggle('active', i === closestIndex);
                     }
                 };
                 
                 const refreshDots = () => {
                     if (!dotsContainer) return;
-                    const visibleItems = Array.from(container.children).filter(child => !child.classList.contains('hidden'));
+                    const visibleItems = getVisibleItems();
                     dotsContainer.innerHTML = '';
                     visibleItems.forEach((item, i) => {
                         const dot = document.createElement('button');
                         dot.classList.add('dot');
                         dot.addEventListener('click', () => {
-                             item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                            item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                         });
                         dotsContainer.appendChild(dot);
                     });
@@ -873,25 +906,23 @@
                 };
 
                 if (leftBtn && rightBtn) {
-                    leftBtn.addEventListener('click', () => {
-                        const firstVisibleCard = Array.from(container.children).find(child => !child.classList.contains('hidden'));
-                        const scrollAmount = firstVisibleCard ? firstVisibleCard.offsetWidth : 320;
-                        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                     leftBtn.addEventListener('click', () => {
+                        const cardWidth = getVisibleItems()[0]?.offsetWidth || 320;
+                        container.scrollBy({ left: -(cardWidth + 16), behavior: 'smooth' });
                     });
                     rightBtn.addEventListener('click', () => {
-                        const firstVisibleCard = Array.from(container.children).find(child => !child.classList.contains('hidden'));
-                        const scrollAmount = firstVisibleCard ? firstVisibleCard.offsetWidth : 320;
-                        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                        const cardWidth = getVisibleItems()[0]?.offsetWidth || 320;
+                        container.scrollBy({ left: cardWidth + 16, behavior: 'smooth' });
                     });
                 }
 
                 container.addEventListener('scroll', updateCarousel, { passive: true });
                 new ResizeObserver(updateCarousel).observe(container);
-                refreshDots(); // Initial setup
+                refreshDots();
             }
 
             setupCarousel('project-grid', 'project-scroll-left', 'project-scroll-right', 'project-dots');
-            setupCarousel('lab-grid', 'lab-scroll-left', 'lab-scroll-right', 'lab-dots');
+            setupCarousel('lab-grid', null, null, 'lab-dots');
 
             // --- Typing Animation for Hero Subtitle ---
             const typingSubtitle = document.getElementById('typing-subtitle');
@@ -927,9 +958,46 @@
                     }
                     setTimeout(type, typeSpeed);
                 }
-                type(); // Start the animation
+                type();
             }
+            
+            // --- Share Link Logic ---
+            function checkUrlForProject() {
+                if (window.location.hash.startsWith('#project=')) {
+                    const projectId = window.location.hash.substring(9);
+                    const projectCard = document.querySelector(`.project-card[data-project-id="${projectId}"]`);
+                    if (projectCard) {
+                        setTimeout(() => {
+                            projectCard.dispatchEvent(new Event('click', { bubbles: true }));
+                        }, 100);
+                    }
+                }
+            }
+            checkUrlForProject();
+
+            modalShareBtn.addEventListener('click', () => {
+                const baseUrl = window.location.href.split('#')[0];
+                const shareUrl = `${baseUrl}#project=${currentProjectId}`;
+                
+                const textArea = document.createElement("textarea");
+                textArea.value = shareUrl;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    const shareText = modalShareBtn.querySelector('.share-text');
+                    const originalText = shareText.textContent;
+                    shareText.textContent = 'Copied!';
+                    setTimeout(() => {
+                        shareText.textContent = originalText;
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                }
+                document.body.removeChild(textArea);
+            });
         });
     </script>
 </body>
 </html>
+
