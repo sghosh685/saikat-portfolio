@@ -152,18 +152,18 @@
 
     <!-- 1. The Header Component -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-sm">
-        <div class="container mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-xl font-bold font-display">Anannya Saha</a>
+        <div class="container mx-auto px-6 md:px-12 py-4 grid grid-cols-3 items-center">
+            <a href="#hero" class="text-xl font-bold font-display justify-self-start">Anannya Saha</a>
             
             <!-- Desktop Navigation -->
-            <nav id="desktop-nav" class="hidden md:flex items-center gap-8">
+            <nav id="desktop-nav" class="hidden md:flex items-center gap-8 justify-self-center">
                 <a href="#about" class="nav-link text-stone-600 dark:text-stone-400 hover:text-amber-600 transition-colors">About</a>
                 <a href="#projects" class="nav-link text-stone-600 dark:text-stone-400 hover:text-amber-600 transition-colors">Projects</a>
                 <a href="#stack" class="nav-link text-stone-600 dark:text-stone-400 hover:text-amber-600 transition-colors">Skills</a>
                 <a href="#contact" class="nav-link text-stone-600 dark:text-stone-400 hover:text-amber-600 transition-colors">Contact</a>
             </nav>
 
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-4 justify-self-end col-start-3">
                  <!-- Theme Toggle Button -->
                 <button id="theme-toggle" type="button" class="p-2.5 rounded-full text-stone-900 dark:text-stone-100 transition-colors">
                     <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -469,7 +469,7 @@
                     <div>
                          <h4 class="font-bold text-lg mb-2 text-amber-600 dark:text-amber-500">Tech Stack & Links</h4>
                         <div id="modal-tech" class="flex flex-wrap gap-2"></div>
-                        <div class="flex items-center gap-4 mt-4">
+                        <div class="flex items-center gap-8 mt-4">
                             <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-semibold text-amber-600 dark:text-amber-500 hover:underline">
                                 View on GitHub
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
@@ -623,12 +623,24 @@
         </section>
     </main>
 
-    <!-- 2. The Footer Component -->
-    <footer class="bg-stone-800 dark:bg-stone-900 text-stone-300 dark:text-stone-400">
-        <div class="container mx-auto px-6 md:px-12 py-8 text-center">
-            <p>&copy; 2025 Anannya Saha. Designed and built with a passion for innovation.</p>
-        </div>
-    </footer>
+   <!-- 2. The Footer Component -->
+<footer class="bg-stone-800 dark:bg-stone-900 text-stone-300 dark:text-stone-400">
+    <div class="container mx-auto px-6 md:px-12 py-8 text-center">
+        <p>
+            &copy; 2025 Anannya Saha. Designed and built by 
+            <a 
+                href="https://www.linkedin.com/in/saikat-ghosh-005b63199/" 
+                class="text-blue-400 hover:underline" 
+                target="_blank" 
+                rel="noopener noreferrer"
+            >
+                Saikat Ghosh
+            </a> 
+            with a passion for innovation. Built with love for Anannya Saha.
+        </p>
+    </div>
+</footer>
+
 
     <!-- Back to Top Button -->
     <button id="back-to-top" class="hidden fixed bottom-8 right-8 z-40 bg-amber-600 text-white p-3 rounded-full shadow-lg hover:bg-amber-700 transition-all duration-300">
@@ -729,7 +741,7 @@
                     projectCards.forEach(card => {
                         const categories = card.dataset.category.split(' ');
                         const shouldShow = filter === 'all' || categories.includes(filter);
-                        card.style.display = shouldShow ? 'block' : 'none';
+                        card.style.display = shouldShow ? '' : 'none';
                         if(shouldShow && !firstVisibleCard) {
                             firstVisibleCard = card;
                         }
@@ -782,11 +794,10 @@
                 document.body.style.overflow = '';
                 modalVideo.src = '';
                 try {
-                    // This attempts to clean the URL hash, but will fail gracefully in sandboxed environments.
                     const newUrl = window.location.pathname + window.location.search;
                     history.replaceState(null, null, newUrl);
                 } catch (e) {
-                    console.warn("Could not modify URL hash: ", e);
+                    console.warn("Could not modify URL hash. This is expected in sandboxed environments.");
                 }
             }
             
@@ -854,7 +865,10 @@
                 const updateActiveDot = () => {
                     if (!dotsContainer) return;
                     const visibleItems = getVisibleItems();
-                    if (visibleItems.length === 0) return;
+                    if (visibleItems.length === 0) {
+                        dotsContainer.innerHTML = '';
+                        return;
+                    }
 
                     const dots = dotsContainer.children;
                     const cardWidth = visibleItems[0].offsetWidth;
@@ -865,7 +879,7 @@
                     let smallestDistance = Infinity;
 
                     visibleItems.forEach((item, index) => {
-                        const itemMidpoint = item.offsetLeft + cardWidth / 2;
+                         const itemMidpoint = item.offsetLeft - container.offsetLeft + cardWidth / 2;
                         const containerMidpoint = container.scrollLeft + container.offsetWidth / 2;
                         const distance = Math.abs(itemMidpoint - containerMidpoint);
 
