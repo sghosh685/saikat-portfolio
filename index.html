@@ -780,11 +780,13 @@
             function closeModal() {
                 modal.classList.add('hidden');
                 document.body.style.overflow = '';
-                modalVideo.src = ''; 
-                if (history.pushState) {
-                    history.pushState(null, null, window.location.pathname + window.location.search);
-                } else {
-                    location.hash = '';
+                modalVideo.src = '';
+                try {
+                    // This attempts to clean the URL hash, but will fail gracefully in sandboxed environments.
+                    const newUrl = window.location.pathname + window.location.search;
+                    history.replaceState(null, null, newUrl);
+                } catch (e) {
+                    console.warn("Could not modify URL hash: ", e);
                 }
             }
             
@@ -886,7 +888,7 @@
                         const dot = document.createElement('button');
                         dot.classList.add('dot');
                         dot.addEventListener('click', () => {
-                            item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                             item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                         });
                         dotsContainer.appendChild(dot);
                     });
@@ -968,7 +970,7 @@
                     const projectCard = document.querySelector(`.project-card[data-project-id="${projectId}"]`);
                     if (projectCard) {
                         setTimeout(() => {
-                            projectCard.dispatchEvent(new Event('click', { bubbles: true }));
+                             projectCard.dispatchEvent(new Event('click', { bubbles: true }));
                         }, 100);
                     }
                 }
