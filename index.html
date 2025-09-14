@@ -62,11 +62,6 @@
         .project-card {
             transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         }
-        .project-card.hidden {
-            opacity: 0;
-            transform: scale(0.95);
-            display: none;
-        }
         .modal-overlay, .modal-content {
             transition: opacity 0.3s ease-in-out;
         }
@@ -234,8 +229,7 @@
                 <div class="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
                     <div class="md:w-1/3 flex-shrink-0">
                         <div class="p-2 rounded-full bg-gradient-to-br from-amber-500 via-orange-500 to-yellow-500">
-                            <!-- Placeholder image as specified -->
-                            <img src="https://placehold.co/400x400/EAE8E4/1c1917?text=AS" alt="Anannya Saha" class="rounded-full">
+                             <img src="https://placehold.co/400x400/EAE8E4/1c1917?text=AS" alt="Anannya Saha" class="rounded-full">
                         </div>
                     </div>
                     <div class="md:w-2/3">
@@ -705,10 +699,11 @@
             const modalGithubLink = document.getElementById('modal-github-link');
             
             if(filtersContainer) {
-                const filterBtns = filtersContainer.querySelectorAll('.filter-btn');
-                const projectCards = projectGrid.querySelectorAll('.project-card');
+                 const filterBtns = filtersContainer.querySelectorAll('.filter-btn');
+                const projectCards = Array.from(projectGrid.children);
                 filtersContainer.addEventListener('click', (e) => {
                     if (!e.target.matches('.filter-btn')) return;
+
                     filterBtns.forEach(btn => {
                         btn.classList.remove('active', 'bg-amber-600', 'text-white');
                         btn.classList.add('bg-stone-200', 'dark:bg-stone-800');
@@ -717,11 +712,22 @@
                     e.target.classList.remove('bg-stone-200', 'dark:bg-stone-800');
 
                     const filter = e.target.dataset.filter;
+                    let firstVisibleCard = null;
+
                     projectCards.forEach(card => {
                         const categories = card.dataset.category.split(' ');
                         const shouldShow = filter === 'all' || categories.includes(filter);
                         card.classList.toggle('hidden', !shouldShow);
+                        if(shouldShow && !firstVisibleCard) {
+                            firstVisibleCard = card;
+                        }
                     });
+
+                    if(firstVisibleCard) {
+                        firstVisibleCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                    }
+                     // Dispatch a custom event to tell the carousel to update its dots
+                    projectGrid.dispatchEvent(new Event('update-carousel-dots'));
                 });
             }
 
@@ -778,7 +784,6 @@
             const darkIcon = document.getElementById('theme-toggle-dark-icon');
             const lightIcon = document.getElementById('theme-toggle-light-icon');
 
-            // This function handles all theme-related updates
             const applyTheme = (theme) => {
                 if (theme === 'dark') {
                     document.documentElement.classList.add('dark');
@@ -793,7 +798,6 @@
                 }
             };
 
-            // Set the initial state of the icon on page load
             const initialThemeIsDark = document.documentElement.classList.contains('dark');
             if (initialThemeIsDark) {
                 lightIcon.classList.remove('hidden');
@@ -803,12 +807,10 @@
                 lightIcon.classList.add('hidden');
             }
 
-            // Add click listener to the button
             themeToggleBtn.addEventListener('click', () => {
                 const isCurrentlyDark = document.documentElement.classList.contains('dark');
                 applyTheme(isCurrentlyDark ? 'light' : 'dark');
             });
-
 
             // --- Back to Top Button Logic ---
             const backToTopButton = document.getElementById('back-to-top');
@@ -827,20 +829,39 @@
                 const dotsContainer = document.getElementById(dotsId);
 
                 if (!container) return;
-
-                const items = Array.from(container.children);
-                if (dotsContainer) {
+                
+                const updateActiveDot = () => {
+                    if (!dotsContainer) return;
+                    const visibleItems = Array.from(container.children).filter(child => !child.classList.contains('hidden'));
+                     if(visibleItems.length === 0) return;
+                    const dots = dotsContainer.children;
+                    const cardWidth = visibleItems[0].offsetWidth;
+                    const gap = parseInt(window.getComputedStyle(container).gap);
+                    const scrollPerItem = cardWidth + gap;
+                    const currentIndex = Math.round(container.scrollLeft / scrollPerItem);
+                    
+                    for(let i = 0; i < dots.length; i++) {
+                        dots[i].classList.toggle('active', i === currentIndex);
+                    }
+                };
+                
+                const refreshDots = () => {
+                    if (!dotsContainer) return;
+                    const visibleItems = Array.from(container.children).filter(child => !child.classList.contains('hidden'));
                     dotsContainer.innerHTML = '';
-                    items.forEach((item, i) => {
+                    visibleItems.forEach((item, i) => {
                         const dot = document.createElement('button');
                         dot.classList.add('dot');
                         dot.addEventListener('click', () => {
-                            item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                             item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                         });
                         dotsContainer.appendChild(dot);
                     });
-                }
+                    updateActiveDot();
+                };
 
+                container.addEventListener('update-carousel-dots', refreshDots);
+                
                 const updateCarousel = () => {
                     if (leftBtn && rightBtn) {
                         const atStart = container.scrollLeft < 10;
@@ -848,33 +869,29 @@
                         leftBtn.classList.toggle('hidden', atStart);
                         rightBtn.classList.toggle('hidden', atEnd);
                     }
-                    if (dotsContainer) {
-                        const dots = dotsContainer.children;
-                        const cardWidth = items[0].offsetWidth;
-                        const gap = parseInt(window.getComputedStyle(container).gap);
-                        const scrollPerItem = cardWidth + gap;
-                        const currentIndex = Math.round(container.scrollLeft / scrollPerItem);
-                        
-                        for(let i = 0; i < dots.length; i++) {
-                            dots[i].classList.toggle('active', i === currentIndex);
-                        }
-                    }
+                    updateActiveDot();
                 };
 
                 if (leftBtn && rightBtn) {
-                    const scrollAmount = items[0]?.offsetWidth || 320;
-                    leftBtn.addEventListener('click', () => container.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
-                    rightBtn.addEventListener('click', () => container.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
+                    leftBtn.addEventListener('click', () => {
+                        const firstVisibleCard = Array.from(container.children).find(child => !child.classList.contains('hidden'));
+                        const scrollAmount = firstVisibleCard ? firstVisibleCard.offsetWidth : 320;
+                        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                    });
+                    rightBtn.addEventListener('click', () => {
+                        const firstVisibleCard = Array.from(container.children).find(child => !child.classList.contains('hidden'));
+                        const scrollAmount = firstVisibleCard ? firstVisibleCard.offsetWidth : 320;
+                        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    });
                 }
 
                 container.addEventListener('scroll', updateCarousel, { passive: true });
                 new ResizeObserver(updateCarousel).observe(container);
-                updateCarousel();
+                refreshDots(); // Initial setup
             }
 
             setupCarousel('project-grid', 'project-scroll-left', 'project-scroll-right', 'project-dots');
             setupCarousel('lab-grid', 'lab-scroll-left', 'lab-scroll-right', 'lab-dots');
-
 
             // --- Typing Animation for Hero Subtitle ---
             const typingSubtitle = document.getElementById('typing-subtitle');
@@ -916,4 +933,3 @@
     </script>
 </body>
 </html>
-
