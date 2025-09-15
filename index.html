@@ -146,6 +146,13 @@
         .dark .carousel-dots .dot.active {
             background-color: #d97706; /* amber-500 */
         }
+
+        #back-to-top {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        #back-to-top.is-footer-visible {
+            transform: translateY(-90px);
+        }
     </style>
 </head>
 <body class="bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-100 transition-colors duration-300">
@@ -153,7 +160,7 @@
     <!-- 1. The Header Component -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-sm">
         <div class="container mx-auto px-6 md:px-12 py-4 grid grid-cols-3 items-center">
-            <a href="#hero" class="text-xl font-bold font-display justify-self-start">Anannya Saha</a>
+            <a href="#hero" class="text-lg sm:text-xl font-bold font-display justify-self-start whitespace-nowrap">Anannya Saha</a>
             
             <!-- Desktop Navigation -->
             <nav id="desktop-nav" class="hidden md:flex items-center gap-8 justify-self-center">
@@ -623,27 +630,26 @@
         </section>
     </main>
 
-   <!-- 2. The Footer Component -->
-<footer class="bg-stone-800 dark:bg-stone-900 text-stone-300 dark:text-stone-400">
-    <div class="container mx-auto px-6 md:px-12 py-8 text-center">
-        <p>
-            &copy; 2025 Anannya Saha. Designed and built by 
-            <a 
-                href="https://www.linkedin.com/in/saikat-ghosh-005b63199/" 
-                class="text-blue-400 hover:underline" 
-                target="_blank" 
-                rel="noopener noreferrer"
-            >
-                Saikat Ghosh
-            </a> 
-            with a passion for innovation. Built with love for Anannya Saha.
-        </p>
-    </div>
-</footer>
-
+    <!-- 2. The Footer Component -->
+    <footer id="main-footer" class="bg-stone-800 dark:bg-stone-900 text-stone-300 dark:text-stone-400">
+        <div class="container mx-auto px-6 md:px-12 py-8 text-center">
+             <p>
+                &copy; 2025 Anannya Saha. Designed and built by 
+                <a 
+                    href="https://www.linkedin.com/in/saikat-ghosh-005b63199/" 
+                    class="text-blue-400 hover:underline" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                >
+                    Saikat Ghosh
+                </a> 
+                with a passion for innovation and love.
+            </p>
+        </div>
+    </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="hidden fixed bottom-8 right-8 z-40 bg-amber-600 text-white p-3 rounded-full shadow-lg hover:bg-amber-700 transition-all duration-300">
+    <button id="back-to-top" class="opacity-0 pointer-events-none fixed bottom-8 right-8 z-40 bg-amber-600 text-white p-3 rounded-full shadow-lg hover:bg-amber-700 transition-all duration-300">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11l7-7 7 7"></path></svg>
     </button>
     
@@ -758,6 +764,7 @@
                 if (e.target.closest('.github-link')) {
                     return;
                 }
+                 e.preventDefault(); // Stop page from jumping to top on link click
                 const card = e.target.closest('.project-card');
                 if (!card) return;
                 currentProjectId = card.dataset.projectId;
@@ -844,12 +851,27 @@
 
             // --- Back to Top Button Logic ---
             const backToTopButton = document.getElementById('back-to-top');
+            const footer = document.getElementById('main-footer');
+
             window.addEventListener('scroll', () => {
-                backToTopButton.classList.toggle('hidden', window.scrollY <= 300);
+                const isVisible = window.scrollY > 300;
+                backToTopButton.classList.toggle('opacity-0', !isVisible);
+                backToTopButton.classList.toggle('pointer-events-none', !isVisible);
             });
+
             backToTopButton.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
+            
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    backToTopButton.classList.toggle('is-footer-visible', entry.isIntersecting);
+                });
+            }, { threshold: 0.1 });
+
+            if (footer) {
+                footerObserver.observe(footer);
+            }
 
             // --- Horizontal Scroll with Buttons & Dots ---
             function setupCarousel(containerId, leftBtnId, rightBtnId, dotsId) {
@@ -1016,4 +1038,3 @@
     </script>
 </body>
 </html>
-
