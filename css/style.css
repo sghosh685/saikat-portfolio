@@ -961,6 +961,7 @@ footer {
 /* ==========================================================================
    @media print — Strict Executive Résumé Output
    Converts document into a structured 2-page ATS/Executive Résumé
+   Matching the Institutional 2-Page Template
    ========================================================================== */
 @page {
   size: letter;
@@ -973,7 +974,6 @@ footer {
   footer,
   #pg,
   .screen-portfolio,
-  .resume-preview-bar,
   .skip,
   .tt,
   .flt,
@@ -987,8 +987,8 @@ footer {
     background: #ffffff !important;
     color: #2b2b2b !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-    font-size: 9.4pt !important;
-    line-height: 1.38 !important;
+    font-size: 9.3pt !important;
+    line-height: 1.36 !important;
     margin: 0 !important;
     padding: 0 !important;
     -webkit-print-color-adjust: exact !important;
@@ -1005,11 +1005,12 @@ footer {
     border-radius: 0 !important;
   }
 
+  /* Résumé Header */
   .res-header {
     text-align: center;
     border-bottom: 2pt solid #0f766e !important;
-    padding-bottom: 6px !important;
-    margin-bottom: 9px !important;
+    padding-bottom: 5px !important;
+    margin-bottom: 8px !important;
   }
   .res-name {
     font-family: Fraunces, Georgia, serif !important;
@@ -1020,151 +1021,155 @@ footer {
     margin: 0 0 2px 0 !important;
     text-transform: uppercase;
   }
-  .res-subtitle {
+  .res-headline {
     font-size: 10.5pt !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     color: #0f766e !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px !important;
+  }
+  .res-specializations {
+    font-size: 8.8pt !important;
+    font-weight: 600 !important;
+    color: #2b2b2b !important;
     margin-bottom: 4px !important;
   }
-  .res-contact {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 6px !important;
-    font-size: 8.8pt !important;
+  .res-contact-bar {
+    font-size: 8.6pt !important;
     color: #4a4a4a !important;
   }
-  .res-contact a {
+  .res-contact-bar a {
     color: #1a1a2e !important;
     text-decoration: none !important;
   }
-  .res-sep {
-    color: #0f766e !important;
-    font-weight: 700 !important;
-  }
 
+  /* Sections */
   .res-section {
-    margin-bottom: 9px !important;
+    margin-bottom: 8px !important;
     page-break-inside: auto;
+  }
+  .res-page-break {
+    break-before: page !important;
+    page-break-before: always !important;
+    padding-top: 2px !important;
   }
   .res-sec-title {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-    font-size: 10pt !important;
+    font-size: 9.8pt !important;
     font-weight: 700 !important;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #1a1a2e !important;
-    border-bottom: 1px solid #0f766e !important;
-    padding-bottom: 2px !important;
-    margin: 0 0 5px 0 !important;
+    border-bottom: 1.2pt solid #0f766e !important;
+    padding-bottom: 1.5px !important;
+    margin: 0 0 4px 0 !important;
   }
-  .res-summary {
-    font-size: 9pt !important;
-    line-height: 1.36 !important;
+  .res-summary-text {
+    font-size: 8.9pt !important;
+    line-height: 1.34 !important;
     color: #2b2b2b !important;
     margin: 0 !important;
     text-align: justify;
   }
-  .res-skills-table {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 2.5px !important;
-  }
-  .res-skill-row {
-    display: flex !important;
-    font-size: 8.9pt !important;
-    line-height: 1.34 !important;
-  }
-  .res-skill-cat {
-    font-weight: 700 !important;
+
+  /* Education */
+  .res-edu-row {
+    font-size: 9pt !important;
     color: #1a1a2e !important;
-    width: 140px !important;
-    flex-shrink: 0 !important;
   }
-  .res-skill-val {
-    color: #2b2b2b !important;
-    flex: 1 !important;
+  .res-edu-sub {
+    font-size: 8.6pt !important;
+    color: #4a4a4a !important;
+    margin-top: 1.5px !important;
+    line-height: 1.32 !important;
   }
 
-  /* Prevent awkward page breaks inside job entries */
-  .res-entry {
-    margin-bottom: 8px !important;
+  /* Core Qualifications */
+  .res-qual-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+  .res-qual-item {
+    font-size: 8.8pt !important;
+    line-height: 1.33 !important;
+    color: #2b2b2b !important;
+  }
+  .res-qual-item strong {
+    color: #1a1a2e !important;
+  }
+
+  /* Professional Experience Jobs */
+  .res-job {
+    margin-bottom: 6px !important;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
   }
-  .res-entry-head {
+  .res-job-head {
     display: flex !important;
     justify-content: space-between !important;
     align-items: baseline !important;
-    margin-bottom: 1.5px !important;
+    margin-bottom: 1px !important;
   }
-  .res-org {
-    font-size: 9.8pt !important;
+  .res-job-title {
+    font-size: 9.4pt !important;
     font-weight: 700 !important;
     color: #1a1a2e !important;
-    display: block !important;
+    text-transform: uppercase;
   }
-  .res-role {
-    font-size: 9.2pt !important;
+  .res-job-dates {
+    font-size: 8.8pt !important;
+    font-weight: 700 !important;
+    color: #1a1a2e !important;
+    white-space: nowrap !important;
+    text-align: right !important;
+  }
+  .res-job-sub {
+    font-size: 8.8pt !important;
     font-style: italic !important;
     color: #4a4a4a !important;
+    margin-bottom: 1.5px !important;
   }
-  .res-meta {
-    text-align: right !important;
-    font-size: 8.8pt !important;
-    color: #4a4a4a !important;
-    white-space: nowrap !important;
-  }
-  .res-loc {
-    margin-right: 6px !important;
-  }
-  .res-dates {
-    font-weight: 600 !important;
-  }
-
-  .res-bullets {
-    margin: 2.5px 0 0 0 !important;
+  .res-job-bullets {
+    margin: 1.5px 0 0 0 !important;
     padding-left: 14px !important;
   }
-  .res-bullets li {
-    font-size: 8.9pt !important;
-    line-height: 1.34 !important;
+  .res-job-bullets li {
+    font-size: 8.7pt !important;
+    line-height: 1.32 !important;
     color: #2b2b2b !important;
-    margin-bottom: 2px !important;
+    margin-bottom: 1.8px !important;
     text-align: justify;
   }
 
-  .res-proj-list {
+  /* Selected Value */
+  .res-val-list {
     display: flex !important;
     flex-direction: column !important;
     gap: 2.5px !important;
   }
-  .res-proj-item {
-    font-size: 8.9pt !important;
-    line-height: 1.34 !important;
+  .res-val-item {
+    font-size: 8.7pt !important;
+    line-height: 1.32 !important;
     color: #2b2b2b !important;
   }
-  .res-proj-item strong {
+  .res-val-item strong {
     color: #1a1a2e !important;
   }
 
-  .res-edu-entry {
-    margin-bottom: 5px !important;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
+  /* Technology & Tools */
+  .res-tools-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
   }
-  .res-coursework {
-    font-size: 8.6pt !important;
-    color: #4a4a4a !important;
-    margin-top: 1px !important;
-  }
-  .res-certs {
-    font-size: 8.9pt !important;
-    line-height: 1.34 !important;
+  .res-tool-line {
+    font-size: 8.7pt !important;
+    line-height: 1.32 !important;
     color: #2b2b2b !important;
   }
-  .res-certs strong {
+  .res-tool-line strong {
     color: #1a1a2e !important;
   }
 }
