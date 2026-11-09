@@ -109,30 +109,16 @@
           <li><a href="#media">Evidence</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <div style="display:flex; align-items:center; gap:8px;">
-          <button id="nav-resume-btn" class="btn s" type="button" style="padding:6px 14px; font-size:0.85rem;" title="Toggle résumé preview view">Résumé View</button>
-          <button id="tt" class="tt" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-          </button>
-        </div>
+        <button id="tt" class="tt" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
       </nav>
     </div>
     <div id="pg" aria-hidden="true"></div>
   </header>
 
-  <!-- Résumé Preview Action Bar (shown when Preview Résumé is active on screen) -->
-  <div id="resume-preview-bar" class="resume-preview-bar">
-    <div>
-      <strong>📄 Résumé Preview Mode</strong> · Formatted as a structured, executive CV.
-    </div>
-    <div style="display:flex; gap:10px;">
-      <button class="btn p" type="button" onclick="window.print()" style="padding:6px 16px; font-size:0.88rem;">Print / Save PDF</button>
-      <button id="exit-resume-btn" class="btn s" type="button" style="padding:6px 16px; font-size:0.88rem;">Exit to Web Portfolio</button>
-    </div>
-  </div>
-
   <!-- =========================================================================
-       VIEW 1: Interactive Web Portfolio (Hidden during print / resume preview)
+       Interactive Web Portfolio
        ========================================================================= -->
   <main id="top" class="screen-portfolio">
     <!-- Hero Section -->
@@ -147,7 +133,7 @@
             <a class="btn p" href="#contact">Get in touch</a>
             <a class="btn s" href="#projects">See my work</a>
             <a class="btn s" href="#builds">Live builds</a>
-            <button id="hero-print-btn" class="btn s" type="button" title="Print or save as structured PDF resume">Print / Save Résumé (PDF)</button>
+            <button class="btn s" type="button" onclick="window.print()">Print / Save PDF</button>
           </div>
         </div>
         <aside class="glance" aria-label="Professional Summary at a Glance">
