@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12161a" />
+      <stop offset="100%" stop-color="#1a2026" />
+    </linearGradient>
+    <radialGradient id="tealGlow" cx="80%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#0f766e" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#12161a" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+  <rect width="1200" height="630" fill="url(#tealGlow)" />
+  <rect x="40" y="40" width="1120" height="550" rx="20" fill="none" stroke="#2a323a" stroke-width="2" />
+
+  <!-- Monogram Logo -->
+  <rect x="80" y="80" width="70" height="70" rx="18" fill="#0f766e" />
+  <text x="115" y="127" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="32" font-weight="700" fill="#ffffff" text-anchor="middle">SG</text>
+
+  <!-- Tag -->
+  <rect x="170" y="93" width="310" height="42" rx="21" fill="#16332f" stroke="#0f766e" stroke-width="1.5" />
+  <text x="325" y="120" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#4fd1c0" text-anchor="middle">Business Systems &amp; Operations</text>
+
+  <!-- Title & Headline -->
+  <text x="80" y="240" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#ffffff">Saikat Ghosh</text>
+  <text x="80" y="305" font-family="Georgia, serif" font-size="32" font-weight="500" fill="#4fd1c0">Turning manual processes into reliable, automated workflows.</text>
+
+  <text x="80" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="22" fill="#9aa4af">Salesforce &amp; CRM Operations · Workflow Automation · Data Quality · Web Governance</text>
+  <text x="80" y="405" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="20" fill="#717c8a">York University (OsgoodePD · SmartTO · Career Centre · LA&amp;PS) · B.Sc. Computer Science</text>
+
+  <!-- Metric Badges -->
+  <g transform="translate(80, 465)">
+    <rect width="220" height="75" rx="12" fill="#1e262e" stroke="#2a323a" />
+    <text x="24" y="38" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#4fd1c0">70–90%</text>
+    <text x="24" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" fill="#9aa4af">Manual Effort Cut</text>
+  </g>
+  <g transform="translate(320, 465)">
+    <rect width="220" height="75" rx="12" fill="#1e262e" stroke="#2a323a" />
+    <text x="24" y="38" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#4fd1c0">1,000+</text>
+    <text x="24" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" fill="#9aa4af">LinkedIn Growth (26% CTR)</text>
+  </g>
+  <g transform="translate(560, 465)">
+    <rect width="220" height="75" rx="12" fill="#1e262e" stroke="#2a323a" />
+    <text x="24" y="38" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#4fd1c0">95+ Sites</text>
+    <text x="24" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" fill="#9aa4af">AODA Web Governance</text>
+  </g>
+  <g transform="translate(800, 465)">
+    <rect width="280" height="75" rx="12" fill="#16332f" stroke="#0f766e" />
+    <text x="24" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="600" fill="#4fd1c0">Toronto, Ontario</text>
+    <text x="24" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" fill="#d9f0ec">saikat-portfolio-one.vercel.app</text>
+  </g>
+</svg>

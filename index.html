@@ -1,1040 +1,943 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anannya Saha | Data Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // This script is placed in the head to prevent a "flash" of the wrong theme.
-        // It runs immediately, before the page is rendered.
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    </script>
-    <style>
-        /* Custom styles as per technical specifications */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12161a" media="(prefers-color-scheme: dark)">
 
-        .font-display {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        /* Journey Section Timeline */
-        .timeline-item {
-            position: relative;
-            padding-left: 3rem;
-            padding-bottom: 2rem;
-            border-left: 2px solid #e7e5e4; /* stone-200 */
-        }
-        .dark .timeline-item {
-            border-left-color: #57534e; /* stone-600 */
-        }
-        .timeline-item:last-child {
-            border-left-color: transparent;
-            padding-bottom: 0;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: -0.80rem;
-            top: 0.125rem;
-            height: 1.5rem;
-            width: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #fff; /* white */
-            border-radius: 9999px;
-            border: 2px solid #e7e5e4; /* stone-200 */
-        }
-        .dark .timeline-dot {
-            background-color: #1c1917; /* stone-900 */
-            border-color: #57534e; /* stone-600 */
-        }
+  <title>Saikat Ghosh | Business Systems, Operations &amp; Digital Programs</title>
+  <meta name="description" content="Portfolio of Saikat Ghosh: Salesforce and CRM operations, workflow automation, data quality, web governance, and digital programs at York University.">
+  <link rel="canonical" href="https://saikat-portfolio-one.vercel.app">
 
-        /* Project Filtering & Modal Transitions */
-        .project-card {
-            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-        }
-        .modal-overlay, .modal-content {
-            transition: opacity 0.3s ease-in-out;
-        }
-        .modal-content {
-             transition-property: opacity, transform;
-             transform: scale(0.95);
-        }
-        #project-modal:not(.hidden) .modal-content {
-            transform: scale(1);
-        }
+  <!-- Open Graph & Social Sharing -->
+  <meta property="og:title" content="Saikat Ghosh | Business Systems, Operations &amp; Digital Programs">
+  <meta property="og:description" content="Business systems and operations professional turning manual, multi-source processes into reliable, automated workflows. B.Sc. Computer Science, York University.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saikat-portfolio-one.vercel.app">
+  <meta property="og:image" content="assets/og-preview.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
-        /* Section fade-in animation */
-        .section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Saikat Ghosh | Business Systems, Operations &amp; Digital Programs">
+  <meta name="twitter:description" content="Business systems and operations professional turning manual, multi-source processes into reliable, automated workflows. B.Sc. Computer Science, York University.">
+  <meta name="twitter:image" content="assets/og-preview.svg">
 
-        /* Responsive Video Iframe */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            border-radius: 0.5rem; /* rounded-lg */
-            background: #1c1917; /* stone-900 */
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        /* Hide scrollbar for IE, Edge and Firefox */
-        .hide-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
-        
-        /* Blinking cursor for typing effect */
-        .blinking-cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1.75rem; /* md:h-10 */
-            background-color: #b45309; /* amber-600 */
-            animation: blink 1s step-end infinite;
-        }
-        .dark .blinking-cursor {
-            background-color: #d97706; /* amber-500 */
-        }
-        @keyframes blink {
-            from, to { opacity: 1 }
-            50% { opacity: 0 }
-        }
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 
-        /* Carousel Dot Indicators */
-        .carousel-dots .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 9999px;
-            background-color: #d6d3d1; /* stone-300 */
-            transition: background-color 0.3s ease-in-out;
+  <!-- FOUC Prevention for Theme -->
+  <script>
+    (function(){
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) {
+          document.documentElement.setAttribute('data-theme', t);
+          var m = document.querySelector('meta[name="color-scheme"]');
+          if (m) m.content = t;
         }
-        .dark .carousel-dots .dot {
-             background-color: #57534e; /* stone-600 */
-        }
-        .carousel-dots .dot.active {
-            background-color: #b45309; /* amber-600 */
-        }
-        .dark .carousel-dots .dot.active {
-            background-color: #d97706; /* amber-500 */
-        }
+      } catch (e) {}
+    })();
+  </script>
 
-        #back-to-top {
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-        #back-to-top.is-footer-visible {
-            transform: translateY(-90px);
-        }
-    </style>
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Saikat Ghosh",
+    "jobTitle": "Business Systems & Operations Professional",
+    "url": "https://saikat-portfolio-one.vercel.app",
+    "email": "mailto:saikatghosh369@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "York University",
+      "department": "Lassonde School of Engineering"
+    },
+    "knowsAbout": [
+      "Salesforce & CRM Operations",
+      "Business Systems Analysis",
+      "Workflow Automation",
+      "Python Data Pipelines",
+      "Process Mapping & SOPs",
+      "Web Governance & AODA Compliance"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/saikatghosh00",
+      "https://github.com/sghosh685"
+    ]
+  }
+  </script>
 </head>
-<body class="bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-100 transition-colors duration-300">
+<body>
+  <a class="skip" href="#top">Skip to content</a>
 
-    <!-- 1. The Header Component -->
-    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-sm">
-        <div class="container mx-auto px-6 md:px-12 py-4 grid grid-cols-3 items-center">
-            <a href="#hero" class="text-lg sm:text-xl font-bold font-display justify-self-start whitespace-nowrap">Anannya Saha</a>
-            
-            <!-- Desktop Navigation -->
-            <nav id="desktop-nav" class="hidden md:flex items-center gap-8 justify-self-center">
-                <a href="#about" class="nav-link text-stone-600 dark:text-stone-400 hover:text-amber-600 transition-colors">About</a>
-                <a href="#projects" class="nav-link text-stone-600 dark:text-stone-400 hover:text-amber-600 transition-colors">Projects</a>
-                <a href="#stack" class="nav-link text-stone-600 dark:text-stone-400 hover:text-amber-600 transition-colors">Skills</a>
-                <a href="#contact" class="nav-link text-stone-600 dark:text-stone-400 hover:text-amber-600 transition-colors">Contact</a>
-            </nav>
+  <!-- Header Navigation -->
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main Navigation">
+        <a class="logo" href="#top" aria-label="Saikat Ghosh Homepage">
+          <span class="logo-badge" aria-hidden="true">SG</span>
+          <span>Saikat Ghosh</span>
+        </a>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#builds">Live Builds</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#goals">Goals</a></li>
+          <li><a href="#media">Evidence</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="tt" class="tt" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </nav>
+    </div>
+    <div id="pg" aria-hidden="true"></div>
+  </header>
 
-            <div class="flex items-center gap-4 justify-self-end col-start-3">
-                 <!-- Theme Toggle Button -->
-                <button id="theme-toggle" type="button" class="p-2.5 rounded-full text-stone-900 dark:text-stone-100 transition-colors">
-                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.707 7.072l.707-.707a1 1 0 10-1.414-1.414l-.707.707a1 1 0 101.414 1.414zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-                </button>
-                
-                <!-- Mobile Menu Button (Hamburger) -->
-                <button id="mobile-menu-btn" class="md:hidden p-2.5">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
+  <main id="top">
+    <!-- Hero Section -->
+    <div class="wrap hero">
+      <div class="hg">
+        <div class="hl">
+          <span class="tag">Open to new opportunities · Toronto, ON</span>
+          <h1>Saikat Ghosh</h1>
+          <p class="punch">I turn manual, multi-source processes into reliable, automated workflows.</p>
+          <p class="lead">Four years across York University units in Salesforce and CRM operations, data quality, web governance, and community-facing programs. I build the workflows, plain-language resources, and reporting systems that keep complex operations accurate and accessible.</p>
+          <div class="btns">
+            <a class="btn p" href="#contact">Get in touch</a>
+            <a class="btn s" href="#projects">See my work</a>
+            <a class="btn s" href="#builds">Live builds</a>
+            <button class="btn s" type="button" onclick="window.print()">Print / Save PDF</button>
+          </div>
+        </div>
+        <aside class="glance" aria-label="Professional Summary at a Glance">
+          <div class="av" aria-hidden="true">SG</div>
+          <b>Business Systems &amp; Operations</b>
+          <span class="gs">4+ years at York University</span>
+          <ul>
+            <li>Salesforce, SIS, Kuali &amp; CRM operations</li>
+            <li>Workflow automation (Python, Excel, Power Apps)</li>
+            <li>Data quality, SQL &amp; executive reporting</li>
+            <li>Program operations &amp; accessible service navigation</li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="stats" role="region" aria-label="Key Impact Metrics">
+        <div class="stat">
+          <b>70–90%</b>
+          <span>Estimated manual effort cut from exam scheduling and reporting</span>
+        </div>
+        <div class="stat">
+          <b>114 → 1,000+</b>
+          <span>LinkedIn followers grown for SmartTO (26% engagement rate)</span>
+        </div>
+        <div class="stat">
+          <b>95+ / 60</b>
+          <span>Websites and databases maintained at LA&amp;PS (+25% organic traffic)</span>
+        </div>
+        <div class="stat">
+          <b>40+ / 70</b>
+          <span>Instructors and courses supported per term at OsgoodePD</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 01: Profile -->
+    <section id="about">
+      <div class="wrap">
+        <span class="eb">01 / Profile</span>
+        <h2>About</h2>
+        <p class="sub">Systems thinking, applied to real operations and human-centred service.</p>
+        <div class="about">
+          <div>
+            <p>I find the bottleneck, map the logic, and build something that scales. At Osgoode Professional Development I supported 40+ instructors and roughly 70 courses per term across SIS, Salesforce, Kuali, and eClass—rebuilding a multi-source exam scheduling and reporting workflow that previously depended on heavy manual coordination.</p>
+            <p>Earlier, at SmartTO (Innovation York), I engineered a Python and CSV pipeline to clean and validate stakeholder data for CRM readiness (increasing qualified leads by 30% and outreach conversion by 15%) while growing the initiative’s LinkedIn following from about 114 to over 1,000. In the Career Centre and the Faculty of LA&amp;PS, I led accessibility-informed web governance, plain-language communication across literacy and language needs, and large-scale database accuracy.</p>
+            <p>I am looking for roles in Salesforce and CRM operations, business systems analysis, program operations, and workflow automation where a computer science foundation and a people-first operations mindset are both essential. I also build and deploy data and analytics projects, from an Ontario labour-market dashboard to an interactive battery and grid learning platform. Away from work I hold ISSA health and lifespan coaching certifications and spend as much time outdoors as I can, from backcountry hiking at Sleeping Giant Provincial Park to fall road trips through Quebec.</p>
+          </div>
+          <div class="facts">
+            <div>Location<small>Toronto, ON · Open to relocation</small></div>
+            <div>Education<small>B.Sc. in Computer Science, York University (2025)</small></div>
+            <div>Languages<small>Bangla (native) · English (full professional) · French (professional working) · Hindi (limited)</small></div>
+            <div>Focus<small>Salesforce · CRM · Process automation · Data &amp; Program Operations</small></div>
+            <div>Mobility &amp; Availability<small>Open to full-time roles · Valid driver’s licence for site visits</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 02: Career -->
+    <section id="experience">
+      <div class="wrap">
+        <span class="eb">02 / Career</span>
+        <h2>Experience</h2>
+        <p class="sub">Four years across York University units, from web and data governance to Salesforce and program operations.</p>
+
+        <div class="job">
+          <div class="when">Jan 2026 – Aug 2026</div>
+          <div>
+            <h3>Instruction &amp; Administration Assistant</h3>
+            <div class="org">Osgoode Professional Development, York University</div>
+            <p class="sum">Owned day-to-day academic operations for 40+ instructors and ~70 courses per term, and automated recurring exam scheduling and reporting workflows.</p>
+            <ul>
+              <li><strong>Workflow automation:</strong> Redesigned a multi-source exam scheduling and reporting workflow using validation rules and exception tracking, cutting estimated manual effort by 70–90% and enabling near one-click execution.</li>
+              <li><strong>Systems &amp; CRM reconciliation:</strong> Reconciled rosters and course catalogue data using SIS as the source of truth before updating Salesforce and Excel records; resolved cross-system inconsistencies between Salesforce and Kuali.</li>
+              <li><strong>Power Platform &amp; decision support:</strong> Created Power Apps and Microsoft Forms/Excel intake workflows to structure recurring communications, and proposed a decision-support framework to standardize complex exam booking protocols.</li>
+            </ul>
+            <details>
+              <summary>Show 3 more operational responsibilities</summary>
+              <ul>
+                <li><strong>Exam operations:</strong> Independently managed Summer and Fall 2026 exam scheduling (including deferred exams), delivered high-stakes examination instructions, and supported live exam monitoring, software onboarding, Wi-Fi troubleshooting, and submissions.</li>
+                <li><strong>eClass &amp; evaluations:</strong> Led pre-term eClass setup and managed end-to-end course evaluation workflows, formatting responses into instructor-ready reports and flagging sensitive items for manager review.</li>
+                <li><strong>Instructor support &amp; SOPs:</strong> Triaged shared inboxes against defined SLAs, maintained confidential learner records, audited oral presentation activity, and authored SOPs, checklists, and workflow diagrams.</li>
+              </ul>
+            </details>
+            <div class="chips">
+              <span class="chip">Salesforce</span>
+              <span class="chip">SIS</span>
+              <span class="chip">Kuali</span>
+              <span class="chip">eClass</span>
+              <span class="chip">Power Apps</span>
+              <span class="chip">Excel</span>
+              <span class="chip">SOPs</span>
             </div>
+          </div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <nav class="flex flex-col items-center gap-4 py-4">
-                <a href="#about" class="mobile-nav-link text-lg">About</a>
-                <a href="#projects" class="mobile-nav-link text-lg">Projects</a>
-                <a href="#stack" class="mobile-nav-link text-lg">Skills</a>
-                <a href="#contact" class="mobile-nav-link text-lg">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="pt-32 pb-20 md:pt-48 md:pb-32 section bg-gradient-to-br from-stone-100 to-stone-200 dark:from-stone-950 dark:to-stone-900">
-            <div class="container mx-auto px-6 md:px-12">
-                <div class="flex flex-col-reverse md:flex-row items-center gap-12">
-                    <!-- Left Column (Text) -->
-                    <div class="md:w-3/5 text-center md:text-left">
-                        <h1 class="text-4xl md:text-6xl font-bold tracking-tighter font-display">
-                            Building Intelligent Solutions.
-                        </h1>
-                        <p class="mt-4 text-2xl md:text-3xl text-amber-600 dark:text-amber-500 h-10 md:h-12 flex justify-center md:justify-start items-center">
-                           <span class="mr-2">I'm a</span>
-                           <span id="typing-subtitle" class="font-semibold"></span>
-                           <span class="blinking-cursor"></span>
-                        </p>
-                        <p class="max-w-2xl mt-6 text-lg text-stone-600 dark:text-stone-400">
-                           I build robust, scalable applications that transform complex data into impactful solutions. From crafting efficient data pipelines to developing full-stack software, my passion is bringing ideas to life with code.
-                        </p>
-                        <div class="mt-8">
-                            <a href="#projects" class="inline-block bg-amber-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-amber-700 transition-all duration-300 transform hover:scale-105">
-                                Explore My Work
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Right Column (Image) -->
-                    <div class="md:w-2/5 flex justify-center">
-                         <div class="p-2 rounded-full bg-gradient-to-br from-amber-500 via-orange-500 to-yellow-500 w-64 h-64 md:w-80 md:h-80 shadow-2xl">
-                            <img src="https://placehold.co/400x400/EAE8E4/1c1917?text=AS" alt="Anannya Saha" class="rounded-full w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
+        <div class="job">
+          <div class="when">Apr 2024 – Jul 2025</div>
+          <div>
+            <h3>Communication &amp; Marketing Assistant</h3>
+            <div class="org">SmartTO, Innovation York, York University</div>
+            <p class="sum">Combined CRM discovery, Python data engineering, and digital growth for a government-funded sustainable mobility initiative.</p>
+            <ul>
+              <li><strong>Automated lead pipeline:</strong> Built a Python and CSV workflow to collect, clean, normalize, validate, and deduplicate stakeholder records before CRM loading, increasing qualified leads by 30% and outreach conversion by 15%.</li>
+              <li><strong>CRM discovery &amp; process mapping:</strong> Contributed to the CRM implementation discovery phase, mapping end-to-end flows across academic operations, industry partnerships, government funding allocation, and startups.</li>
+              <li><strong>Digital &amp; community growth:</strong> Grew LinkedIn from about 114 to 1,000+ followers with a 26% engagement rate, generating 87,000+ impressions and 17,000+ clicks.</li>
+            </ul>
+            <details>
+              <summary>Show 2 more operational responsibilities</summary>
+              <ul>
+                <li><strong>Reporting &amp; content:</strong> Built Excel dashboards summarizing engagement metrics for leadership, tracked stakeholder milestones and follow-up checkpoints, and maintained WordPress content. Supported grant-based budget tracking, contract documentation, and funding distribution monitoring to support accountability.</li>
+                <li><strong>Campaign Analytics:</strong> Reported Mailchimp campaign performance metrics, including open rate, click-through rate (CTR), unsubscribes, click density, and send-time insights. Used these findings to refine targeting and messaging.</li>
+              </ul>
+            </details>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">CRM</span>
+              <span class="chip">Process mapping</span>
+              <span class="chip">Mailchimp</span>
+              <span class="chip">Excel dashboards</span>
+              <span class="chip">LinkedIn</span>
             </div>
-        </section>
-
-        <!-- About Me Section -->
-        <section id="about" class="py-20 section">
-            <div class="container mx-auto px-6 md:px-12">
-                <h2 class="text-4xl font-bold text-center mb-12 font-display">About Me</h2>
-                <div class="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
-                    <div class="md:w-1/3 flex-shrink-0">
-                        <div class="p-2 rounded-full bg-gradient-to-br from-amber-500 via-orange-500 to-yellow-500">
-                             <img src="https://placehold.co/400x400/EAE8E4/1c1917?text=AS" alt="Anannya Saha" class="rounded-full">
-                        </div>
-                    </div>
-                    <div class="md:w-2/3">
-                        <p class="text-lg mb-4 text-stone-700 dark:text-stone-300">
-                            My journey into technology began with a fascination for solving puzzles, which led me to a Computer Science degree from Ontario Tech University. Today, I channel that passion into my work as a Data Engineer, where I get to unravel the complexities of data to build efficient, automated systems.
-                        </p>
-                        <p class="text-lg mb-4 text-stone-700 dark:text-stone-300">
-                            At the Ontario Public Services, I've had the opportunity to wear multiple hats—from a data modeling analyst automating reports with Python to a senior developer co-leading the rollout of enterprise-level systems in Dynamics 365. My core focus is always on bridging the gap between technical possibilities and business needs, whether that's through a Power BI dashboard for staffing analytics or a PowerApps tool that cuts workflow inefficiencies by 38%.
-                        </p>
-                         <p class="text-lg text-stone-700 dark:text-stone-300">
-                            Beyond the code, I'm a lifelong learner committed to exploring how technology can create clearer, more effective ways of working.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Journey Section -->
-        <section id="journey" class="py-20 section">
-            <div class="container mx-auto px-6 md:px-12">
-                <h2 class="text-4xl font-bold text-center mb-4 font-display">The Journey</h2>
-                <p class="text-center text-lg text-stone-600 dark:text-stone-400 mb-12">A timeline of key milestones in my career.</p>
-                <div class="max-w-3xl mx-auto">
-                    <div class="timeline-item">
-                        <div class="timeline-dot">
-                             <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg>
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-stone-500 dark:text-stone-500">MAY 2025 - PRESENT</time>
-                        <h3 class="text-lg font-semibold text-stone-900 dark:text-white">Developing Enterprise Solutions</h3>
-                        <p class="text-base font-normal text-stone-600 dark:text-stone-400">As a Senior Applications Developer, I co-led the development of an Audit Case Management System in Dynamics 365 and optimized backend workflows with Python data validation scripts.</p>
-                    </div>
-                     <div class="timeline-item">
-                        <div class="timeline-dot">
-                             <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg>
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-stone-500 dark:text-stone-500">JANUARY 2025</time>
-                        <h3 class="text-lg font-semibold text-stone-900 dark:text-white">Excellence in Automation Award</h3>
-                        <p class="text-base font-normal text-stone-600 dark:text-stone-400">Received the Excellence Award for transforming manual workforce approvals using a combination of Python and Power Automate.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot">
-                             <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg>
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-stone-500 dark:text-stone-500">JULY 2024 - APRIL 2025</time>
-                        <h3 class="text-lg font-semibold text-stone-900 dark:text-white">Bridging Policy and Technology</h3>
-                        <p class="text-base font-normal text-stone-600 dark:text-stone-400">As a Workforce Policy Analyst, I developed the automated staffing request tool and built interactive Power BI dashboards for workforce forecasting and policy analysis.</p>
-                    </div>
-                     <div class="timeline-item">
-                        <div class="timeline-dot">
-                             <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg>
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-stone-500 dark:text-stone-500">DECEMBER 2023</time>
-                        <h3 class="text-lg font-semibold text-stone-900 dark:text-white">Recognition for Innovation</h3>
-                        <p class="text-base font-normal text-stone-600 dark:text-stone-400">Received the Innovator Award for creating an enterprise analytics tool to generate organization charts from complex datasets.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot">
-                            <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg>
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-stone-500 dark:text-stone-500">MAY 2022 - JULY 2024</time>
-                        <h3 class="text-lg font-semibold text-stone-900 dark:text-white">Diving into Data Automation</h3>
-                        <p class="text-base font-normal text-stone-600 dark:text-stone-400">Began my career as a Workforce Data Modelling Analyst, automating Excel reporting with Python to achieve a 65% faster workflow and developing robust data pipelines.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot">
-                             <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"></path></svg>
-                        </div>
-                        <time class="mb-1 text-sm font-normal leading-none text-stone-500 dark:text-stone-500">2018 - 2023</time>
-                        <h3 class="text-lg font-semibold text-stone-900 dark:text-white">Foundation in Computer Science</h3>
-                        <p class="text-base font-normal text-stone-600 dark:text-stone-400">Graduated with Distinction from Ontario Tech University with a Bachelor of Science in Computer Science, building a strong foundation for my career in technology.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 section">
-            <div class="container mx-auto px-6 md:px-0">
-                <h2 class="text-4xl font-bold text-center mb-4 font-display">My Work</h2>
-                <p class="text-center text-lg text-stone-600 dark:text-stone-400 mb-12">A selection of projects that showcase my skills in action.</p>
-
-                <!-- Filter Buttons -->
-                <div id="filters" class="flex justify-center flex-wrap gap-4 mb-12">
-                    <button class="filter-btn active px-4 py-2 rounded-md font-semibold bg-amber-600 text-white" data-filter="all">All</button>
-                    <button class="filter-btn px-4 py-2 rounded-md font-semibold bg-stone-200 dark:bg-stone-800" data-filter="automation">Automation</button>
-                    <button class="filter-btn px-4 py-2 rounded-md font-semibold bg-stone-200 dark:bg-stone-800" data-filter="dataviz">Data Viz</button>
-                    <button class="filter-btn px-4 py-2 rounded-md font-semibold bg-stone-200 dark:bg-stone-800" data-filter="bi">BI</button>
-                </div>
-                
-                <div class="relative group">
-                    <!-- Project Grid -->
-                    <div id="project-grid" class="flex gap-4 overflow-x-auto pb-4 hide-scrollbar snap-x snap-mandatory scroll-smooth px-6 md:px-0">
-                        <!-- Project Card 1 -->
-                        <div class="project-card w-[85%] sm:w-80 md:w-96 flex-shrink-0 snap-center cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden" 
-                             data-project-id="staffing-request-tool"
-                             data-category="automation"
-                             data-title="Staffing Request Tool"
-                             data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                             data-github-url="https://github.com"
-                             data-tech="PowerApps,Power Automate,SharePoint,Dataverse,Power BI"
-                             data-description="This project involved designing and deploying a comprehensive PowerApps solution to replace a manual, inefficient staffing approval process. The tool integrates Microsoft Forms, Teams Approvals, and SharePoint to create a secure, automated, multi-level approval workflow."
-                             data-outcomes="• Increased workflow efficiency by 38%.|• Established a secure, centralized data hub on SharePoint with role-based permissions.|• Migrated from legacy MS Access to a scalable solution integrated with Power BI for real-time insights.|• Refined UI/UX based on positive feedback from cross-functional user acceptance testing."
-                             data-learnings="This project reinforced the importance of user-centered design in automation. Conducting thorough user acceptance testing was critical for refining the workflow and ensuring the final tool met the nuanced needs of managers and executives, leading to high adoption rates.">
-                            <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Automation+Tool" alt="Staffing Request Tool" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2">Staffing Request Tool</h3>
-                                <p class="text-stone-600 dark:text-stone-400 mb-4">Streamlined a complex staffing approval process to improve workflow efficiency by 38%.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="tag text-xs font-semibold bg-amber-100 text-amber-800 px-2 py-1 rounded-full">#automation</span>
-                                    <span class="tag text-xs font-semibold bg-sky-100 text-sky-800 px-2 py-1 rounded-full">#power-platform</span>
-                                </div>
-                                <div class="mt-4 flex justify-between items-center">
-                                    <a href="#" class="view-project-link font-semibold text-amber-600 dark:text-amber-500 hover:underline">View Project &rarr;</a>
-                                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-link text-stone-500 hover:text-amber-600 dark:hover:text-amber-500 transition-colors">
-                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Project Card 2 -->
-                        <div class="project-card w-[85%] sm:w-80 md:w-96 flex-shrink-0 snap-center cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-                             data-project-id="staffing-analytics-dashboard"
-                             data-category="dataviz bi"
-                             data-title="Employee Staffing Analytics Dashboard"
-                             data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                             data-github-url="https://github.com"
-                             data-tech="Power BI,SQL,PowerQuery,Python"
-                             data-description="To address challenges in headcount tracking, I developed a dynamic Microsoft Power BI dashboard. This solution automates data integration from multiple sources using SQL, PowerQuery, and Python to provide real-time, accurate analytics for staffing and resource planning."
-                             data-outcomes="• Optimized FTE allocation and improved headcount tracking for business objectives.|• Automated multi-source data integration to ensure real-time accuracy.|• Supported effective resource planning by validating staffing forecasts with solution-focused testing.|• Delivered actionable insights through dashboards designed in collaboration with key stakeholders."
-                             data-learnings="Successfully integrating disparate data sources was a key challenge. This project taught me the value of robust data validation at each step of the pipeline (ETL) to ensure the final visualizations are both accurate and trustworthy for executive decision-making.">
-                            <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=BI+Dashboard" alt="Staffing Analytics Dashboard" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2">Staffing Analytics Dashboard</h3>
-                                <p class="text-stone-600 dark:text-stone-400 mb-4">Developed a Microsoft Power BI dashboard to optimize FTE allocation and improve headcount tracking.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="tag text-xs font-semibold bg-purple-100 text-purple-800 px-2 py-1 rounded-full">#data-viz</span>
-                                    <span class="tag text-xs font-semibold bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full">#bi</span>
-                                    <span class="tag text-xs font-semibold bg-rose-100 text-rose-800 px-2 py-1 rounded-full">#python</span>
-                                </div>
-                                <div class="mt-4 flex justify-between items-center">
-                                    <a href="#" class="view-project-link font-semibold text-amber-600 dark:text-amber-500 hover:underline">View Project &rarr;</a>
-                                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-link text-stone-500 hover:text-amber-600 dark:hover:text-amber-500 transition-colors">
-                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Project Card 3 -->
-                        <div class="project-card w-[85%] sm:w-80 md:w-96 flex-shrink-0 snap-center cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-                             data-project-id="org-chart-tool"
-                             data-category="dataviz automation"
-                             data-title="Enterprise Organization Chart Tool"
-                             data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                             data-github-url="https://github.com"
-                             data-tech="Python (Pandas),Excel,Power BI"
-                             data-description="This project addressed the need for an accurate, scalable way to visualize the company's structure for planning and analysis. I developed robust data pipelines using Python to clean, transform, and process large Excel datasets, feeding into an automated analytics tool for generating org charts."
-                             data-outcomes="• Created a scalable tool that ensured accuracy for critical workforce planning and pay equity analysis.|• Developed robust data pipelines to handle complex data cleaning and transformation tasks.|• Delivered a solution that was recognized with the 'Innovator Award' for its impact on the organization.|• Provided clear visualizations for executive decision-making."
-                             data-learnings="This project highlighted the power of Python for scalable data preparation. Handling inconsistencies in large, manually-maintained Excel files taught me advanced data cleaning techniques and the importance of building resilient pipelines that can adapt to imperfect source data.">
-                            <img src="https://placehold.co/600x400/ec4899/ffffff?text=Org+Chart+Tool" alt="Enterprise Org Chart Tool" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2">Enterprise Org Chart Tool</h3>
-                                <p class="text-stone-600 dark:text-stone-400 mb-4">Created an award-winning analytics tool to generate org charts for workforce planning and pay equity analysis.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="tag text-xs font-semibold bg-purple-100 text-purple-800 px-2 py-1 rounded-full">#data-viz</span>
-                                    <span class="tag text-xs font-semibold bg-amber-100 text-amber-800 px-2 py-1 rounded-full">#automation</span>
-                                </div>
-                                <div class="mt-4 flex justify-between items-center">
-                                    <a href="#" class="view-project-link font-semibold text-amber-600 dark:text-amber-500 hover:underline">View Project &rarr;</a>
-                                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-link text-stone-500 hover:text-amber-600 dark:hover:text-amber-500 transition-colors">
-                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- New Project Card 4 -->
-                        <div class="project-card w-[85%] sm:w-80 md:w-96 flex-shrink-0 snap-center cursor-pointer bg-white dark:bg-stone-900 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-                             data-project-id="financial-reporting-automation"
-                             data-category="bi"
-                             data-title="Financial Reporting Automation"
-                             data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                             data-github-url="https://github.com"
-                             data-tech="Python,SQL,Azure"
-                             data-description="Automated the generation of monthly financial reports, reducing manual effort and improving data accuracy by creating a Python-based ETL pipeline."
-                             data-outcomes="• Reduced report generation time by 65%.|• Improved data accuracy and consistency across reports."
-                             data-learnings="Learned to handle large financial datasets efficiently and the importance of robust error checking in data pipelines.">
-                            <img src="https://placehold.co/600x400/10b981/ffffff?text=Financial+Automation" alt="Financial Reporting Automation" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold mb-2">Financial Reporting Automation</h3>
-                                <p class="text-stone-600 dark:text-stone-400 mb-4">Python-based pipeline for automating monthly financial reports.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="tag text-xs font-semibold bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full">#bi</span>
-                                    <span class="tag text-xs font-semibold bg-rose-100 text-rose-800 px-2 py-1 rounded-full">#python</span>
-                                </div>
-                                <div class="mt-4 flex justify-between items-center">
-                                    <a href="#" class="view-project-link font-semibold text-amber-600 dark:text-amber-500 hover:underline">View Project &rarr;</a>
-                                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-link text-stone-500 hover:text-amber-600 dark:hover:text-amber-500 transition-colors">
-                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Scroll Buttons -->
-                    <button id="project-scroll-left" class="scroll-btn hidden md:block absolute top-1/2 left-0 -translate-y-1/2 bg-white/80 dark:bg-stone-800/80 p-2 rounded-full shadow-md hover:bg-white transition-opacity opacity-0 group-hover:opacity-100">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-                    </button>
-                    <button id="project-scroll-right" class="scroll-btn hidden md:block absolute top-1/2 right-0 -translate-y-1/2 bg-white/80 dark:bg-stone-800/80 p-2 rounded-full shadow-md hover:bg-white transition-opacity opacity-0 group-hover:opacity-100">
-                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                    </button>
-                </div>
-                 <!-- Dots Indicator -->
-                <div id="project-dots" class="carousel-dots flex md:hidden justify-center gap-2 mt-4"></div>
-            </div>
-        </section>
-
-        <!-- Project Modal -->
-        <div id="project-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
-            <!-- Overlay -->
-            <div id="modal-overlay" class="absolute inset-0 bg-black/70"></div>
-            <!-- Content -->
-            <div id="modal-content" class="modal-content relative w-full max-w-4xl max-h-[90vh] bg-white dark:bg-stone-900 rounded-lg shadow-xl flex flex-col">
-                <div class="p-6 border-b dark:border-stone-700 flex justify-between items-center flex-shrink-0">
-                    <h3 id="modal-title" class="text-2xl font-bold">Project Title</h3>
-                    <button id="modal-close-btn" class="text-stone-500 hover:text-stone-900 dark:hover:text-white text-3xl leading-none">&times;</button>
-                </div>
-                <div class="p-6 overflow-y-auto space-y-6">
-                    <div class="video-container">
-                        <iframe id="modal-video" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-lg mb-2 text-amber-600 dark:text-amber-500">Problem & Solution</h4>
-                        <p id="modal-description" class="text-stone-600 dark:text-stone-400"></p>
-                    </div>
-                    <div>
-                         <h4 class="font-bold text-lg mb-2 text-amber-600 dark:text-amber-500">Tech Stack & Links</h4>
-                        <div id="modal-tech" class="flex flex-wrap gap-2"></div>
-                        <div class="flex items-center gap-8 mt-4">
-                            <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-semibold text-amber-600 dark:text-amber-500 hover:underline">
-                                View on GitHub
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                            </a>
-                            <button id="modal-share-btn" class="inline-flex items-center gap-2 font-semibold text-amber-600 dark:text-amber-500 hover:underline">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12s-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6.002l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.368a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path></svg>
-                                <span class="share-text">Share</span>
-                            </button>
-                        </div>
-                    </div>
-                     <div>
-                        <h4 class="font-bold text-lg mb-2 text-amber-600 dark:text-amber-500">Key Outcomes</h4>
-                        <ul id="modal-outcomes" class="list-disc list-inside space-y-2 text-stone-600 dark:text-stone-400"></ul>
-                    </div>
-                    <div>
-                         <h4 class="font-bold text-lg mb-2 text-amber-600 dark:text-amber-500">What I Learned</h4>
-                        <p id="modal-learnings" class="text-stone-600 dark:text-stone-400"></p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
 
-        <!-- The Lab Section -->
-        <section id="lab" class="py-20 section">
-            <div class="container mx-auto px-6 md:px-0">
-                <h2 class="text-4xl font-bold text-center mb-4 font-display">The Lab</h2>
-                <p class="text-center text-lg text-stone-600 dark:text-stone-400 mb-12">A peek into my digital sketchbook of ideas, experiments, and code snippets.</p>
-                <div class="relative group">
-                    <div id="lab-grid" class="flex gap-4 overflow-x-auto pb-4 max-w-6xl mx-auto hide-scrollbar snap-x snap-mandatory scroll-smooth px-6 md:px-0">
-                        <div class="lab-item w-[85%] sm:w-80 flex-shrink-0 snap-center p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
-                            <h4 class="font-bold mb-2">🤖 Exploring Anomaly Detection</h4>
-                            <p class="text-sm text-stone-600 dark:text-stone-400">
-                                Experimenting with Azure AI fundamentals to build a model that flags unusual patterns in service reporting data. The goal is to proactively identify potential issues before they impact performance metrics.
-                            </p>
-                        </div>
-                         <div class="lab-item w-[85%] sm:w-80 flex-shrink-0 snap-center p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
-                            <h4 class="font-bold mb-2">💡 Idea: Integrating Financial Data</h4>
-                            <p class="text-sm text-stone-600 dark:text-stone-400">
-                                Thinking about a v2 for the Staffing Request Tool. I could extend the Power Automate flow to connect to a financial system's API, allowing for real-time budget validation during the approval process.
-                            </p>
-                        </div>
-                         <div class="lab-item w-[85%] sm:w-80 flex-shrink-0 snap-center p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
-                            <h4 class="font-bold mb-2">💡 Idea: Predictive Forecasting</h4>
-                            <p class="text-sm text-stone-600 dark:text-stone-400">
-                                Could the staffing data from the Power BI dashboard be used to train a simple time-series model? It would be interesting to forecast departmental turnover rates for the next quarter.
-                            </p>
-                        </div>
-                        <!-- New Lab Item 1 -->
-                         <div class="lab-item w-[85%] sm:w-80 flex-shrink-0 snap-center p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
-                            <h4 class="font-bold mb-2">⚙️ Experiment: Real-time Data Sync</h4>
-                            <p class="text-sm text-stone-600 dark:text-stone-400">
-                               Testing a new method for real-time data synchronization between SharePoint and a SQL database using a lightweight Python script and Azure Functions for better performance.
-                            </p>
-                        </div>
-                        <!-- New Lab Item 2 -->
-                         <div class="lab-item w-[85%] sm:w-80 flex-shrink-0 snap-center p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
-                            <h4 class="font-bold mb-2">🎨 UI/UX: Dashboard Color Theory</h4>
-                            <p class="text-sm text-stone-600 dark:text-stone-400">
-                                Researching color theory principles to apply to Power BI dashboards, aiming to improve readability and guide user attention to key metrics more effectively.
-                            </p>
-                        </div>
-                        <!-- New Lab Item 3 -->
-                         <div class="lab-item w-[85%] sm:w-80 flex-shrink-0 snap-center p-4 bg-white dark:bg-stone-900 rounded-lg shadow-md">
-                            <h4 class="font-bold mb-2">📈 Concept: Sentiment Analysis</h4>
-                            <p class="text-sm text-stone-600 dark:text-stone-400">
-                               Sketching out a concept for a tool that performs sentiment analysis on user feedback forms to automatically categorize and prioritize issues for development teams.
-                            </p>
-                        </div>
-                    </div>
-                     <!-- Scroll Buttons -->
-                    <button id="lab-scroll-left" class="scroll-btn hidden md:block absolute top-1/2 left-0 -translate-y-1/2 bg-white/80 dark:bg-stone-800/80 p-2 rounded-full shadow-md hover:bg-white transition-opacity opacity-0 group-hover:opacity-100">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-                    </button>
-                    <button id="lab-scroll-right" class="scroll-btn hidden md:block absolute top-1/2 right-0 -translate-y-1/2 bg-white/80 dark:bg-stone-800/80 p-2 rounded-full shadow-md hover:bg-white transition-opacity opacity-0 group-hover:opacity-100">
-                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                    </button>
-                </div>
-                <!-- Dots Indicator -->
-                <div id="lab-dots" class="carousel-dots flex md:hidden justify-center gap-2 mt-4"></div>
+        <div class="job">
+          <div class="when">May 2023 – Apr 2024</div>
+          <div>
+            <h3>Website &amp; Social Media Coordinator</h3>
+            <div class="org">Career Centre, Division of Students, York University</div>
+            <p class="sum">Connected diverse students and employers to career programming through events, plain-language web design, and analytics-led UX improvements.</p>
+            <ul>
+              <li><strong>Event &amp; workshop growth:</strong> Coordinated career workshops, webinars, and employer sessions serving 25 to 400 participants, contributing to a 60% increase in participation through organized promotion, clear web information, timely reminders, and consistent follow-up.</li>
+              <li><strong>Analytics &amp; UX redesign:</strong> Used Google Analytics, participant feedback, and heatmaps to identify barriers in the information journey across WordPress and Drupal sites, cutting bounce rate by 17%, improving page load times by 20%, and lifting user satisfaction by 25%.</li>
+              <li><strong>Accessible service navigation:</strong> Supported international, racialized, and diverse students through one-to-one enquiries, plain-language resources adapted for varied literacy and technical needs, and referrals to university supports.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">WordPress</span>
+              <span class="chip">Drupal</span>
+              <span class="chip">Google Analytics</span>
+              <span class="chip">Heatmaps</span>
+              <span class="chip">Plain-Language &amp; AODA</span>
+              <span class="chip">Microsoft 365</span>
             </div>
-        </section>
-
-        <!-- The Stack Section -->
-        <section id="stack" class="py-20 section">
-             <div class="container mx-auto px-6 md:px-12">
-                <h2 class="text-4xl font-bold text-center mb-4 font-display">My Tech Stack</h2>
-                <p class="text-center text-lg text-stone-600 dark:text-stone-400 mb-12">The tools and technologies I use to bring ideas to life.</p>
-                <div class="max-w-4xl mx-auto space-y-8">
-                    <div>
-                        <h3 class="font-semibold text-lg mb-4 text-center">Languages & Databases</h3>
-                        <div class="flex flex-wrap gap-4 justify-center">
-                            <span class="p-2 px-4 rounded-md bg-stone-200 dark:bg-stone-800">Python (Numpy, Pandas)</span>
-                            <span class="p-2 px-4 rounded-md bg-stone-200 dark:bg-stone-800">SQL</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-lg mb-4 text-center">Cloud, BI & Enterprise Systems</h3>
-                        <div class="flex flex-wrap gap-4 justify-center">
-                             <span class="p-2 px-4 rounded-md bg-stone-200 dark:bg-stone-800">Microsoft Azure</span>
-                             <span class="p-2 px-4 rounded-md bg-stone-200 dark:bg-stone-800">Power BI</span>
-                             <span class="p-2 px-4 rounded-md bg-stone-200 dark:bg-stone-800">Dynamics 365</span>
-                             <span class="p-2 px-4 rounded-md bg-stone-200 dark:bg-stone-800">Cognos</span>
-                             <span class="p-2 px-4 rounded-md bg-stone-200 dark:bg-stone-800">SharePoint</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-lg mb-4 text-center">Automation & Low-Code</h3>
-                         <div class="flex flex-wrap gap-4 justify-center items-center">
-                            <span class="p-2 px-4 rounded-md bg-stone-200 dark:bg-stone-800">PowerApps</span>
-                             <span class="text-2xl text-stone-400 dark:text-stone-600">&rarr;</span>
-                            <span class="p-2 px-4 rounded-md bg-stone-200 dark:bg-stone-800">Power Automate</span>
-                             <span class="text-2xl text-stone-400 dark:text-stone-600">&rarr;</span>
-                            <span class="p-2 px-4 rounded-md bg-stone-200 dark:bg-stone-800">Dataverse</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 section">
-            <div class="container mx-auto px-6 md:px-12 text-center">
-                 <h2 class="text-4xl font-bold text-center mb-4 font-display">Let's Build Together</h2>
-                <p class="max-w-2xl mx-auto text-lg text-stone-600 dark:text-stone-400 mb-8">
-                    I'm always excited to connect with fellow developers, analysts, and recruiters. If you have a project in mind or just want to talk about data, feel free to reach out.
-                </p>
-                <div class="flex justify-center items-center space-x-6 mb-8">
-                    <a href="https://www.linkedin.com" target="_blank" class="text-stone-500 hover:text-amber-600 transition-colors duration-300">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path></svg>
-                    </a>
-                    <a href="https://github.com" target="_blank" class="text-stone-500 hover:text-amber-600 transition-colors duration-300">
-                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                    </a>
-                </div>
-                <a href="mailto:anannya.saha55@gmail.com" class="text-lg text-amber-600 dark:text-amber-500 hover:underline mb-8 inline-block"> anannya.saha55@gmail.com</a>
-                <div class="mt-8">
-                    <p class="mb-4 text-sm text-stone-600 dark:text-stone-400">Download a resume tailored for:</p>
-                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                        <a href="Data Engineer Resume Anannya Saha.pdf" download="Anannya_Saha_Resume_Software_Engineer.pdf" class="w-full sm:w-auto bg-stone-800 text-white dark:bg-stone-200 dark:text-stone-900 px-6 py-3 rounded-md font-semibold hover:bg-stone-700 dark:hover:bg-stone-300 transition-all duration-300">
-                            Software Engineer
-                        </a>
-                        <a href="Data Engineer Resume Anannya Saha.pdf" download="Anannya_Saha_Resume_AI_ML_Engineer.pdf" class="w-full sm:w-auto bg-stone-800 text-white dark:bg-stone-200 dark:text-stone-900 px-6 py-3 rounded-md font-semibold hover:bg-stone-700 dark:hover:bg-stone-300 transition-all duration-300">
-                            AI/ML Engineer
-                        </a>
-                        <a href="Data Engineer Resume Anannya Saha.pdf" download="Anannya_Saha_Resume_Data_Engineer.pdf" class="w-full sm:w-auto bg-stone-800 text-white dark:bg-stone-200 dark:text-stone-900 px-6 py-3 rounded-md font-semibold hover:bg-stone-700 dark:hover:bg-stone-300 transition-all duration-300">
-                            Data Engineer
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 2. The Footer Component -->
-    <footer id="main-footer" class="bg-stone-800 dark:bg-stone-900 text-stone-300 dark:text-stone-400">
-        <div class="container mx-auto px-6 md:px-12 py-8 text-center">
-             <p>
-                &copy; 2025 Anannya Saha. Designed and built by 
-                <a 
-                    href="https://www.linkedin.com/in/saikat-ghosh-005b63199/" 
-                    class="text-blue-400 hover:underline" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                >
-                    Saikat Ghosh
-                </a> 
-                with a passion for innovation and love.
-            </p>
+          </div>
         </div>
-    </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="opacity-0 pointer-events-none fixed bottom-8 right-8 z-40 bg-amber-600 text-white p-3 rounded-full shadow-lg hover:bg-amber-700 transition-all duration-300">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11l7-7 7 7"></path></svg>
-    </button>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- Header & Navigation Logic ---
-            const header = document.getElementById('main-header');
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-            const sections = document.querySelectorAll('section');
+        <div class="job">
+          <div class="when">May 2022 – Apr 2023</div>
+          <div>
+            <h3>Website &amp; Database Assistant</h3>
+            <div class="org">Faculty of Liberal Arts &amp; Professional Studies, York University</div>
+            <p class="sum">Governed program, course, and faculty information across a high-volume distributed web and database environment.</p>
+            <ul>
+              <li><strong>Scale &amp; accessibility governance:</strong> Maintained 95+ websites and 60+ databases with accessibility-informed (AODA/WCAG) content standards, contributing to a 15% increase in user satisfaction.</li>
+              <li><strong>SEO &amp; content performance:</strong> Drove a 25% increase in organic search traffic via SEO audits and metadata optimization, and partnered with faculty on Photoshop visual content that boosted engagement by 20%.</li>
+              <li><strong>Data validation &amp; documentation:</strong> Verified records against authorized sources, logged issues and ownership in structured Excel trackers, and authored step-by-step SOPs that reduced ad hoc support requests.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">CMS Governance</span>
+              <span class="chip">60+ Databases</span>
+              <span class="chip">SEO</span>
+              <span class="chip">AODA/WCAG</span>
+              <span class="chip">Excel Trackers</span>
+            </div>
+          </div>
+        </div>
 
-            window.addEventListener('scroll', () => {
-                header.classList.toggle('shadow-md', window.scrollY > 50);
-            });
+        <div class="job">
+          <div class="when">Dec 2023 – Jan 2026</div>
+          <div>
+            <h3>CCTV &amp; Security Operations Operator (Part-Time)</h3>
+            <div class="org">Community Safety, York University</div>
+            <p class="sum">Monitored a 1,400-camera network safeguarding a diverse campus community of 46,000+ people.</p>
+            <ul>
+              <li><strong>Incident triage &amp; system uptime:</strong> Improved incident resolution time by 30% through disciplined time-stamped logging, privacy-conscious judgment, and real-time anomaly analysis, and cut surveillance system downtime by 20% via proactive daily hardware audits.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Real-time Triage</span>
+              <span class="chip">System Diagnostics</span>
+              <span class="chip">Confidential Records</span>
+              <span class="chip">Escalation Protocols</span>
+            </div>
+          </div>
+        </div>
 
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
+        <div class="job">
+          <div class="when">Earlier</div>
+          <div>
+            <h3>Earlier &amp; Independent Experience</h3>
+            <ul>
+              <li><strong>Takias Capital, self-directed personal initiative (Jul 2022 – Present):</strong> Python (Pandas) backtesting scripts and structured risk-management journals for U.S. equities and options.</li>
+              <li><strong>Global Peer Support, LyveBee (2020–2021):</strong> Provided online mental health peer counseling and service referrals to individuals across Africa, North America, and Europe, exercising strict confidentiality.</li>
+              <li><strong>Intramural Convenor, Athletics &amp; Recreation (2021 – 2023):</strong> Coordinated facilities, officials, attendance, and participant orientation for inclusive student recreation; enforced 100% safety/waiver compliance and boosted engagement by 30%.</li>
+              <li><strong>Facility Lead Assistant, LA&amp;PS (May 2022):</strong> Coordinated daily operations across six academic buildings and logged and followed up on 135+ maintenance issues, reducing facility downtime by 20%.</li>
+              <li><strong>Market Research Analyst, Onethread (2021) &amp; Salesperson, Jublee Sanitary (2020–2021):</strong> Conducted software usability research, tender documentation, and B2B contract negotiation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            const observerOptions = { rootMargin: '-50% 0px -50% 0px' };
-            const navObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
-                            link.classList.remove('text-amber-600', 'dark:text-amber-500', 'font-semibold');
-                            if (link.getAttribute('href') === `#${id}`) {
-                                link.classList.add('text-amber-600', 'dark:text-amber-500', 'font-semibold');
-                            }
-                        });
-                    }
-                });
-            }, observerOptions);
-            sections.forEach(section => {
-                if(section.id) navObserver.observe(section);
-            });
+    <!-- Section 03: Selected Work -->
+    <section id="projects">
+      <div class="wrap">
+        <span class="eb">03 / Work</span>
+        <h2>Selected Projects</h2>
+        <p class="sub">Problem, what I built, and the result. Each project started with an operational or data bottleneck.</p>
 
-            // --- Section fade-in animation ---
-            const sectionObserver = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        sectionObserver.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            sections.forEach(section => {
-                sectionObserver.observe(section);
-            });
+        <!-- Project 1 -->
+        <article class="proj">
+          <div class="pv">
+            <svg viewBox="0 0 520 150" role="img" aria-label="Process Diagram: Multiple sources to Validate to Flag exceptions to Schedule and report">
+              <rect x="0" y="48" width="88" height="54" rx="10" class="nb hi"/>
+              <text x="44" y="68" class="nt hit">Multiple</text>
+              <text x="44" y="82" class="nt hit">sources</text>
+              <path d="M92 75h48" class="na"/>
+              <rect x="144" y="48" width="88" height="54" rx="10" class="nb"/>
+              <text x="188" y="75" class="nt">Validate</text>
+              <path d="M236 75h48" class="na"/>
+              <rect x="288" y="48" width="88" height="54" rx="10" class="nb"/>
+              <text x="332" y="68" class="nt">Flag</text>
+              <text x="332" y="82" class="nt">exceptions</text>
+              <path d="M380 75h48" class="na"/>
+              <rect x="432" y="48" width="88" height="54" rx="10" class="nb hi"/>
+              <text x="476" y="60" class="nt hit">Schedule</text>
+              <text x="476" y="75" class="nt hit">+</text>
+              <text x="476" y="90" class="nt hit">report</text>
+            </svg>
+            <span class="pn">01</span>
+          </div>
+          <div class="pt">
+            <div class="org">Osgoode Professional Development</div>
+            <h3>Exam Scheduling &amp; Intake Automation</h3>
+            <dl>
+              <dt>Challenge</dt>
+              <dd>Termly exam scheduling across about 70 courses relied on heavy manual coordination across multiple data sources.</dd>
+              <dt>What I built</dt>
+              <dd>An automated multi-source workflow with validation rules, exception tracking, and Power Apps/Forms intake tools.</dd>
+              <dt>Outcome</dt>
+              <dd>Cut estimated manual effort by 70–90%, saving dozens of administrative hours per cycle with near one-click execution.</dd>
+            </dl>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">Excel</span>
+              <span class="chip">Power Apps</span>
+              <span class="chip">SIS &amp; Salesforce</span>
+            </div>
+          </div>
+        </article>
 
-            // --- Project Modal Logic ---
-            const filtersContainer = document.getElementById('filters');
-            const projectGrid = document.getElementById('project-grid');
-            
-            const modal = document.getElementById('project-modal');
-            const modalOverlay = document.getElementById('modal-overlay');
-            const modalCloseBtn = document.getElementById('modal-close-btn');
-            
-            const modalTitle = document.getElementById('modal-title');
-            const modalVideo = document.getElementById('modal-video');
-            const modalDescription = document.getElementById('modal-description');
-            const modalLearnings = document.getElementById('modal-learnings');
-            const modalTech = document.getElementById('modal-tech');
-            const modalOutcomes = document.getElementById('modal-outcomes');
-            const modalGithubLink = document.getElementById('modal-github-link');
-            const modalShareBtn = document.getElementById('modal-share-btn');
-            let currentProjectId = '';
+        <!-- Project 2 -->
+        <article class="proj">
+          <div class="pv">
+            <svg viewBox="0 0 520 150" role="img" aria-label="Dashboard visualization illustration showing comparative course trends">
+              <rect x="30" y="95" width="40" height="40" rx="6" class="bar"/>
+              <rect x="100" y="71" width="40" height="64" rx="6" class="bar"/>
+              <rect x="170" y="83" width="40" height="52" rx="6" class="bar"/>
+              <rect x="240" y="47" width="40" height="88" rx="6" class="bar"/>
+              <rect x="310" y="65" width="40" height="70" rx="6" class="bar"/>
+              <rect x="380" y="31" width="40" height="104" rx="6" class="bar hi"/>
+              <rect x="450" y="43" width="40" height="92" rx="6" class="bar"/>
+              <path d="M20 135H510" class="na"/>
+            </svg>
+            <span class="pn">02</span>
+          </div>
+          <div class="pt">
+            <div class="org">Osgoode Professional Development</div>
+            <h3>Salesforce Reporting &amp; Decision Support</h3>
+            <dl>
+              <dt>Challenge</dt>
+              <dd>Recurring scheduling bottlenecks and cross-system discrepancies between SIS, Kuali, and Salesforce were hard to spot early.</dd>
+              <dt>What I built</dt>
+              <dd>Web-based reporting utilities and Excel dashboards powered by Salesforce data exports to surface bottlenecks and historical course trends.</dd>
+              <dt>Outcome</dt>
+              <dd>Clear operational visibility for daily planning and standardized decision support for complex exam bookings.</dd>
+            </dl>
+            <div class="chips">
+              <span class="chip">Salesforce</span>
+              <span class="chip">Kuali</span>
+              <span class="chip">Dashboards</span>
+              <span class="chip">Excel</span>
+            </div>
+          </div>
+        </article>
 
-            if(filtersContainer) {
-                const filterBtns = filtersContainer.querySelectorAll('.filter-btn');
-                const projectCards = Array.from(projectGrid.children);
-                filtersContainer.addEventListener('click', (e) => {
-                    if (!e.target.matches('.filter-btn')) return;
+        <!-- Project 3 -->
+        <article class="proj">
+          <div class="pv">
+            <svg viewBox="0 0 520 150" role="img" aria-label="Process Diagram: Collect to Clean and normalize to Deduplicate to CRM-ready">
+              <rect x="0" y="48" width="88" height="54" rx="10" class="nb hi"/>
+              <text x="44" y="75" class="nt hit">Collect</text>
+              <path d="M92 75h48" class="na"/>
+              <rect x="144" y="48" width="88" height="54" rx="10" class="nb"/>
+              <text x="188" y="60" class="nt">Clean</text>
+              <text x="188" y="75" class="nt">+</text>
+              <text x="188" y="90" class="nt">normalize</text>
+              <path d="M236 75h48" class="na"/>
+              <rect x="288" y="48" width="88" height="54" rx="10" class="nb"/>
+              <text x="332" y="75" class="nt">Deduplicate</text>
+              <path d="M380 75h48" class="na"/>
+              <rect x="432" y="48" width="88" height="54" rx="10" class="nb hi"/>
+              <text x="476" y="75" class="nt hit">CRM-ready</text>
+            </svg>
+            <span class="pn">03</span>
+          </div>
+          <div class="pt">
+            <div class="org">SmartTO, Innovation York</div>
+            <h3>Automated Lead &amp; Stakeholder Data Pipeline</h3>
+            <dl>
+              <dt>Challenge</dt>
+              <dd>Partner and prospect records arrived from disparate sources with duplicates and inconsistent schemas.</dd>
+              <dt>What I built</dt>
+              <dd>A Python and CSV workflow that collects, cleans, normalizes, validates, and deduplicates records before they are loaded into the CRM.</dd>
+              <dt>Outcome</dt>
+              <dd>Increased qualified leads by 30%, improved outreach conversion by 15%, and established clean CRM reporting readiness.</dd>
+            </dl>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">CSV workflow</span>
+              <span class="chip">CRM Data Quality</span>
+            </div>
+          </div>
+        </article>
 
-                    filterBtns.forEach(btn => {
-                        btn.classList.remove('active', 'bg-amber-600', 'text-white');
-                        btn.classList.add('bg-stone-200', 'dark:bg-stone-800');
-                    });
-                    e.target.classList.add('active', 'bg-amber-600', 'text-white');
-                    e.target.classList.remove('bg-stone-200', 'dark:bg-stone-800');
+        <!-- Project 4 -->
+        <article class="proj">
+          <div class="pv">
+            <svg viewBox="0 0 520 150" role="img" aria-label="Process Diagram: Legacy data to CRM to Tracking to Reporting">
+              <rect x="0" y="48" width="88" height="54" rx="10" class="nb hi"/>
+              <text x="44" y="68" class="nt hit">Legacy</text>
+              <text x="44" y="82" class="nt hit">data</text>
+              <path d="M92 75h48" class="na"/>
+              <rect x="144" y="48" width="88" height="54" rx="10" class="nb"/>
+              <text x="188" y="75" class="nt">CRM</text>
+              <path d="M236 75h48" class="na"/>
+              <rect x="288" y="48" width="88" height="54" rx="10" class="nb"/>
+              <text x="332" y="75" class="nt">Tracking</text>
+              <path d="M380 75h48" class="na"/>
+              <rect x="432" y="48" width="88" height="54" rx="10" class="nb hi"/>
+              <text x="476" y="75" class="nt hit">Reporting</text>
+            </svg>
+            <span class="pn">04</span>
+          </div>
+          <div class="pt">
+            <div class="org">York University × Salesforce × RBC Future Launch</div>
+            <h3>Salesforce Digital Transformation Strategy</h3>
+            <dl>
+              <dt>Challenge</dt>
+              <dd>Organizations with fragmented legacy data struggled to track stakeholders and report with confidence.</dd>
+              <dt>What I built</dt>
+              <dd>As Team Lead (May–Jun 2024), assessed how CRM tools could consolidate legacy data, improve stakeholder tracking, and strengthen reporting and follow-up.</dd>
+              <dt>Outcome</dt>
+              <dd>A CRM strategy that connects data, stakeholder tracking, and reporting in one unified view.</dd>
+            </dl>
+            <div class="chips">
+              <span class="chip">Salesforce</span>
+              <span class="chip">CRM strategy</span>
+              <span class="chip">Team lead</span>
+              <span class="chip">Process design</span>
+            </div>
+          </div>
+        </article>
 
-                    const filter = e.target.dataset.filter;
-                    let firstVisibleCard = null;
+        <!-- Project 5 -->
+        <article class="proj">
+          <div class="pv">
+            <svg viewBox="0 0 520 150" role="img" aria-label="Line trend chart showing continuous performance and traffic improvement">
+              <path d="M20 40 L100 52 L180 48 L260 76 L340 88 L420 104 L500 112" class="ln"/>
+              <circle cx="20" cy="40" r="5" class="dot"/>
+              <circle cx="100" cy="52" r="5" class="dot"/>
+              <circle cx="180" cy="48" r="5" class="dot"/>
+              <circle cx="260" cy="76" r="5" class="dot"/>
+              <circle cx="340" cy="88" r="5" class="dot"/>
+              <circle cx="420" cy="104" r="5" class="dot"/>
+              <circle cx="500" cy="112" r="5" class="dot"/>
+              <path d="M20 135H510" class="na"/>
+            </svg>
+            <span class="pn">05</span>
+          </div>
+          <div class="pt">
+            <div class="org">York University Career Centre &amp; LA&amp;PS</div>
+            <h3>Web Governance &amp; Analytics Improvements</h3>
+            <dl>
+              <dt>Challenge</dt>
+              <dd>Students faced high bounce rates and navigation friction across distributed university web pages and databases.</dd>
+              <dt>What I built</dt>
+              <dd>Used Google Analytics and heatmaps to find friction, improved WordPress and Drupal content pathways, and applied accessibility (AODA/WCAG), plain-language, and SEO practices across Faculty sites.</dd>
+              <dt>Outcome</dt>
+              <dd>Cut Career Centre bounce rate by 17%, lifted event attendance by 60%, and grew LA&amp;PS organic search traffic by 25%.</dd>
+            </dl>
+            <div class="chips">
+              <span class="chip">WordPress</span>
+              <span class="chip">Drupal</span>
+              <span class="chip">Google Analytics</span>
+              <span class="chip">AODA / SEO</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-                    projectCards.forEach(card => {
-                        const categories = card.dataset.category.split(' ');
-                        const shouldShow = filter === 'all' || categories.includes(filter);
-                        card.style.display = shouldShow ? '' : 'none';
-                        if(shouldShow && !firstVisibleCard) {
-                            firstVisibleCard = card;
-                        }
-                    });
+    <!-- Section 04: Live Builds -->
+    <section id="builds">
+      <div class="wrap">
+        <span class="eb">04 / Builds</span>
+        <h2>Live Projects &amp; Software</h2>
+        <p class="sub">Interactive tools, data models, and deployed software systems.</p>
 
-                    if(firstVisibleCard) {
-                        firstVisibleCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-                    }
-                    projectGrid.dispatchEvent(new Event('update-carousel-dots'));
-                });
-            }
+        <!-- Filter Controls -->
+        <div class="flt" role="group" aria-label="Filter projects by category">
+          <button type="button" class="fb on" data-f="all" aria-pressed="true">All</button>
+          <button type="button" class="fb" data-f="energy" aria-pressed="false">Energy &amp; Policy</button>
+          <button type="button" class="fb" data-f="data" aria-pressed="false">Data &amp; Analytics</button>
+          <button type="button" class="fb" data-f="edu" aria-pressed="false">Education &amp; Health</button>
+          <button type="button" class="fb" data-f="apps" aria-pressed="false">Apps &amp; Tools</button>
+        </div>
 
-            projectGrid.addEventListener('click', (e) => {
-                if (e.target.closest('.github-link')) {
-                    return;
-                }
-                 e.preventDefault(); // Stop page from jumping to top on link click
-                const card = e.target.closest('.project-card');
-                if (!card) return;
-                currentProjectId = card.dataset.projectId;
-                modalTitle.textContent = card.dataset.title;
-                modalVideo.src = card.dataset.videoUrl;
-                modalDescription.textContent = card.dataset.description;
-                modalLearnings.textContent = card.dataset.learnings;
-                modalGithubLink.href = card.dataset.githubUrl;
-                modalTech.innerHTML = '';
-                const techs = card.dataset.tech.split(',');
-                techs.forEach(tech => {
-                    const tag = document.createElement('span');
-                    tag.className = 'p-1 px-3 rounded text-sm bg-stone-200 dark:bg-stone-800';
-                    tag.textContent = tech.trim();
-                    modalTech.appendChild(tag);
-                });
-                modalOutcomes.innerHTML = '';
-                const outcomes = card.dataset.outcomes.split('|');
-                outcomes.forEach(outcome => {
-                    const li = document.createElement('li');
-                    li.textContent = outcome.trim();
-                    modalOutcomes.appendChild(li);
-                });
-                openModal();
-            });
-            
-            function openModal() {
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
+        <div class="bgrid">
+          <!-- TAKIAS GATEKEEPER -->
+          <article class="card bld" data-cat="apps">
+            <span class="bt">FinTech · Risk Management</span>
+            <h3>TAKIAS GATEKEEPER</h3>
+            <p>A standalone web application engineered for retail traders to strictly enforce pre-trade checklists, risk sizing rules, and emotional discipline. Built to eliminate impulsive trading through hard-coded financial logic and options backtesting parameters.</p>
+            <div class="chips">
+              <span class="chip">FinTech</span>
+              <span class="chip">Risk Sizing</span>
+              <span class="chip">Web App</span>
+            </div>
+            <div class="bl">
+              <span class="badge">Private code</span>
+            </div>
+          </article>
 
-            function closeModal() {
-                modal.classList.add('hidden');
-                document.body.style.overflow = '';
-                modalVideo.src = '';
-                try {
-                    const newUrl = window.location.pathname + window.location.search;
-                    history.replaceState(null, null, newUrl);
-                } catch (e) {
-                    console.warn("Could not modify URL hash. This is expected in sandboxed environments.");
-                }
-            }
-            
-            modalCloseBtn.addEventListener('click', closeModal);
-            modalOverlay.addEventListener('click', closeModal);
-            document.addEventListener('keydown', (e) => {
-                if (e.key === "Escape" && !modal.classList.contains('hidden')) {
-                    closeModal();
-                }
-            });
+          <!-- MotionOM360 -->
+          <article class="card bld" data-cat="edu">
+            <span class="bt">Health Tech · Coaching</span>
+            <h3>MotionOM360</h3>
+            <p>A digital brand and web application framing health coaching as a neuro-athletic operating system. Integrates my ISSA health coaching methodologies with a structured digital platform for client tracking and habit-formation principles.</p>
+            <div class="chips">
+              <span class="chip">Health Tech</span>
+              <span class="chip">ISSA Methodologies</span>
+              <span class="chip">Web App</span>
+            </div>
+            <div class="bl">
+              <span class="badge">In development</span>
+            </div>
+          </article>
 
-            // --- Theme Toggler ---
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const darkIcon = document.getElementById('theme-toggle-dark-icon');
-            const lightIcon = document.getElementById('theme-toggle-light-icon');
+          <!-- Battery + Grid Economics -->
+          <article class="card bld" data-cat="energy">
+            <span class="bt">Energy · Education</span>
+            <h3>Battery + Grid Economics</h3>
+            <p>An interactive learning platform on how battery storage and smart grids enable the clean energy transition. Modules cover the duck curve, battery chemistries and degradation, a drag-and-drop grid simulator, vehicle-to-grid, and real case studies such as South Australia’s Big Battery.</p>
+            <div class="chips">
+              <span class="chip">Grid simulator</span>
+              <span class="chip">LCOE calculators</span>
+              <span class="chip">Interactive learning</span>
+            </div>
+            <div class="bl">
+              <a class="btn p" href="https://battery-grid-economics.vercel.app/" target="_blank" rel="noopener">Open live project ↗</a>
+            </div>
+          </article>
 
-            const applyTheme = (theme) => {
-                if (theme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                    lightIcon.classList.remove('hidden');
-                    darkIcon.classList.add('hidden');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                    darkIcon.classList.remove('hidden');
-                    lightIcon.classList.add('hidden');
-                }
-            };
+          <!-- Nuclear Safety Education -->
+          <article class="card bld" data-cat="edu">
+            <span class="bt">Energy · Education</span>
+            <h3>Nuclear Safety Education</h3>
+            <p>An interactive guide to nuclear energy, reactors, and safety, built around diagrams, quizzes, and plain-language guides. It compares PWR, BWR, CANDU, and RBMK reactor types.</p>
+            <div class="chips">
+              <span class="chip">Diagrams</span>
+              <span class="chip">Quizzes</span>
+              <span class="chip">Science communication</span>
+            </div>
+            <div class="bl">
+              <a class="btn p" href="https://nuclear-safety-edu.vercel.app/" target="_blank" rel="noopener">Open live project ↗</a>
+            </div>
+          </article>
 
-            const initialThemeIsDark = document.documentElement.classList.contains('dark');
-            if (initialThemeIsDark) {
-                lightIcon.classList.remove('hidden');
-                darkIcon.classList.add('hidden');
-            } else {
-                darkIcon.classList.remove('hidden');
-                lightIcon.classList.add('hidden');
-            }
+          <!-- Ontario Workforce Snapshot (Categorized as DATA) -->
+          <article class="card bld" data-cat="data">
+            <span class="bt">Labour Market · Data</span>
+            <h3>Ontario Workforce Snapshot, 2021–2026</h3>
+            <p>A dashboard of Ontario labour market indicators built from Statistics Canada tables 14-10-0287-01 and 14-10-0355-01: employment, unemployment, participation, and sector movement, with a year-over-year watchlist for workforce planning.</p>
+            <div class="chips">
+              <span class="chip">Statistics Canada data</span>
+              <span class="chip">Dashboard</span>
+              <span class="chip">Policy analysis</span>
+            </div>
+            <div class="bl">
+              <a class="btn p" href="https://sghosh685.github.io/Ontario-Workforce-Analytics/" target="_blank" rel="noopener">Open live project ↗</a>
+            </div>
+          </article>
 
-            themeToggleBtn.addEventListener('click', () => {
-                const isCurrentlyDark = document.documentElement.classList.contains('dark');
-                applyTheme(isCurrentlyDark ? 'light' : 'dark');
-            });
+          <!-- Natural Gas Market Analysis -->
+          <article class="card bld" data-cat="energy">
+            <span class="bt">Energy · Analytics</span>
+            <h3>Natural Gas Market Analysis</h3>
+            <p>A demonstration dashboard for a natural gas market analyst role: pricing trends and spreads across Henry Hub, Dawn, and AECO, a 1,000-iteration Monte Carlo cost model, and an Ontario market report. Uses historical public data (EIA, NGI, NGX, OEB; Jan 2026).</p>
+            <div class="chips">
+              <span class="chip">Monte Carlo model</span>
+              <span class="chip">Next.js &amp; TypeScript</span>
+              <span class="chip">Dashboard</span>
+            </div>
+            <div class="bl">
+              <a class="btn p" href="https://natural-gas-analytics.vercel.app/" target="_blank" rel="noopener">Open live project ↗</a>
+              <a class="btn s" href="https://youtu.be/gthBFSZ3Ln4" target="_blank" rel="noopener">Watch walkthrough ▶</a>
+            </div>
+          </article>
 
-            // --- Back to Top Button Logic ---
-            const backToTopButton = document.getElementById('back-to-top');
-            const footer = document.getElementById('main-footer');
+          <!-- NetZeroX Policy Pulse -->
+          <article class="card bld" data-cat="energy">
+            <span class="bt">Policy · Compliance</span>
+            <h3>NetZeroX Policy Pulse</h3>
+            <p>A concept for tracking US and Canadian energy regulation. It organizes 127 records from agencies such as the EPA, FERC, Canada Gazette, and the Alberta Energy Regulator, with filters, a compliance calendar, and an exposure calculator that estimates a risk index.</p>
+            <div class="chips">
+              <span class="chip">Regulatory tracking</span>
+              <span class="chip">Risk calculator</span>
+              <span class="chip">Prototype</span>
+            </div>
+            <div class="bl">
+              <a class="btn p" href="https://policy-pulse-engine.vercel.app/" target="_blank" rel="noopener">Open live project ↗</a>
+            </div>
+          </article>
 
-            window.addEventListener('scroll', () => {
-                const isVisible = window.scrollY > 300;
-                backToTopButton.classList.toggle('opacity-0', !isVisible);
-                backToTopButton.classList.toggle('pointer-events-none', !isVisible);
-            });
+          <!-- My Canada Travel Map -->
+          <article class="card bld" data-cat="apps">
+            <span class="bt">Web App · Canada</span>
+            <h3>My Canada: Travel Map</h3>
+            <p>An interactive map where visitors mark the provinces and territories they have explored, see travel stats and achievements, and download or share a personal map. Inspired by Unseen Bangladesh.</p>
+            <div class="chips">
+              <span class="chip">Interactive map</span>
+              <span class="chip">Shareable</span>
+              <span class="chip">Frontend</span>
+            </div>
+            <div class="bl">
+              <a class="btn p" href="https://unseencanada.vercel.app/" target="_blank" rel="noopener">Open live project ↗</a>
+            </div>
+          </article>
+        </div>
 
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            
-            const footerObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    backToTopButton.classList.toggle('is-footer-visible', entry.isIntersecting);
-                });
-            }, { threshold: 0.1 });
+        <p class="sub" style="margin-top:28px">
+          More code and additional builds (including my <a href="https://nsc-dashboard-gules.vercel.app/dashboard" target="_blank" rel="noopener">NSC Operations Dashboard</a>) are on <a href="https://github.com/sghosh685?tab=repositories" target="_blank" rel="noopener">my GitHub (@sghosh685)</a>.
+        </p>
+      </div>
+    </section>
 
-            if (footer) {
-                footerObserver.observe(footer);
-            }
+    <!-- Section 05: Toolkit -->
+    <section id="skills">
+      <div class="wrap">
+        <span class="eb">05 / Toolkit</span>
+        <h2>Skills</h2>
+        <p class="sub">Technical depth paired with an operational mindset.</p>
+        <div class="skills">
+          <div class="card">
+            <h3>Systems &amp; CRM</h3>
+            <div class="chips">
+              <span class="chip">Salesforce (Admin cert in progress)</span>
+              <span class="chip">SIS</span>
+              <span class="chip">Kuali</span>
+              <span class="chip">eClass / Moodle LMS</span>
+              <span class="chip">CRM Data Readiness</span>
+              <span class="chip">Roster Reconciliation</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Data, Code &amp; Automation</h3>
+            <div class="chips">
+              <span class="chip">Python</span>
+              <span class="chip">SQL (MS Azure SQL, PostgreSQL)</span>
+              <span class="chip">Interactive Brokers API</span>
+              <span class="chip">Excel (Pivots, Formulas)</span>
+              <span class="chip">Power Apps</span>
+              <span class="chip">Microsoft Forms</span>
+              <span class="chip">CSV ETL Workflows</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Process &amp; Governance</h3>
+            <div class="chips">
+              <span class="chip">Requirements Gathering</span>
+              <span class="chip">Process Mapping</span>
+              <span class="chip">SOPs &amp; Checklists</span>
+              <span class="chip">Program Evaluation</span>
+              <span class="chip">Confidential Records</span>
+              <span class="chip">Exception &amp; Escalation Tracking</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Web, UX &amp; Digital</h3>
+            <div class="chips">
+              <span class="chip">WordPress</span>
+              <span class="chip">Drupal</span>
+              <span class="chip">HTML / CSS / JavaScript</span>
+              <span class="chip">React &amp; Next.js</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Google Analytics</span>
+              <span class="chip">Mailchimp</span>
+              <span class="chip">AODA / WCAG &amp; SEO</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Outreach &amp; Collaboration</h3>
+            <div class="chips">
+              <span class="chip">Stakeholder Coordination</span>
+              <span class="chip">Plain-Language Communication</span>
+              <span class="chip">Workshop Facilitation</span>
+              <span class="chip">Hootsuite</span>
+              <span class="chip">Adobe Photoshop</span>
+              <span class="chip">Canva &amp; CapCut</span>
+              <span class="chip">Microsoft 365 &amp; Teams</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            // --- Horizontal Scroll with Buttons & Dots ---
-            function setupCarousel(containerId, leftBtnId, rightBtnId, dotsId) {
-                const container = document.getElementById(containerId);
-                const leftBtn = document.getElementById(leftBtnId);
-                const rightBtn = document.getElementById(rightBtnId);
-                const dotsContainer = document.getElementById(dotsId);
+    <!-- Section 06: Education -->
+    <section id="education">
+      <div class="wrap">
+        <span class="eb">06 / Learning</span>
+        <h2>Education &amp; Recognition</h2>
+        <p class="sub">Academic foundations, industry certifications, and community navigation.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>B.Sc. in Computer Science</h3>
+            <p>York University, Lassonde School of Engineering (2021–2025). Coursework: Database Systems, Software Design, UI Design, Web Programming, Operating Systems, Statistics &amp; Probability.</p>
+          </div>
+          <div class="card">
+            <h3>Schulich School of Business &amp; Business for Tech</h3>
+            <p>Completed ENTR 3400/3600 (Business for Tech Entrepreneurs I &amp; II) and Financial Accounting coursework. Developed foundational understanding of capital budgeting (NPV), financial reporting, operations management, and tech-startup leadership.</p>
+          </div>
+          <div class="card">
+            <h3>Certifications &amp; Credentials</h3>
+            <p>ISSA Certified Health Coach (Aug 2026–Aug 2028 · ID 402375719) · ISSA Youth, Senior &amp; Lifespan Coach (Aug 2026–Aug 2028 · ID 40011690) · Enterprise Design Thinking (IBM) · CRM Basics · Salesforce Administrator Exam Prep.</p>
+          </div>
+          <div class="card">
+            <h3>Community &amp; Service Navigation</h3>
+            <p>Student Advisor, Lassonde Discovery Day (~250 students) · Engagement Facilitator, York Orientation Day (400+ IT students; +20% satisfaction) · Guided newcomer &amp; international students through healthcare, insurance, and campus referral pathways.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                if (!container) return;
+    <!-- Section 07: Goals -->
+    <section id="goals">
+      <div class="wrap">
+        <span class="eb">07 / Direction</span>
+        <h2>Career Goals</h2>
+        <p class="sub">Where I deliver the strongest impact.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Salesforce &amp; CRM Operations</h3>
+            <p>Administer and scale CRM platforms, cross-system integrations, data governance, and executive reporting so teams trust their numbers.</p>
+          </div>
+          <div class="card">
+            <h3>Business Systems &amp; Process Automation</h3>
+            <p>Transform manual, multi-source bottlenecks into reliable automated pipelines using Python, SQL, Power Platform, and clear SOPs.</p>
+          </div>
+          <div class="card">
+            <h3>Program &amp; Digital Operations</h3>
+            <p>Own the end-to-end program and digital lifecycle—from course/event scheduling and LMS/CMS governance to plain-language stakeholder service.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                const getVisibleItems = () => Array.from(container.children).filter(child => child.style.display !== 'none');
-                
-                const updateActiveDot = () => {
-                    if (!dotsContainer) return;
-                    const visibleItems = getVisibleItems();
-                    if (visibleItems.length === 0) {
-                        dotsContainer.innerHTML = '';
-                        return;
-                    }
+    <!-- Section 08: Evidence (Semantic HTML, Real HD Thumbnails) -->
+    <section id="media">
+      <div class="wrap">
+        <span class="eb">08 / Evidence</span>
+        <h2>Video Walkthroughs, Code &amp; Credentials</h2>
+        <p class="sub">Live system walkthroughs, code repositories, and verified credentials showing how I build and communicate.</p>
 
-                    const dots = dotsContainer.children;
-                    const cardWidth = visibleItems[0].offsetWidth;
-                    const gap = parseInt(window.getComputedStyle(container).gap) || 0;
-                    const scrollPerItem = cardWidth + gap;
+        <!-- Subsection 1: Video Walkthroughs -->
+        <h3 class="mh">Video Walkthroughs &amp; Storytelling</h3>
+        <div class="grid">
+          <div class="card m-card">
+            <a class="video-preview" href="https://youtu.be/y0sP5oKhwIM" target="_blank" rel="noopener" aria-label="Watch Operations Tracking Command Center Walkthrough on YouTube">
+              <img src="https://img.youtube.com/vi/y0sP5oKhwIM/hqdefault.jpg" alt="Operations Tracking Command Center video preview" loading="lazy">
+              <span class="play-btn" aria-hidden="true">▶</span>
+              <span class="duration-tag">System Demo</span>
+            </a>
+            <h3>Operations Tracking Command Center</h3>
+            <p>Live walkthrough of my audit-ready Google Sheets operations system covering real-time Finance reconciliation, 3rd-business-day bookkeeper/CRM exports, a 15-minute Inbox Zero triage routine, Campaign mail-merge checklists, and Month-End Audit controls.</p>
+            <a class="go" href="https://youtu.be/y0sP5oKhwIM" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+          </div>
 
-                    let closestIndex = 0;
-                    let smallestDistance = Infinity;
+          <div class="card m-card">
+            <a class="video-preview" href="https://youtu.be/gthBFSZ3Ln4" target="_blank" rel="noopener" aria-label="Watch Natural Gas Analytics Walkthrough on YouTube">
+              <img src="https://img.youtube.com/vi/gthBFSZ3Ln4/hqdefault.jpg" alt="Natural Gas Analytics video preview" loading="lazy">
+              <span class="play-btn" aria-hidden="true">▶</span>
+              <span class="duration-tag">Monte Carlo Demo</span>
+            </a>
+            <h3>Natural Gas Analytics V1 Walkthrough</h3>
+            <p>Technical walkthrough of my Next.js, TypeScript, and Recharts energy intelligence dashboard comparing Henry Hub, Dawn, and AECO benchmarks with a Volatility Index, a 1,000-iteration in-browser Monte Carlo simulator, and a carbon pricing executive brief.</p>
+            <a class="go" href="https://youtu.be/gthBFSZ3Ln4" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+          </div>
 
-                    visibleItems.forEach((item, index) => {
-                         const itemMidpoint = item.offsetLeft - container.offsetLeft + cardWidth / 2;
-                        const containerMidpoint = container.scrollLeft + container.offsetWidth / 2;
-                        const distance = Math.abs(itemMidpoint - containerMidpoint);
+          <div class="card m-card">
+            <div class="chips" style="margin-top:0; margin-bottom:12px">
+              <span class="badge hi">Storytelling &amp; Audience Growth</span>
+            </div>
+            <h3>Self-Help Art &amp; Digital Storytelling Channel</h3>
+            <p>Produced and edited videos from 2020 to 2022 promoting mental well-being through creative expression. Grew the channel to 10,000+ views and 500+ subscribers while establishing a strong foundation in video editing, pacing, and audience storytelling.</p>
+            <div class="bl">
+              <span class="badge">10k+ Views · 500+ Subs</span>
+            </div>
+          </div>
+        </div>
 
-                        if (distance < smallestDistance) {
-                            smallestDistance = distance;
-                            closestIndex = index;
-                        }
-                    });
+        <!-- Subsection 2: Code, Dashboards & Architecture -->
+        <h3 class="mh">Code, Dashboards &amp; Architecture</h3>
+        <div class="grid">
+          <div class="card">
+            <div class="chips" style="margin-top:0; margin-bottom:12px">
+              <span class="chip">Open Source Code</span>
+            </div>
+            <h3>GitHub (@sghosh685): All Repositories</h3>
+            <p>Full source code across my deployed web applications, Python ETL scripts, data visualizations, and workflow automation utilities.</p>
+            <a class="go" href="https://github.com/sghosh685?tab=repositories" target="_blank" rel="noopener">Open Repositories ↗</a>
+          </div>
 
-                    for (let i = 0; i < dots.length; i++) {
-                        dots[i].classList.toggle('active', i === closestIndex);
-                    }
-                };
-                
-                const refreshDots = () => {
-                    if (!dotsContainer) return;
-                    const visibleItems = getVisibleItems();
-                    dotsContainer.innerHTML = '';
-                    visibleItems.forEach((item, i) => {
-                        const dot = document.createElement('button');
-                        dot.classList.add('dot');
-                        dot.addEventListener('click', () => {
-                             item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-                        });
-                        dotsContainer.appendChild(dot);
-                    });
-                    updateActiveDot();
-                };
+          <div class="card">
+            <div class="chips" style="margin-top:0; margin-bottom:12px">
+              <span class="chip">Live Dashboard</span>
+            </div>
+            <h3>NSC Operations &amp; KPI Dashboard</h3>
+            <p>Interactive executive monitoring and operational status dashboard deployed on Vercel for rapid metric triage and team visibility.</p>
+            <a class="go" href="https://nsc-dashboard-gules.vercel.app/dashboard" target="_blank" rel="noopener">Open Live App ↗</a>
+          </div>
 
-                container.addEventListener('update-carousel-dots', refreshDots);
-                
-                const updateCarousel = () => {
-                    if (leftBtn && rightBtn) {
-                        const atStart = container.scrollLeft < 10;
-                        const atEnd = container.scrollWidth - container.scrollLeft <= container.clientWidth + 10;
-                        leftBtn.classList.toggle('hidden', atStart);
-                        rightBtn.classList.toggle('hidden', atEnd);
-                    }
-                    updateActiveDot();
-                };
+          <div class="card">
+            <div class="chips" style="margin-top:0; margin-bottom:12px">
+              <span class="badge hi">Relational Modeling</span>
+            </div>
+            <h3>MS Azure SQL Relational Database Case Study</h3>
+            <p>Normalized relational schema, Entity-Relationship (ER) modeling, and SQL validation queries built across 5 business domains (Air Canada, Uber, Insurance, Academic &amp; Retail).</p>
+            <div class="bl">
+              <span class="badge">Architecture Spec &amp; Queries</span>
+            </div>
+          </div>
+        </div>
 
-                if (leftBtn && rightBtn) {
-                     leftBtn.addEventListener('click', () => {
-                        const cardWidth = getVisibleItems()[0]?.offsetWidth || 320;
-                        container.scrollBy({ left: -(cardWidth + 16), behavior: 'smooth' });
-                    });
-                    rightBtn.addEventListener('click', () => {
-                        const cardWidth = getVisibleItems()[0]?.offsetWidth || 320;
-                        container.scrollBy({ left: cardWidth + 16, behavior: 'smooth' });
-                    });
-                }
+        <!-- Subsection 3: Verified Credentials -->
+        <h3 class="mh">Verified Certifications &amp; Credentials</h3>
+        <div class="grid">
+          <div class="card">
+            <div class="chips" style="margin-top:0; margin-bottom:12px">
+              <span class="badge hi">ISSA Accredited</span>
+            </div>
+            <h3>ISSA Certified Health Coach</h3>
+            <p>Issued Aug 26, 2026 · Valid through Aug 26, 2028 · Credential ID: 402375719. Client-centred communication, health education, motivational interviewing, and structured goal support.</p>
+            <div class="bl">
+              <span class="badge">Verified Credential</span>
+            </div>
+          </div>
 
-                container.addEventListener('scroll', updateCarousel, { passive: true });
-                new ResizeObserver(updateCarousel).observe(container);
-                refreshDots();
-            }
+          <div class="card">
+            <div class="chips" style="margin-top:0; margin-bottom:12px">
+              <span class="badge hi">ISSA Accredited</span>
+            </div>
+            <h3>ISSA Youth, Senior &amp; Lifespan Coach</h3>
+            <p>Issued Aug 27, 2026 · Valid through Aug 27, 2028 · Credential ID: 40011690. Adapting program guidance, biomechanical safety, and accessible communication across life stages.</p>
+            <div class="bl">
+              <span class="badge">Verified Credential</span>
+            </div>
+          </div>
 
-            setupCarousel('project-grid', 'project-scroll-left', 'project-scroll-right', 'project-dots');
-            setupCarousel('lab-grid', null, null, 'lab-dots');
+          <div class="card">
+            <div class="chips" style="margin-top:0; margin-bottom:12px">
+              <span class="badge hi">Design &amp; CRM</span>
+            </div>
+            <h3>IBM Enterprise Design Thinking &amp; Salesforce Trailhead</h3>
+            <p>Certified in user-centric problem framing, business workflow design, CRM relationship management, and ongoing Salesforce Administrator preparation.</p>
+            <div class="bl">
+              <span class="badge">Practitioner Status</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            // --- Typing Animation for Hero Subtitle ---
-            const typingSubtitle = document.getElementById('typing-subtitle');
-            if (typingSubtitle) {
-                const roles = ["Data Engineer", "Software Developer", "AI/ML Enthusiast", "BI Developer"];
-                let roleIndex = 0;
-                let charIndex = 0;
-                let isDeleting = false;
+    <!-- Section 09: Contact -->
+    <section id="contact">
+      <div class="wrap contact">
+        <h2>Let’s work together</h2>
+        <p>I am available for full-time roles in Salesforce and CRM operations, business systems, program operations, and digital coordination. Based in Toronto and open to opportunities across Ontario.</p>
+        <div class="btns" style="justify-content:center">
+          <a class="btn p" href="mailto:saikatghosh369@gmail.com">saikatghosh369@gmail.com</a>
+          <a class="btn s" href="https://linkedin.com/in/saikatghosh00" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn s" href="https://github.com/sghosh685?tab=repositories" target="_blank" rel="noopener">GitHub</a>
+          <button class="btn s" id="cp" type="button" aria-controls="copy-status">Copy email</button>
+        </div>
+        <!-- Screen reader live region for clipboard feedback -->
+        <div id="copy-status" role="status" aria-live="polite" class="sr-only"></div>
+      </div>
+    </section>
+  </main>
 
-                function type() {
-                    const currentRole = roles[roleIndex];
-                    let displayText = '';
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      © 2026 Saikat Ghosh · Toronto, Ontario · <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
 
-                    if (isDeleting) {
-                        displayText = currentRole.substring(0, charIndex - 1);
-                        charIndex--;
-                    } else {
-                        displayText = currentRole.substring(0, charIndex + 1);
-                        charIndex++;
-                    }
-
-                    typingSubtitle.textContent = displayText;
-
-                    let typeSpeed = isDeleting ? 100 : 200;
-
-                    if (!isDeleting && charIndex === currentRole.length) {
-                        typeSpeed = 2000; // Pause at end of word
-                        isDeleting = true;
-                    } else if (isDeleting && charIndex === 0) {
-                        isDeleting = false;
-                        roleIndex = (roleIndex + 1) % roles.length;
-                        typeSpeed = 500; // Pause before typing new word
-                    }
-                    setTimeout(type, typeSpeed);
-                }
-                type();
-            }
-            
-            // --- Share Link Logic ---
-            function checkUrlForProject() {
-                if (window.location.hash.startsWith('#project=')) {
-                    const projectId = window.location.hash.substring(9);
-                    const projectCard = document.querySelector(`.project-card[data-project-id="${projectId}"]`);
-                    if (projectCard) {
-                        setTimeout(() => {
-                             projectCard.dispatchEvent(new Event('click', { bubbles: true }));
-                        }, 100);
-                    }
-                }
-            }
-            checkUrlForProject();
-
-            modalShareBtn.addEventListener('click', () => {
-                const baseUrl = window.location.href.split('#')[0];
-                const shareUrl = `${baseUrl}#project=${currentProjectId}`;
-                
-                const textArea = document.createElement("textarea");
-                textArea.value = shareUrl;
-                document.body.appendChild(textArea);
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                    const shareText = modalShareBtn.querySelector('.share-text');
-                    const originalText = shareText.textContent;
-                    shareText.textContent = 'Copied!';
-                    setTimeout(() => {
-                        shareText.textContent = originalText;
-                    }, 2000);
-                } catch (err) {
-                    console.error('Failed to copy text: ', err);
-                }
-                document.body.removeChild(textArea);
-            });
-        });
-    </script>
+  <!-- Core Script -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>
