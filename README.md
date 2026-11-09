@@ -11,6 +11,7 @@
 
 ## 🌐 Live Production URL
 - **Production Site:** [https://saikat-portfolio-one.vercel.app](https://saikat-portfolio-one.vercel.app)
+- **Github PROD** [https://sghosh685.github.io/saikat-portfolio/]([url](https://sghosh685.github.io/saikat-portfolio/))
 - **LinkedIn:** [linkedin.com/in/saikatghosh00](https://www.linkedin.com/in/saikatghosh00)
 - **GitHub:** [github.com/sghosh685](https://github.com/sghosh685)
 - **Contact:** [saikatghosh369@gmail.com](mailto:saikatghosh369@gmail.com)
