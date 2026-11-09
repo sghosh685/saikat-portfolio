@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12161a" media="(prefers-color-scheme: dark)">
+
+  <title>Saikat Ghosh | Résumé — Business Systems, Operations &amp; Digital Programs</title>
+  <meta name="description" content="Executive résumé of Saikat Ghosh: Salesforce and CRM operations, workflow automation, data quality, web governance, and digital programs at York University.">
+  <link rel="canonical" href="https://saikat-portfolio-one.vercel.app/resume">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Saikat Ghosh | Résumé">
+  <meta property="og:description" content="Executive résumé of Saikat Ghosh: Business Systems, Operations &amp; Digital Programs. B.Sc. Computer Science, York University.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saikat-portfolio-one.vercel.app/resume">
+  <meta property="og:image" content="assets/og-preview.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #eceae4;
+      --sheet-bg: #ffffff;
+      --text: #2b2b2b;
+      --heading: #1a1a2e;
+      --accent: #0f766e;
+      --muted: #555e68;
+      --line: #0f766e;
+      --bar-bg: #ffffff;
+      --bar-border: #d4d2ca;
+      box-sizing: border-box;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1317;
+        --sheet-bg: #ffffff; /* Sheet stays white paper for true print preview */
+        --text: #2b2b2b;
+        --heading: #1a1a2e;
+        --accent: #0f766e;
+        --muted: #555e68;
+        --line: #0f766e;
+        --bar-bg: #1a2026;
+        --bar-border: #2a323a;
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      font-size: 9.3pt;
+      line-height: 1.36;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Screen Topbar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bar-bg);
+      border-bottom: 1px solid var(--bar-border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    .back-btn {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .back-btn:hover {
+      text-decoration: underline;
+    }
+    .print-btn {
+      background: var(--accent);
+      color: #ffffff;
+      border: 1px solid var(--accent);
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: filter 0.2s, transform 0.2s;
+    }
+    .print-btn:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    /* Resume Document Container (Screen preview) */
+    .sheet-wrap {
+      max-width: 850px;
+      margin: 28px auto 60px;
+      background: var(--sheet-bg);
+      color: #2b2b2b;
+      padding: 48px 56px;
+      border-radius: 8px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+    }
+
+    /* Resume Header */
+    .res-header {
+      text-align: center;
+      border-bottom: 2pt solid #0f766e;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+    }
+    .res-name {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 20pt;
+      font-weight: 700;
+      color: #1a1a2e;
+      letter-spacing: -0.01em;
+      margin: 0 0 2px 0;
+      text-transform: uppercase;
+    }
+    .res-headline {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #0f766e;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
+    }
+    .res-specializations {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #2b2b2b;
+      margin-bottom: 4px;
+    }
+    .res-contact-bar {
+      font-size: 8.8pt;
+      color: #4a4a4a;
+    }
+    .res-contact-bar a {
+      color: #1a1a2e;
+      text-decoration: none;
+    }
+    .res-contact-bar a:hover {
+      text-decoration: underline;
+      color: #0f766e;
+    }
+
+    /* Sections */
+    .res-section {
+      margin-bottom: 10px;
+    }
+    .res-sec-title {
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1a1a2e;
+      border-bottom: 1.2pt solid #0f766e;
+      padding-bottom: 2px;
+      margin: 0 0 5px 0;
+    }
+    .res-summary-text {
+      font-size: 9pt;
+      line-height: 1.36;
+      color: #2b2b2b;
+      margin: 0;
+      text-align: justify;
+    }
+
+    /* Education */
+    .res-edu-row {
+      font-size: 9.1pt;
+      color: #1a1a2e;
+    }
+    .res-edu-sub {
+      font-size: 8.8pt;
+      color: #4a4a4a;
+      margin-top: 2px;
+      line-height: 1.34;
+    }
+
+    /* Core Qualifications */
+    .res-qual-list {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .res-qual-item {
+      font-size: 8.9pt;
+      line-height: 1.34;
+      color: #2b2b2b;
+    }
+    .res-qual-item strong {
+      color: #1a1a2e;
+    }
+
+    /* Professional Experience */
+    .res-job {
+      margin-bottom: 8px;
+    }
+    .res-job:last-child {
+      margin-bottom: 0;
+    }
+    .res-job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5px;
+    }
+    .res-job-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #1a1a2e;
+      text-transform: uppercase;
+    }
+    .res-job-dates {
+      font-size: 8.9pt;
+      font-weight: 700;
+      color: #1a1a2e;
+      white-space: nowrap;
+      text-align: right;
+    }
+    .res-job-sub {
+      font-size: 8.9pt;
+      font-style: italic;
+      color: #4a4a4a;
+      margin-bottom: 2px;
+    }
+    .res-job-bullets {
+      margin: 2px 0 0 0;
+      padding-left: 16px;
+    }
+    .res-job-bullets li {
+      font-size: 8.8pt;
+      line-height: 1.34;
+      color: #2b2b2b;
+      margin-bottom: 2.2px;
+      text-align: justify;
+    }
+
+    /* Selected Value */
+    .res-val-list {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .res-val-item {
+      font-size: 8.8pt;
+      line-height: 1.34;
+      color: #2b2b2b;
+    }
+    .res-val-item strong {
+      color: #1a1a2e;
+    }
+
+    /* Technology & Tools */
+    .res-tools-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+    }
+    .res-tool-line {
+      font-size: 8.8pt;
+      line-height: 1.34;
+      color: #2b2b2b;
+    }
+    .res-tool-line strong {
+      color: #1a1a2e;
+    }
+
+    /* ==========================================================================
+       Print Stylesheet — Strictly 2-Page Letter PDF
+       ========================================================================== */
+    @page {
+      size: letter;
+      margin: 0.42in 0.52in;
+    }
+
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #2b2b2b !important;
+        font-size: 9.2pt !important;
+        line-height: 1.35 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .topbar {
+        display: none !important;
+      }
+
+      .sheet-wrap {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+
+      .res-page-break {
+        break-before: page !important;
+        page-break-before: always !important;
+        padding-top: 2px !important;
+      }
+
+      .res-job {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        margin-bottom: 6px !important;
+      }
+
+      .res-header {
+        border-bottom: 2pt solid #0f766e !important;
+        padding-bottom: 5px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .res-name {
+        font-size: 19pt !important;
+      }
+
+      .res-headline {
+        font-size: 10.5pt !important;
+      }
+
+      .res-sec-title {
+        border-bottom: 1.2pt solid #0f766e !important;
+        margin: 0 0 4px 0 !important;
+      }
+
+      .res-job-bullets li {
+        margin-bottom: 1.8px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Top Bar -->
+  <aside class="topbar" aria-label="Action Controls">
+    <a class="back-btn" href="/">← Back to Portfolio</a>
+    <div>
+      <button class="print-btn" type="button" onclick="window.print()">
+        <span>🖨️ Print / Save as PDF</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Résumé Paper Sheet -->
+  <main class="sheet-wrap" aria-label="Saikat Ghosh Executive Résumé">
+    <!-- Header -->
+    <header class="res-header">
+      <h1 class="res-name">SAIKAT GHOSH</h1>
+      <div class="res-headline">BUSINESS SYSTEMS, OPERATIONS &amp; DIGITAL PROGRAMS</div>
+      <div class="res-specializations">
+        Salesforce &amp; CRM Operations &nbsp;|&nbsp; Workflow Automation &nbsp;|&nbsp; Data Quality &amp; Governance &nbsp;|&nbsp; Accessible Service Navigation
+      </div>
+      <div class="res-contact-bar">
+        Toronto, ON &nbsp;|&nbsp; 437-232-8555 &nbsp;|&nbsp; <a href="mailto:saikat21@yorku.ca">saikat21@yorku.ca</a> &nbsp;|&nbsp; <a href="mailto:saikatghosh369@gmail.com">saikatghosh369@gmail.com</a> &nbsp;|&nbsp; <a href="https://linkedin.com/in/saikatghosh00" target="_blank" rel="noopener">linkedin.com/in/saikatghosh00</a>
+      </div>
+    </header>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section class="res-section">
+      <h2 class="res-sec-title">PROFESSIONAL SUMMARY</h2>
+      <p class="res-summary-text">
+        Business Systems and Operations Professional with 4+ years of demonstrated cross-unit experience across York University (OsgoodePD, SmartTO, Career Centre, and LA&amp;PS), specializing in Salesforce/CRM operations, automated workflow engineering, and accessible service navigation. Combines a Computer Science foundation (B.Sc., 2025) and Schulich business coursework with a user-centred operations mindset to eliminate manual administrative bottlenecks, reconcile multi-system records (SIS, Salesforce, Kuali, eClass), and govern large-scale web and database environments under strict AODA/WCAG standards. Recognized for delivering audit-ready documentation, cross-functional stakeholder collaboration, and reliable data pipelines that improve service quality and operational throughput.
+      </p>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="res-section">
+      <h2 class="res-sec-title">EDUCATION</h2>
+      <div class="res-edu-row">
+        <strong>Bachelor of Science in Computer Science</strong> &nbsp;|&nbsp; York University, Lassonde School of Engineering &nbsp;|&nbsp; May 2021 – May 2025
+      </div>
+      <div class="res-edu-sub">
+        <em>Relevant Coursework:</em> Database Systems, Software Design, User Interface Design, Web Programming, Operating Systems, Statistics &amp; Probability.
+      </div>
+      <div class="res-edu-sub">
+        <em>Schulich School of Business &amp; Business for Tech:</em> Completed ENTR 3400/3600 (Business for Tech Entrepreneurs I &amp; II) and Financial Accounting coursework (capital budgeting / NPV, financial reporting, operations management).
+      </div>
+    </section>
+
+    <!-- CORE QUALIFICATIONS -->
+    <section class="res-section">
+      <h2 class="res-sec-title">CORE QUALIFICATIONS</h2>
+      <div class="res-qual-list">
+        <div class="res-qual-item">
+          <strong>Systems &amp; CRM Operations:</strong> Experienced administering and reconciling academic and CRM platforms including Salesforce, SIS, Kuali, and eClass/Moodle; proficient in cross-system discrepancy resolution, roster validation, and permission auditing.
+        </div>
+        <div class="res-qual-item">
+          <strong>Workflow Automation &amp; Process Engineering:</strong> Designed and deployed Python ETL pipelines, Power Apps, and automated Excel intake workflows that eliminated 70–90% of manual effort from high-stakes exam scheduling and stakeholder tracking.
+        </div>
+        <div class="res-qual-item">
+          <strong>Data Quality, Records Reconciliation &amp; Reporting:</strong> Built automated data validation and deduplication routines; authored executive Excel dashboards, SQL queries (Azure SQL, PostgreSQL), and KPI trackers supporting evidence-based administrative decision-making.
+        </div>
+        <div class="res-qual-item">
+          <strong>Web Governance &amp; Accessible Communication:</strong> Governed 95+ websites and 60+ databases ensuring strict compliance with AODA / WCAG 2.1 AA; authored plain-language guidance adapted for varied digital literacy and language needs.
+        </div>
+        <div class="res-qual-item">
+          <strong>Program Planning, Logistics &amp; Operational Delivery:</strong> Managed end-to-end academic logistics for ~70 courses and 40+ instructors per term at OsgoodePD; coordinated career programming for 25 to 400 participants, driving a 60% participation lift.
+        </div>
+        <div class="res-qual-item">
+          <strong>Cross-Unit Collaboration, Confidentiality &amp; Escalation:</strong> Exercised strict confidentiality managing student and lawyer records, handled real-time incident triage across a 1,400-camera network, and authored standardized SOPs and escalation protocols.
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE (PAGE 1) -->
+    <section class="res-section">
+      <h2 class="res-sec-title">PROFESSIONAL EXPERIENCE</h2>
+
+      <!-- OsgoodePD -->
+      <article class="res-job">
+        <div class="res-job-head">
+          <span class="res-job-title">INSTRUCTION &amp; ADMINISTRATION ASSISTANT</span>
+          <span class="res-job-dates">JAN 2026 – AUG 2026</span>
+        </div>
+        <div class="res-job-sub">Osgoode Professional Development, York University | Toronto, ON</div>
+        <ul class="res-job-bullets">
+          <li>Redesigned and automated a recurring multi-source exam scheduling and reporting workflow across SIS, Salesforce, Kuali, and Excel using validation rules and exception tracking, cutting estimated manual effort by 70–90% with near one-click execution.</li>
+          <li>Supported day-to-day academic operations for 40+ instructors and ~70 courses per term; reconciled course catalogue and roster data using SIS as the primary source of truth, resolving cross-system inconsistencies between Salesforce and Kuali.</li>
+          <li>Created Power Apps and Microsoft Forms/Excel intake workflows to structure recurring communications; proposed a decision-support framework to standardize complex exam booking protocols across departments.</li>
+          <li>Independently managed Summer and Fall 2026 exam scheduling (including deferred exams), delivered high-stakes examination instructions, and supported live exam monitoring, software onboarding, and Wi-Fi troubleshooting.</li>
+          <li>Led pre-term eClass course setup and formatted course evaluation responses into instructor-ready reports, triaging sensitive matters for leadership review; authored step-by-step SOPs, checklists, and workflow diagrams.</li>
+        </ul>
+      </article>
+
+      <!-- SmartTO -->
+      <article class="res-job">
+        <div class="res-job-head">
+          <span class="res-job-title">COMMUNICATION &amp; MARKETING ASSISTANT</span>
+          <span class="res-job-dates">APR 2024 – JUL 2025</span>
+        </div>
+        <div class="res-job-sub">SmartTO, Innovation York, York University | Toronto, ON</div>
+        <ul class="res-job-bullets">
+          <li>Engineered an automated Python and CSV data pipeline to collect, clean, normalize, validate, and deduplicate stakeholder records prior to CRM loading, lifting qualified leads by 30% and outreach conversion by 15%.</li>
+          <li>Contributed to the CRM implementation discovery phase, mapping end-to-end flows across academic operations, industry partnerships, government funding allocation streams, and clean-tech startups.</li>
+          <li>Scaled the initiative’s LinkedIn presence from 114 to 1,000+ followers with an industry-leading 26% engagement rate, generating 87,000+ impressions and 17,000+ clicks.</li>
+          <li>Built executive Excel dashboards summarizing engagement metrics for leadership, tracked stakeholder follow-up checkpoints, monitored grant-based budget tracking and contracts, and analyzed Mailchimp campaign analytics.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE, CONTINUED (PAGE 2) -->
+    <section class="res-section res-page-break">
+      <h2 class="res-sec-title">PROFESSIONAL EXPERIENCE, CONTINUED</h2>
+
+      <!-- Career Centre -->
+      <article class="res-job">
+        <div class="res-job-head">
+          <span class="res-job-title">WEBSITE &amp; SOCIAL MEDIA COORDINATOR</span>
+          <span class="res-job-dates">MAY 2023 – APR 2024</span>
+        </div>
+        <div class="res-job-sub">Career Centre, Division of Students, York University | Toronto, ON</div>
+        <ul class="res-job-bullets">
+          <li>Coordinated student-facing career workshops, webinars, and employer sessions serving 25 to 400 attendees, driving a 60% participation increase through timely multi-channel promotion and structured follow-up.</li>
+          <li>Analyzed Google Analytics and user heatmaps to optimize information pathways across WordPress and Drupal websites, reducing bounce rate by 17%, accelerating load times by 20%, and lifting user satisfaction by 25%.</li>
+          <li>Delivered one-to-one service navigation and authored plain-language digital resources tailored for international, racialized, and diverse students with varying digital literacy and language needs.</li>
+        </ul>
+      </article>
+
+      <!-- LA&PS -->
+      <article class="res-job">
+        <div class="res-job-head">
+          <span class="res-job-title">WEBSITE &amp; DATABASE ASSISTANT</span>
+          <span class="res-job-dates">MAY 2022 – APR 2023</span>
+        </div>
+        <div class="res-job-sub">Faculty of Liberal Arts &amp; Professional Studies, York University | Toronto, ON</div>
+        <ul class="res-job-bullets">
+          <li>Maintained accuracy and AODA/WCAG accessibility compliance across 95+ institutional websites and 60+ databases supporting academic planning, course catalogues, and student inquiries.</li>
+          <li>Drove a 25% increase in organic search traffic through systematic SEO metadata audits; partnered with faculty on visual graphics boosting engagement by 20%.</li>
+          <li>Verified records against authorized sources, logged data ownership in structured Excel trackers, and authored step-by-step SOPs that reduced ad-hoc administrative support requests.</li>
+        </ul>
+      </article>
+
+      <!-- Community Safety -->
+      <article class="res-job">
+        <div class="res-job-head">
+          <span class="res-job-title">CCTV &amp; SECURITY OPERATIONS OPERATOR (PART-TIME)</span>
+          <span class="res-job-dates">DEC 2023 – JAN 2026</span>
+        </div>
+        <div class="res-job-sub">Department of Community Safety, York University | Toronto, ON</div>
+        <ul class="res-job-bullets">
+          <li>Monitored a 1,400-camera network safeguarding 46,000+ campus community members; improved incident resolution time by 30% through disciplined time-stamped logging and cut system downtime by 20% via daily hardware audits under strict confidentiality protocols.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- SELECTED VALUE FOR BUSINESS SYSTEMS & OPERATIONS -->
+    <section class="res-section">
+      <h2 class="res-sec-title">SELECTED VALUE FOR BUSINESS SYSTEMS &amp; OPERATIONS</h2>
+      <div class="res-val-list">
+        <div class="res-val-item">
+          <strong>Immediate Contribution:</strong> Proven ability to step directly into complex academic or enterprise environments, reconcile multi-system records (SIS, Salesforce, Kuali, eClass), automate repetitive administrative bottlenecks using Python and Excel, and establish reliable SOPs from day one.
+        </div>
+        <div class="res-val-item">
+          <strong>Transferable Value:</strong> Combines technical Computer Science rigor with four years of hands-on institutional service at York University, bridging technical development teams, administrative leaders, and student/faculty end-users with plain-language clarity and equity-informed navigation.
+        </div>
+        <div class="res-val-item">
+          <strong>Developmental Approach:</strong> Active candidate for the Salesforce Administrator certification; quickly masters proprietary institutional platforms and enterprise policies through approved documentation, supervised operational practice, historical data reviews, and rigorous exception audits.
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY & TOOLS -->
+    <section class="res-section">
+      <h2 class="res-sec-title">TECHNOLOGY &amp; TOOLS</h2>
+      <div class="res-tools-grid">
+        <div class="res-tool-line"><strong>Microsoft 365:</strong> Word, Excel (Pivots, Advanced Formulas, XLOOKUP), PowerPoint, Outlook, Teams, Forms, Power Apps, SharePoint-supported files</div>
+        <div class="res-tool-line"><strong>York and academic systems:</strong> SIS (Enrollment, PES, COS, Permissions), Kuali, eClass/Moodle, Salesforce-supported processes, 25Live, Zoom</div>
+        <div class="res-tool-line"><strong>Web and communications:</strong> WordPress, Drupal, Google Analytics, Mailchimp, Hootsuite, Canva, Adobe Photoshop, Plain-Language Communications</div>
+        <div class="res-tool-line"><strong>Data and workflow:</strong> Databases (Azure SQL, PostgreSQL), Python (Pandas, ETL scripts), CSV workflows, Process Mapping, SOP authoring</div>
+        <div class="res-tool-line"><strong>Certifications:</strong> ISSA Certified Health Coach (ID 402375719) &bull; ISSA Youth, Senior &amp; Lifespan Coach (ID 40011690) &bull; IBM Enterprise Design Thinking Practitioner</div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
