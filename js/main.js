@@ -178,4 +178,41 @@
       sectionObserver.observe(section);
     });
   }
+
+  // --- Résumé Print & Preview Controls ---
+  const heroPrintBtn = document.getElementById('hero-print-btn');
+  const navResumeBtn = document.getElementById('nav-resume-btn');
+  const exitResumeBtn = document.getElementById('exit-resume-btn');
+
+  if (heroPrintBtn) {
+    heroPrintBtn.addEventListener('click', function () {
+      window.print();
+    });
+  }
+
+  function setResumePreview(active) {
+    document.body.classList.toggle('resume-preview-active', active);
+    if (navResumeBtn) {
+      navResumeBtn.textContent = active ? 'Portfolio View' : 'Résumé View';
+      navResumeBtn.setAttribute('title', active ? 'Switch to interactive web portfolio' : 'Switch to structured résumé preview');
+    }
+    const resumeView = document.getElementById('resume-print-view');
+    if (resumeView) {
+      resumeView.setAttribute('aria-hidden', active ? 'false' : 'true');
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  if (navResumeBtn) {
+    navResumeBtn.addEventListener('click', function () {
+      const isCurrentlyActive = document.body.classList.contains('resume-preview-active');
+      setResumePreview(!isCurrentlyActive);
+    });
+  }
+
+  if (exitResumeBtn) {
+    exitResumeBtn.addEventListener('click', function () {
+      setResumePreview(false);
+    });
+  }
 })();

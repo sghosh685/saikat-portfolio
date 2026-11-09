@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#12161a" media="(prefers-color-scheme: dark)">
 
   <title>Saikat Ghosh | Business Systems, Operations &amp; Digital Programs</title>
-  <meta name="description" content="Portfolio of Saikat Ghosh: Salesforce and CRM operations, workflow automation, data quality, web governance, and digital programs at York University.">
+  <meta name="description" content="Portfolio and résumé of Saikat Ghosh: Salesforce and CRM operations, workflow automation, data quality, web governance, and digital programs at York University.">
   <link rel="canonical" href="https://saikat-portfolio-one.vercel.app">
 
   <!-- Open Graph & Social Sharing -->
@@ -60,6 +60,7 @@
     "jobTitle": "Business Systems & Operations Professional",
     "url": "https://saikat-portfolio-one.vercel.app",
     "email": "mailto:saikatghosh369@gmail.com",
+    "telephone": "+1-437-232-8555",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Toronto",
@@ -108,15 +109,32 @@
           <li><a href="#media">Evidence</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button id="tt" class="tt" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        </button>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <button id="nav-resume-btn" class="btn s" type="button" style="padding:6px 14px; font-size:0.85rem;" title="Toggle résumé preview view">Résumé View</button>
+          <button id="tt" class="tt" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+        </div>
       </nav>
     </div>
     <div id="pg" aria-hidden="true"></div>
   </header>
 
-  <main id="top">
+  <!-- Résumé Preview Action Bar (shown when Preview Résumé is active on screen) -->
+  <div id="resume-preview-bar" class="resume-preview-bar">
+    <div>
+      <strong>📄 Résumé Preview Mode</strong> · Formatted as a structured, executive CV.
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button class="btn p" type="button" onclick="window.print()" style="padding:6px 16px; font-size:0.88rem;">Print / Save PDF</button>
+      <button id="exit-resume-btn" class="btn s" type="button" style="padding:6px 16px; font-size:0.88rem;">Exit to Web Portfolio</button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       VIEW 1: Interactive Web Portfolio (Hidden during print / resume preview)
+       ========================================================================= -->
+  <main id="top" class="screen-portfolio">
     <!-- Hero Section -->
     <div class="wrap hero">
       <div class="hg">
@@ -129,7 +147,7 @@
             <a class="btn p" href="#contact">Get in touch</a>
             <a class="btn s" href="#projects">See my work</a>
             <a class="btn s" href="#builds">Live builds</a>
-            <button class="btn s" type="button" onclick="window.print()">Print / Save PDF</button>
+            <button id="hero-print-btn" class="btn s" type="button" title="Print or save as structured PDF resume">Print / Save Résumé (PDF)</button>
           </div>
         </div>
         <aside class="glance" aria-label="Professional Summary at a Glance">
@@ -929,6 +947,224 @@
       </div>
     </section>
   </main>
+
+  <!-- =========================================================================
+       VIEW 2: Structured Executive Résumé (Print & Resume Preview Target)
+       Strictly structured, ATS-friendly, clean typography, zero web chrome
+       ========================================================================= -->
+  <section id="resume-print-view" class="resume-print-view" aria-label="Structured Executive Résumé">
+    <!-- Header -->
+    <header class="res-header">
+      <h1 class="res-name">Saikat Ghosh</h1>
+      <div class="res-subtitle">Business Systems, Operations &amp; Digital Programs</div>
+      <div class="res-contact">
+        <span>Toronto, ON</span>
+        <span class="res-sep">•</span>
+        <span>(437) 232-8555</span>
+        <span class="res-sep">•</span>
+        <a href="mailto:saikatghosh369@gmail.com">saikatghosh369@gmail.com</a>
+        <span class="res-sep">•</span>
+        <a href="https://linkedin.com/in/saikatghosh00">linkedin.com/in/saikatghosh00</a>
+        <span class="res-sep">•</span>
+        <a href="https://github.com/sghosh685">github.com/sghosh685</a>
+        <span class="res-sep">•</span>
+        <a href="https://saikat-portfolio-one.vercel.app">saikat-portfolio-one.vercel.app</a>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <div class="res-section">
+      <h2 class="res-sec-title">Professional Summary</h2>
+      <p class="res-summary">
+        Systems-focused Business Operations &amp; Technology Professional with 4+ years across York University driving Salesforce/CRM operations, workflow automation, web governance, and community programs. Combines a Computer Science degree (B.Sc. 2025) and Schulich business coursework with hands-on expertise turning fragmented, multi-source operations into automated, reliable workflows. Proven track record reducing manual administrative burden by 70–90%, scaling stakeholder pipelines by 30%, and governing 95+ websites and 60+ databases to strict AODA/WCAG accessibility standards.
+      </p>
+    </div>
+
+    <!-- Core Competencies & Technical Proficiencies -->
+    <div class="res-section">
+      <h2 class="res-sec-title">Core Competencies &amp; Technical Proficiencies</h2>
+      <div class="res-skills-table">
+        <div class="res-skill-row">
+          <span class="res-skill-cat">Systems &amp; CRM:</span>
+          <span class="res-skill-val">Salesforce (Administrator prep in progress), SIS (Enrollment, PES, COS, Permissions), Kuali, eClass / Moodle LMS, Roster Reconciliation, CRM Data Readiness, 25Live.</span>
+        </div>
+        <div class="res-skill-row">
+          <span class="res-skill-cat">Data &amp; Automation:</span>
+          <span class="res-skill-val">Python (ETL, Pandas, Data Validation), SQL (Azure SQL, PostgreSQL), Advanced Excel (Formulas, Pivots, XLOOKUP), Power Apps, Microsoft Forms, CSV Data Pipelines.</span>
+        </div>
+        <div class="res-skill-row">
+          <span class="res-skill-cat">Process &amp; Governance:</span>
+          <span class="res-skill-val">Business Process Mapping, Requirements Gathering, Standard Operating Procedures (SOPs), Exception &amp; Escalation Tracking, AODA / WCAG 2.1 AA Compliance, Confidential Records Triage.</span>
+        </div>
+        <div class="res-skill-row">
+          <span class="res-skill-cat">Web &amp; Digital:</span>
+          <span class="res-skill-val">WordPress, Drupal, HTML5 / CSS3 / Modern JS, React &amp; Next.js, TypeScript, Google Analytics (Dashboards, UX Heatmaps), Mailchimp, Plain-Language Communication.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Experience -->
+    <div class="res-section">
+      <h2 class="res-sec-title">Professional Experience</h2>
+
+      <!-- OsgoodePD -->
+      <article class="res-entry">
+        <div class="res-entry-head">
+          <div>
+            <span class="res-org">Osgoode Professional Development, York University</span>
+            <span class="res-role">Instruction &amp; Administration Assistant</span>
+          </div>
+          <div class="res-meta">
+            <span class="res-loc">Toronto, ON</span>
+            <span class="res-dates">Jan 2026 – Aug 2026</span>
+          </div>
+        </div>
+        <ul class="res-bullets">
+          <li>Redesigned and automated recurring multi-source exam scheduling and reporting across SIS, Salesforce, Kuali, and Excel, cutting manual administrative effort by 70–90% and enabling near one-click execution.</li>
+          <li>Reconciled course catalogue, rosters, and instructor records using SIS as the primary source of truth, resolving cross-system data discrepancies between Salesforce and Kuali for ~70 courses per term.</li>
+          <li>Built Power Apps and Microsoft Forms/Excel intake workflows to standardize communication across 40+ instructors, reducing ad-hoc scheduling inquiries and turnaround times.</li>
+          <li>Independently managed Summer and Fall 2026 exam logistics (including deferred examinations), monitored live testing sessions, and authored comprehensive SOPs, checklists, and workflow diagrams.</li>
+          <li>Led pre-term eClass course setup and managed end-to-end course evaluation workflows, formatting responses into executive-ready reports and triaging sensitive feedback to leadership.</li>
+        </ul>
+      </article>
+
+      <!-- SmartTO -->
+      <article class="res-entry">
+        <div class="res-entry-head">
+          <div>
+            <span class="res-org">SmartTO, Innovation York, York University</span>
+            <span class="res-role">Communication &amp; Marketing Assistant</span>
+          </div>
+          <div class="res-meta">
+            <span class="res-loc">Toronto, ON</span>
+            <span class="res-dates">Apr 2024 – Jul 2025</span>
+          </div>
+        </div>
+        <ul class="res-bullets">
+          <li>Engineered an automated Python and CSV data pipeline to collect, clean, normalize, validate, and deduplicate stakeholder records prior to CRM loading, lifting qualified leads by 30% and outreach conversion by 15%.</li>
+          <li>Contributed to the CRM implementation discovery phase, mapping end-to-end workflows across academic units, industry partners, government funding streams, and startups.</li>
+          <li>Scaled the initiative’s LinkedIn presence from 114 to 1,000+ followers with an industry-leading 26% engagement rate (87,000+ impressions, 17,000+ clicks).</li>
+          <li>Designed executive Excel dashboards reporting engagement metrics, grant-based budget tracking, and contract milestones; tracked Mailchimp campaign analytics (CTR, send-time optimization) to refine outreach strategy.</li>
+        </ul>
+      </article>
+
+      <!-- Career Centre -->
+      <article class="res-entry">
+        <div class="res-entry-head">
+          <div>
+            <span class="res-org">Career Centre, Division of Students, York University</span>
+            <span class="res-role">Website &amp; Social Media Coordinator</span>
+          </div>
+          <div class="res-meta">
+            <span class="res-loc">Toronto, ON</span>
+            <span class="res-dates">May 2023 – Apr 2024</span>
+          </div>
+        </div>
+        <ul class="res-bullets">
+          <li>Coordinated career workshops, webinars, and employer recruiting sessions for 25 to 400 attendees, driving a 60% increase in student participation through timely multichannel campaigns.</li>
+          <li>Utilized Google Analytics, heatmaps, and user feedback to optimize information architecture across WordPress and Drupal websites, reducing bounce rate by 17%, accelerating page load times by 20%, and lifting user satisfaction by 25%.</li>
+          <li>Delivered one-to-one service navigation and developed plain-language digital resources tailored for international, racialized, and diverse students with varying digital literacy needs.</li>
+        </ul>
+      </article>
+
+      <!-- LA&PS -->
+      <article class="res-entry">
+        <div class="res-entry-head">
+          <div>
+            <span class="res-org">Faculty of Liberal Arts &amp; Professional Studies (LA&amp;PS), York University</span>
+            <span class="res-role">Website &amp; Database Assistant</span>
+          </div>
+          <div class="res-meta">
+            <span class="res-loc">Toronto, ON</span>
+            <span class="res-dates">May 2022 – Apr 2023</span>
+          </div>
+        </div>
+        <ul class="res-bullets">
+          <li>Governed content quality, accuracy, and AODA/WCAG compliance across 95+ institutional websites and 60+ academic databases supporting thousands of students and faculty.</li>
+          <li>Drove a 25% increase in organic search traffic through targeted SEO metadata audits and content restructuring; created visual collateral boosting engagement by 20%.</li>
+          <li>Reconciled academic records against authorized source systems and authored step-by-step SOPs that streamlined support tickets and departmental requests.</li>
+        </ul>
+      </article>
+
+      <!-- Community Safety -->
+      <article class="res-entry">
+        <div class="res-entry-head">
+          <div>
+            <span class="res-org">Department of Community Safety, York University</span>
+            <span class="res-role">CCTV &amp; Security Operations Operator (Part-Time)</span>
+          </div>
+          <div class="res-meta">
+            <span class="res-loc">Toronto, ON</span>
+            <span class="res-dates">Dec 2023 – Jan 2026</span>
+          </div>
+        </div>
+        <ul class="res-bullets">
+          <li>Monitored a 1,400-camera surveillance network protecting a campus community of 46,000+ students and staff, exercising rigorous confidentiality and privacy protocols.</li>
+          <li>Reduced incident resolution time by 30% through disciplined time-stamped triage and reduced hardware downtime by 20% via daily diagnostic audits.</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Key Systems & Automation Projects -->
+    <div class="res-section">
+      <h2 class="res-sec-title">Selected Systems &amp; Software Projects</h2>
+      <div class="res-proj-list">
+        <div class="res-proj-item">
+          <strong>TAKIAS Gatekeeper (FinTech Web Application):</strong> Engineered pre-trade risk management and position-sizing engine with hardcoded financial rules and options backtesting parameters.
+        </div>
+        <div class="res-proj-item">
+          <strong>Ontario Workforce Analytics Dashboard (Statistics Canada Data):</strong> Built interactive labour market intelligence platform analyzing employment, participation, and sector movement (2021–2026).
+        </div>
+        <div class="res-proj-item">
+          <strong>Natural Gas Market Intelligence Platform:</strong> Developed Next.js/TypeScript procurement dashboard featuring in-browser 1,000-iteration Monte Carlo cost simulation and volatility modeling across Henry Hub, Dawn, and AECO hubs.
+        </div>
+        <div class="res-proj-item">
+          <strong>Battery + Grid Economics Learning Platform:</strong> Designed interactive simulator modeling LCOE, duck curve dynamics, and battery degradation economics for clean energy transition.
+        </div>
+      </div>
+    </div>
+
+    <!-- Education & Credentials -->
+    <div class="res-section">
+      <h2 class="res-sec-title">Education &amp; Credentials</h2>
+
+      <div class="res-edu-entry">
+        <div class="res-entry-head">
+          <div>
+            <span class="res-org">York University, Lassonde School of Engineering</span>
+            <span class="res-role">Bachelor of Science (B.Sc.) in Computer Science</span>
+          </div>
+          <div class="res-meta">
+            <span class="res-loc">Toronto, ON</span>
+            <span class="res-dates">2021 – 2025</span>
+          </div>
+        </div>
+        <div class="res-coursework">
+          <em>Relevant Coursework:</em> Database Systems, Software Design, User Interface Design, Web Programming, Operating Systems, Statistics &amp; Probability.
+        </div>
+      </div>
+
+      <div class="res-edu-entry" style="margin-top: 6px;">
+        <div class="res-entry-head">
+          <div>
+            <span class="res-org">Schulich School of Business &amp; Business for Tech</span>
+            <span class="res-role">Business for Tech Entrepreneurs (ENTR 3400/3600) &amp; Financial Accounting</span>
+          </div>
+          <div class="res-meta">
+            <span class="res-dates">York University</span>
+          </div>
+        </div>
+        <div class="res-coursework">
+          Coursework in capital budgeting (NPV), financial statement analysis, operations management, and technology startup leadership.
+        </div>
+      </div>
+
+      <div class="res-certs" style="margin-top: 8px;">
+        <strong>Industry Certifications &amp; Credentials:</strong>
+        ISSA Certified Health Coach (Aug 2026–2028 · ID 402375719) • ISSA Youth, Senior &amp; Lifespan Coach (Aug 2026–2028 · ID 40011690) • IBM Enterprise Design Thinking Practitioner • Salesforce Administrator Preparation.
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>

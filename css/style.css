@@ -950,32 +950,419 @@ footer {
   }
 }
 
-/* Print Stylesheet */
+/* ==========================================================================
+   Resume Print View & Preview Mode Styles
+   ========================================================================== */
+
+/* By default on screen, hide the resume print view */
+.resume-print-view {
+  display: none;
+}
+.resume-preview-bar {
+  display: none;
+}
+
+/* On-screen Résumé Preview Mode */
+body.resume-preview-active .screen-portfolio,
+body.resume-preview-active footer {
+  display: none !important;
+}
+body.resume-preview-active .resume-preview-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 840px;
+  margin: 20px auto 0;
+  padding: 14px 24px;
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  color: var(--text);
+  box-shadow: var(--card-shadow);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+body.resume-preview-active .resume-print-view {
+  display: block !important;
+  max-width: 840px;
+  margin: 20px auto 48px;
+  padding: 48px 56px;
+  background: #ffffff;
+  color: #2b2b2b;
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+  line-height: 1.45;
+}
+
+/* Résumé Screen View Inner Elements */
+.res-header {
+  text-align: center;
+  border-bottom: 2px solid #0f766e;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+.res-name {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 24pt;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.01em;
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+}
+.res-subtitle {
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: #0f766e;
+  margin-bottom: 8px;
+}
+.res-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 9.2pt;
+  color: #4a4a4a;
+}
+.res-contact a {
+  color: #1a1a2e;
+  text-decoration: none;
+}
+.res-contact a:hover {
+  text-decoration: underline;
+  color: #0f766e;
+}
+.res-sep {
+  color: #0f766e;
+  font-weight: 700;
+}
+.res-section {
+  margin-bottom: 14px;
+}
+.res-sec-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 10.8pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1a1a2e;
+  border-bottom: 1px solid #0f766e;
+  padding-bottom: 3px;
+  margin: 0 0 8px 0;
+}
+.res-summary {
+  font-size: 9.4pt;
+  line-height: 1.45;
+  color: #2b2b2b;
+  margin: 0;
+  text-align: justify;
+}
+.res-skills-table {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.res-skill-row {
+  display: flex;
+  font-size: 9.3pt;
+  line-height: 1.4;
+}
+.res-skill-cat {
+  font-weight: 700;
+  color: #1a1a2e;
+  width: 155px;
+  flex-shrink: 0;
+}
+.res-skill-val {
+  color: #2b2b2b;
+  flex: 1;
+}
+.res-entry {
+  margin-bottom: 12px;
+}
+.res-entry:last-child {
+  margin-bottom: 0;
+}
+.res-entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+.res-org {
+  font-size: 10.2pt;
+  font-weight: 700;
+  color: #1a1a2e;
+  display: block;
+}
+.res-role {
+  font-size: 9.6pt;
+  font-style: italic;
+  color: #4a4a4a;
+}
+.res-meta {
+  text-align: right;
+  font-size: 9.2pt;
+  color: #4a4a4a;
+  white-space: nowrap;
+}
+.res-loc {
+  margin-right: 8px;
+}
+.res-dates {
+  font-weight: 600;
+}
+.res-bullets {
+  margin: 4px 0 0 0;
+  padding-left: 18px;
+}
+.res-bullets li {
+  font-size: 9.2pt;
+  line-height: 1.4;
+  color: #2b2b2b;
+  margin-bottom: 3px;
+  text-align: justify;
+}
+.res-proj-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.res-proj-item {
+  font-size: 9.2pt;
+  line-height: 1.4;
+  color: #2b2b2b;
+}
+.res-proj-item strong {
+  color: #1a1a2e;
+}
+.res-edu-entry {
+  margin-bottom: 8px;
+}
+.res-coursework {
+  font-size: 9pt;
+  color: #4a4a4a;
+  margin-top: 2px;
+}
+.res-certs {
+  font-size: 9.2pt;
+  line-height: 1.4;
+  color: #2b2b2b;
+}
+.res-certs strong {
+  color: #1a1a2e;
+}
+
+/* ==========================================================================
+   @media print — Strict Executive Résumé Output
+   Converts document into a structured 2-page ATS/Executive Résumé
+   ========================================================================== */
+@page {
+  size: letter;
+  margin: 0.42in 0.52in;
+}
+
 @media print {
-  header, .tt, .skip, #pg, .btns, .hero::before, .flt, .play-btn {
+  /* Hide the web portfolio and all browser chrome */
+  header,
+  footer,
+  #pg,
+  .screen-portfolio,
+  .resume-preview-bar,
+  .skip,
+  .tt,
+  .flt,
+  .btns,
+  #copy-status {
     display: none !important;
   }
-  body {
-    background: #ffffff;
-    color: #000000;
-    font-size: 13pt;
+
+  /* Force clean white background and dark typography */
+  html, body {
+    background: #ffffff !important;
+    color: #2b2b2b !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 9.4pt !important;
+    line-height: 1.38 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
-  .rv {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  details {
-    display: block;
-  }
-  details > * {
-    display: block;
-  }
-  section {
-    break-inside: avoid-page;
-    padding: 20px 0;
-  }
-  .card, .pv, .stat, .facts {
+
+  /* Display the structured resume container */
+  .resume-print-view {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
     box-shadow: none !important;
-    border: 1px solid #cccccc !important;
+    border-radius: 0 !important;
+  }
+
+  .res-header {
+    text-align: center;
+    border-bottom: 2pt solid #0f766e !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 9px !important;
+  }
+  .res-name {
+    font-family: Fraunces, Georgia, serif !important;
+    font-size: 19pt !important;
+    font-weight: 700 !important;
+    color: #1a1a2e !important;
+    letter-spacing: -0.01em;
+    margin: 0 0 2px 0 !important;
+    text-transform: uppercase;
+  }
+  .res-subtitle {
+    font-size: 10.5pt !important;
+    font-weight: 600 !important;
+    color: #0f766e !important;
+    margin-bottom: 4px !important;
+  }
+  .res-contact {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 8.8pt !important;
+    color: #4a4a4a !important;
+  }
+  .res-contact a {
+    color: #1a1a2e !important;
+    text-decoration: none !important;
+  }
+  .res-sep {
+    color: #0f766e !important;
+    font-weight: 700 !important;
+  }
+
+  .res-section {
+    margin-bottom: 9px !important;
+    page-break-inside: auto;
+  }
+  .res-sec-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-size: 10pt !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1a1a2e !important;
+    border-bottom: 1px solid #0f766e !important;
+    padding-bottom: 2px !important;
+    margin: 0 0 5px 0 !important;
+  }
+  .res-summary {
+    font-size: 9pt !important;
+    line-height: 1.36 !important;
+    color: #2b2b2b !important;
+    margin: 0 !important;
+    text-align: justify;
+  }
+  .res-skills-table {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5px !important;
+  }
+  .res-skill-row {
+    display: flex !important;
+    font-size: 8.9pt !important;
+    line-height: 1.34 !important;
+  }
+  .res-skill-cat {
+    font-weight: 700 !important;
+    color: #1a1a2e !important;
+    width: 140px !important;
+    flex-shrink: 0 !important;
+  }
+  .res-skill-val {
+    color: #2b2b2b !important;
+    flex: 1 !important;
+  }
+
+  /* Prevent awkward page breaks inside job entries */
+  .res-entry {
+    margin-bottom: 8px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  .res-entry-head {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    margin-bottom: 1.5px !important;
+  }
+  .res-org {
+    font-size: 9.8pt !important;
+    font-weight: 700 !important;
+    color: #1a1a2e !important;
+    display: block !important;
+  }
+  .res-role {
+    font-size: 9.2pt !important;
+    font-style: italic !important;
+    color: #4a4a4a !important;
+  }
+  .res-meta {
+    text-align: right !important;
+    font-size: 8.8pt !important;
+    color: #4a4a4a !important;
+    white-space: nowrap !important;
+  }
+  .res-loc {
+    margin-right: 6px !important;
+  }
+  .res-dates {
+    font-weight: 600 !important;
+  }
+
+  .res-bullets {
+    margin: 2.5px 0 0 0 !important;
+    padding-left: 14px !important;
+  }
+  .res-bullets li {
+    font-size: 8.9pt !important;
+    line-height: 1.34 !important;
+    color: #2b2b2b !important;
+    margin-bottom: 2px !important;
+    text-align: justify;
+  }
+
+  .res-proj-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5px !important;
+  }
+  .res-proj-item {
+    font-size: 8.9pt !important;
+    line-height: 1.34 !important;
+    color: #2b2b2b !important;
+  }
+  .res-proj-item strong {
+    color: #1a1a2e !important;
+  }
+
+  .res-edu-entry {
+    margin-bottom: 5px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  .res-coursework {
+    font-size: 8.6pt !important;
+    color: #4a4a4a !important;
+    margin-top: 1px !important;
+  }
+  .res-certs {
+    font-size: 8.9pt !important;
+    line-height: 1.34 !important;
+    color: #2b2b2b !important;
+  }
+  .res-certs strong {
+    color: #1a1a2e !important;
   }
 }
