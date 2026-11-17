@@ -178,4 +178,59 @@
       sectionObserver.observe(section);
     });
   }
+
+  // --- Deep-link & Hash Navigation Handler ---
+  function handleDeepLinkHash() {
+    const rawHash = window.location.hash;
+    if (!rawHash) return;
+
+    // Decode hash (e.g., #project=proj-01 -> proj-01, #timeline=cred-3 -> cred-3, #projects -> projects)
+    let targetId = decodeURIComponent(rawHash.replace(/^#/, ''));
+    if (targetId.startsWith('project=')) {
+      targetId = targetId.replace('project=', '');
+    } else if (targetId.startsWith('timeline=')) {
+      targetId = targetId.replace('timeline=', '');
+    }
+
+    if (!targetId) return;
+
+    // Look for element by ID, or by data-project-id, or data-timeline-id
+    const targetEl = document.getElementById(targetId) ||
+                     document.querySelector('[data-project-id="' + targetId + '"]') ||
+                     document.querySelector('[data-timeline-id="' + targetId + '"]');
+
+    if (targetEl) {
+      // If the target is inside a filtered section (like Live Builds), reset filter to 'all' so it's visible
+      if (targetEl.hasAttribute('hidden')) {
+        targetEl.removeAttribute('hidden');
+        const allBtn = document.querySelector('.fb[data-f="all"]');
+        if (allBtn) {
+          document.querySelectorAll('.fb').forEach(function (b) {
+            b.classList.remove('on');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          allBtn.classList.add('on');
+          allBtn.setAttribute('aria-pressed', 'true');
+        }
+      }
+
+      // Ensure reveal animation is triggered immediately
+      targetEl.classList.add('in');
+
+      // Smooth scroll to target with proper offset
+      setTimeout(function () {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetEl.classList.add('anchor-highlight');
+        setTimeout(function () {
+          targetEl.classList.remove('anchor-highlight');
+        }, 3000);
+      }, 150);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', handleDeepLinkHash);
+  window.addEventListener('hashchange', handleDeepLinkHash);
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    handleDeepLinkHash();
+  }
 })();
