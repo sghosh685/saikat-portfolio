@@ -51,6 +51,19 @@
     })();
   </script>
 
+  <!-- Early Deep-link Hash Normalizer -->
+  <script>
+    (function(){
+      var h = window.location.hash;
+      if (h && (h.indexOf('project=') !== -1 || h.indexOf('timeline=') !== -1)) {
+        var clean = decodeURIComponent(h.replace(/^#/, '').replace(/^project=/, '').replace(/^timeline=/, '')).trim();
+        if (clean && window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', '#' + clean);
+        }
+      }
+    })();
+  </script>
+
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {

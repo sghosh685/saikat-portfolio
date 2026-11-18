@@ -184,8 +184,8 @@
     const rawHash = window.location.hash;
     if (!rawHash) return;
 
-    // Decode hash (e.g., #project=proj-01 -> proj-01, #timeline=cred-3 -> cred-3, #projects -> projects)
-    let targetId = decodeURIComponent(rawHash.replace(/^#/, ''));
+    // Decode hash (supports #project=proj-01 -> proj-01, #timeline=cred-3 -> cred-3, #proj-01 -> proj-01, #projects -> projects)
+    let targetId = decodeURIComponent(rawHash.replace(/^#/, '')).trim();
     if (targetId.startsWith('project=')) {
       targetId = targetId.replace('project=', '');
     } else if (targetId.startsWith('timeline=')) {
@@ -201,8 +201,10 @@
 
     if (targetEl) {
       // If the target is inside a filtered section (like Live Builds), reset filter to 'all' so it's visible
-      if (targetEl.hasAttribute('hidden')) {
-        targetEl.removeAttribute('hidden');
+      if (targetEl.hasAttribute('hidden') || targetEl.closest('[hidden]')) {
+        document.querySelectorAll('.bld').forEach(function (c) {
+          c.removeAttribute('hidden');
+        });
         const allBtn = document.querySelector('.fb[data-f="all"]');
         if (allBtn) {
           document.querySelectorAll('.fb').forEach(function (b) {
@@ -217,18 +219,37 @@
       // Ensure reveal animation is triggered immediately
       targetEl.classList.add('in');
 
-      // Smooth scroll to target with proper offset
-      setTimeout(function () {
-        targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Scroll with block: 'start' so it respects scroll-margin-top (88px) and stays below sticky nav
+      function scrollToTarget() {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         targetEl.classList.add('anchor-highlight');
         setTimeout(function () {
           targetEl.classList.remove('anchor-highlight');
-        }, 3000);
-      }, 150);
+        }, 3500);
+      }
+
+      // 1. Immediate scroll
+      scrollToTarget();
+
+      // 2. Scheduled scroll after initial paint reflow
+      setTimeout(scrollToTarget, 200);
+
+      // 3. Scroll after fonts settle to prevent layout displacement
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {
+          setTimeout(scrollToTarget, 100);
+        });
+      }
+
+      // Normalize address bar URL to standard native anchor format without reloading
+      if (window.history && window.history.replaceState && (rawHash.includes('project=') || rawHash.includes('timeline='))) {
+        history.replaceState(null, '', '#' + targetId);
+      }
     }
   }
 
   window.addEventListener('DOMContentLoaded', handleDeepLinkHash);
+  window.addEventListener('load', handleDeepLinkHash);
   window.addEventListener('hashchange', handleDeepLinkHash);
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
     handleDeepLinkHash();
