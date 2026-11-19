@@ -237,7 +237,7 @@ Business Systems, Operations, and Workflow Automation Specialist with a Computer
 * **Core Competencies Validated**: Poise & Composure Under Pressure, Rigorous Work Ethic, Peer Role Model & Cultural Anchor, High-Volume Digital & Creative Collaboration.
 
 ### Myla Cardenas — Website & CRM Coordinator
-* **Organization**: Career Centre, York University
+* **Organization**: Division of Students, York University
 * **Verified Quote**:
   > *"Thank you SO much for all your incredible work on the Career Centre website redevelopment. I wish you nothing but the best and please let us know if we can do anything for you in the future. So happy to have had you on our team!"*
 * **Core Competencies Validated**: Website & CRM Operations, Enterprise CMS Redevelopment, Cross-Functional Project Coordination, Standing Reference.
