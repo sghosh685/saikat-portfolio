@@ -80,6 +80,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
     .back-btn {
@@ -90,27 +91,76 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      white-space: nowrap;
     }
     .back-btn:hover {
       text-decoration: underline;
     }
-    .print-btn {
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .action-btn {
       background: var(--accent);
       color: #ffffff;
       border: 1px solid var(--accent);
-      padding: 9px 20px;
+      padding: 9px 18px;
       border-radius: 8px;
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 0.90rem;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: filter 0.2s, transform 0.2s;
+      text-decoration: none;
+      font-family: inherit;
+      white-space: nowrap;
+      transition: filter 0.2s, transform 0.2s, background 0.2s, border-color 0.2s, color 0.2s;
     }
-    .print-btn:hover {
+    .action-btn:hover {
       filter: brightness(1.1);
       transform: translateY(-1px);
+    }
+    .action-btn-secondary {
+      background: var(--sheet-bg);
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+    }
+    .action-btn-secondary:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+    .action-btn.copied {
+      background: #15803d !important;
+      border-color: #15803d !important;
+      color: #ffffff !important;
+      transform: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .topbar {
+        padding: 10px 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .topbar-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .action-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 14px;
+        font-size: 0.88rem;
+      }
+      .sheet-wrap {
+        margin: 14px 10px 40px;
+        padding: 24px 18px;
+      }
     }
 
     /* Resume Document Container (Screen preview) */
@@ -448,11 +498,14 @@
   <!-- Screen Top Bar -->
   <aside class="topbar" aria-label="Action Controls">
     <a class="back-btn" href="/#projects">← Back to Portfolio Showcase</a>
-    <div style="display: flex; gap: 10px;">
-      <a class="print-btn" href="assets/Saikat_Ghosh_Resume.pdf" download="Saikat_Ghosh_Resume.pdf" style="text-decoration:none">
+    <div class="topbar-actions">
+      <button id="copyAtsBtn" class="action-btn action-btn-secondary" type="button" aria-label="Copy ATS plain text resume to clipboard">
+        <span id="copyAtsIcon">📋</span> <span id="copyAtsLabel">Copy ATS Plain Text</span>
+      </button>
+      <a class="action-btn" href="assets/Saikat_Ghosh_Resume.pdf" download="Saikat_Ghosh_Resume.pdf">
         <span>⬇ Download Clean PDF</span>
       </a>
-      <button class="print-btn" type="button" onclick="window.print()">
+      <button class="action-btn" type="button" onclick="window.print()">
         <span>🖨️ Print / Save as PDF</span>
       </button>
     </div>
@@ -632,5 +685,132 @@
     </section>
   </main>
 
+  <!-- ATS Plain-Text / Markdown Résumé Payload -->
+  <script id="atsResumePayload" type="text/plain">
+SAIKAT GHOSH
+BUSINESS SYSTEMS, OPERATIONS & DIGITAL PROGRAMS
+Salesforce & CRM Operations | Workflow Automation | Data Quality & Governance | Accessible Service Navigation
+Toronto, ON | 437-232-8555 | saikat21@yorku.ca | saikatghosh369@gmail.com
+LinkedIn: https://linkedin.com/in/saikatghosh00 | Portfolio: https://saikat-portfolio-one.vercel.app
+
+PROFESSIONAL SUMMARY
+Business Systems and Operations Professional with 4+ years of demonstrated cross-unit experience across York University (OsgoodePD, SmartTO, Career Centre, and LA&PS), specializing in Salesforce CRM operations, automated workflow engineering, and accessible service navigation. Combines a Computer Science foundation (B.Sc., 2025) and Schulich business coursework with a user-centred operations mindset to eliminate manual administrative bottlenecks, reconcile multi-system enterprise records (Core Student Database / SIS, Salesforce CRM, Curriculum Software / Kuali, LMS), and govern large-scale web and database environments under strict AODA/WCAG standards. Recognized for delivering audit-ready documentation, cross-functional stakeholder collaboration, and reliable data pipelines that improve service quality and operational throughput.
+
+EDUCATION
+Bachelor of Science in Computer Science | York University, Lassonde School of Engineering | May 2021 – May 2025
+Relevant Coursework: Database Systems, Software Design, User Interface Design, Web Programming, Operating Systems, Statistics & Probability.
+Schulich School of Business & Business for Tech: Completed ENTR 3400/3600 (Business for Tech Entrepreneurs I & II) and Financial Accounting coursework (capital budgeting / NPV, financial reporting, operations management).
+
+CORE QUALIFICATIONS
+* Systems & CRM Operations: Experienced administering and reconciling enterprise CRM and database systems including Salesforce CRM, Core Student Information Database (SIS), Curriculum Management (Kuali), and Learning Management Systems (eClass / Moodle); proficient in cross-system discrepancy resolution, roster validation, and permission auditing.
+* Workflow Automation & Process Engineering: Designed and deployed Python ETL pipelines, Power Apps, and automated Excel intake workflows that eliminated 70–90% of manual effort from high-stakes exam scheduling and stakeholder tracking.
+* Data Quality, Records Reconciliation & Reporting: Built automated data validation and deduplication routines; authored executive Excel dashboards, SQL queries (Azure SQL, PostgreSQL), and KPI trackers supporting evidence-based administrative decision-making.
+* Web Governance & Accessible Communication: Governed 95+ websites and 60+ databases ensuring strict compliance with AODA / WCAG 2.1 AA; authored plain-language guidance adapted for varied digital literacy and language needs.
+* Program Planning, Logistics & Operational Delivery: Managed end-to-end academic logistics for ~70 courses and 40+ instructors per term at OsgoodePD; coordinated career programming for 25 to 400 participants, driving a 60% participation lift.
+* Cross-Unit Collaboration, Confidentiality & Escalation: Exercised strict confidentiality managing student and lawyer records, handled real-time incident triage across a 1,400-camera network, and authored standardized SOPs and escalation protocols.
+
+PROFESSIONAL EXPERIENCE
+
+INSTRUCTION & ADMINISTRATION ASSISTANT | JAN 2026 – AUG 2026
+Osgoode Professional Development, York University | Toronto, ON
+* Automated termly enrolment workflows across 70+ courses by building a pipeline with validation guardrails for 12 distinct stakeholders per course, eliminating manual data entry and cross-course instructor misallocations.
+* Engineered an automated data preparation workflow for MachForm course evaluations across 70+ courses, auto-detecting anomalies (such as duplicate submissions from identical IP addresses) and generating 70+ course-isolated instructor reports.
+* Redesigned and automated a recurring multi-source exam scheduling and reporting workflow across the core student information database (SIS), Salesforce CRM, curriculum management software (Kuali), and Excel using validation rules and exception tracking, cutting estimated manual effort by 70–90% with near one-click execution.
+* Supported day-to-day academic operations for 40+ instructors and ~70 courses per term; reconciled course catalogue and roster data using the core student information system (SIS / ERP database) as the primary source of truth, resolving cross-system discrepancies between Salesforce CRM and curriculum records (Kuali).
+* Created Power Apps and Microsoft Forms/Excel intake workflows to structure recurring communications; proposed a decision-support framework to standardize complex exam booking protocols across departments.
+* Independently managed Summer and Fall 2026 exam scheduling (including deferred exams), delivered high-stakes examination instructions, and supported live exam monitoring, software onboarding, and Wi-Fi troubleshooting.
+* Led pre-term eClass course setup and formatted course evaluation responses into instructor-ready reports, triaging sensitive matters for leadership review; authored step-by-step SOPs, checklists, and workflow diagrams.
+
+COMMUNICATION & MARKETING ASSISTANT | APR 2024 – JUL 2025
+SmartTO, Innovation York, York University | Toronto, ON
+* Engineered an automated Python and CSV data pipeline to collect, clean, normalize, validate, and deduplicate stakeholder records prior to CRM loading, lifting qualified leads by 30% and outreach conversion by 15%.
+* Contributed to the CRM implementation discovery phase, mapping end-to-end flows across academic operations, industry partnerships, government funding allocation streams, and clean-tech startups.
+* Scaled the initiative's LinkedIn presence from 114 to 1,000+ followers with an industry-leading 26% engagement rate, generating 87,000+ impressions and 17,000+ clicks.
+* Built executive Excel dashboards summarizing engagement metrics for leadership, tracked stakeholder follow-up checkpoints, monitored grant-based budget tracking and contracts, and analyzed Mailchimp campaign analytics.
+
+WEBSITE & SOCIAL MEDIA COORDINATOR | MAY 2023 – APR 2024
+Career Centre, Division of Students, York University | Toronto, ON
+* Coordinated student-facing career workshops, webinars, and employer sessions serving 25 to 400 attendees, driving a 60% participation increase through timely multi-channel promotion and structured follow-up.
+* Created engaging short-form digital content (Instagram Reels, Stories, and Canva visual assets) spotlighting Career Centre services, driving student awareness and participation through accessible storytelling.
+* Analyzed Google Analytics and user heatmaps to optimize information pathways across WordPress and Drupal websites, reducing bounce rate by 17%, accelerating load times by 20%, and lifting user satisfaction by 25%.
+* Delivered one-to-one service navigation and authored plain-language digital resources tailored for international, racialized, and diverse students with varying digital literacy and language needs.
+
+WEBSITE & DATABASE ASSISTANT | MAY 2022 – APR 2023
+Faculty of Liberal Arts & Professional Studies, York University | Toronto, ON
+* Maintained accuracy and AODA/WCAG accessibility compliance across 95+ institutional websites and 60+ databases supporting academic planning, course catalogues, and student inquiries.
+* Drove a 25% increase in organic search traffic through systematic SEO metadata audits; partnered with faculty on visual graphics boosting engagement by 20%.
+* Verified records against authorized sources, logged data ownership in structured Excel trackers, and authored step-by-step SOPs that reduced ad-hoc administrative support requests.
+
+CCTV & SECURITY OPERATIONS OPERATOR (PART-TIME) | DEC 2023 – JAN 2026
+Department of Community Safety, York University | Toronto, ON
+* Monitored a 1,400-camera network safeguarding 46,000+ campus community members; improved incident resolution time by 30% through disciplined time-stamped logging and cut system downtime by 20% via daily hardware audits under strict confidentiality protocols.
+
+SELECTED VALUE FOR BUSINESS SYSTEMS & OPERATIONS
+* Immediate Contribution: Proven ability to step directly into complex academic or enterprise environments, reconcile multi-system enterprise records (Core Database / SIS, Salesforce CRM, Curriculum Systems / Kuali, LMS), automate repetitive administrative bottlenecks using Python and Excel, and establish reliable SOPs from day one.
+* Transferable Value: Combines technical Computer Science rigor with four years of hands-on institutional service at York University, bridging technical development teams, administrative leaders, and student/faculty end-users with plain-language clarity and equity-informed navigation.
+* Developmental Approach: Active candidate for the Salesforce Administrator certification; quickly masters proprietary institutional platforms and enterprise policies through approved documentation, supervised operational practice, historical data reviews, and rigorous exception audits.
+
+TECHNOLOGY & TOOLS
+* Microsoft 365: Word, Excel (Pivots, Advanced Formulas, XLOOKUP), PowerPoint, Outlook, Teams, Forms, Power Apps, SharePoint-supported files
+* Enterprise & academic systems: Core Student Information System / Database (SIS), Curriculum Management (Kuali), LMS (eClass / Moodle), Intake Automation (MachForm), Salesforce CRM, 25Live, Zoom
+* Web and communications: WordPress, Drupal, Google Analytics, Mailchimp, Hootsuite, Canva, Adobe Photoshop, Plain-Language Communications
+* Data and workflow: Databases (Azure SQL, PostgreSQL), Python (Pandas, ETL scripts), CSV workflows, Process Mapping, SOP authoring
+* Certifications: ISSA Certified Health Coach (ID 402375719) • ISSA Youth, Senior & Lifespan Coach (ID 40011690) • IBM Enterprise Design Thinking Practitioner
+  </script>
+
+  <!-- ATS Copy Button Logic -->
+  <script>
+    (function () {
+      const copyBtn = document.getElementById('copyAtsBtn');
+      const copyIcon = document.getElementById('copyAtsIcon');
+      const copyLabel = document.getElementById('copyAtsLabel');
+      const payloadEl = document.getElementById('atsResumePayload');
+
+      if (!copyBtn || !payloadEl) return;
+
+      const rawText = payloadEl.textContent.trim();
+
+      function showCopiedFeedback() {
+        copyBtn.classList.add('copied');
+        if (copyIcon) copyIcon.textContent = '✓';
+        if (copyLabel) copyLabel.textContent = 'Copied ATS Text!';
+        setTimeout(function () {
+          copyBtn.classList.remove('copied');
+          if (copyIcon) copyIcon.textContent = '📋';
+          if (copyLabel) copyLabel.textContent = 'Copy ATS Plain Text';
+        }, 2500);
+      }
+
+      function fallbackCopy(text) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.top = '-9999px';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+          document.execCommand('copy');
+          showCopiedFeedback();
+        } catch (e) {
+          window.prompt('Copy your ATS resume text manually:', text);
+        }
+        document.body.removeChild(ta);
+      }
+
+      copyBtn.addEventListener('click', function () {
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(rawText)
+            .then(showCopiedFeedback)
+            .catch(function () {
+              fallbackCopy(rawText);
+            });
+        } else {
+          fallbackCopy(rawText);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
