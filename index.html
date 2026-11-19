@@ -40,7 +40,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=1.4">
+  <link rel="stylesheet" href="css/style.css?v=1.5">
 
   <!-- FOUC Prevention for Theme -->
   <script>
@@ -1161,118 +1161,244 @@
         <span class="eb">09 / Endorsements</span>
         <h2>Collaborative Impact &amp; Recommendations</h2>
         <p class="sub">Authentic feedback from management, supervisors, and colleagues across York University units.</p>
-        <div class="grid">
-          <!-- Emoline Fox, Manager, Student Experience, OsgoodePD -->
-          <div class="card test-card">
-            <div>
-              <div class="quote-icon" aria-hidden="true">&ldquo;</div>
-              <blockquote class="test-quote">
-                &ldquo;It was a pleasure having Saikat on the team... I don’t think I’ll ever forget his interview, especially the avatar! He made an impression right from the beginning. I also really appreciated all the cool coding and little tricks he showed us to make our work easier. I know I learned a few things from him that I’ll continue to use! Thank you for everything you contributed.&rdquo;
-              </blockquote>
-            </div>
-            <div>
-              <div class="test-author">
-                <div class="av-small" aria-hidden="true">EF</div>
-                <div>
-                  <strong>Emoline Fox</strong>
-                  <small>Manager, Student Experience &bull; Osgoode Professional Development, York University</small>
-                </div>
-              </div>
-              <div class="chips" style="margin-top:14px; margin-bottom:0">
-                <span class="chip">Workflow Automation &amp; Coding</span>
-                <span class="chip">Management Upskilling</span>
-              </div>
-            </div>
+        <div class="slider-controls">
+          <span class="slider-hint">Continuous slow drift &bull; Hover or tap any card to pause</span>
+          <div class="slider-btns">
+            <button class="slider-btn" id="sliderToggle" type="button" aria-label="Pause motion">⏸ Pause</button>
           </div>
+        </div>
 
-          <!-- Eric Wong, Manager, IT & Innovation, OsgoodePD -->
-          <div class="card test-card">
-            <div>
-              <div class="quote-icon" aria-hidden="true">&ldquo;</div>
-              <blockquote class="test-quote">
-                &ldquo;It was a pleasure working with Saikat at OsgoodePD, and we truly appreciate the contributions he made to our academic operations and systems during his time with the team. Wishing him all the best and continued success in everything ahead.&rdquo;
-              </blockquote>
-            </div>
-            <div>
-              <div class="test-author">
-                <div class="av-small" aria-hidden="true">EW</div>
-                <div>
-                  <strong>Eric Wong, <span style="font-size:0.8rem; font-weight:500; color:var(--muted)">PMP CSM CSPO</span></strong>
-                  <small>Manager, Information Technology &amp; Innovation &bull; Osgoode Professional Development, York University</small>
+        <div class="endorsements-slider" aria-label="Colleague and supervisor endorsements slider">
+          <div class="endorsements-track">
+            <!-- Set 1 (Original) -->
+            <!-- Emoline Fox, Manager, Student Experience, OsgoodePD -->
+            <div class="card test-card">
+              <div>
+                <div class="quote-icon" aria-hidden="true">&ldquo;</div>
+                <blockquote class="test-quote">
+                  &ldquo;It was a pleasure having Saikat on the team... I don’t think I’ll ever forget his interview, especially the avatar! He made an impression right from the beginning. I also really appreciated all the cool coding and little tricks he showed us to make our work easier. I know I learned a few things from him that I’ll continue to use! Thank you for everything you contributed.&rdquo;
+                </blockquote>
+              </div>
+              <div>
+                <div class="test-author">
+                  <div class="av-small" aria-hidden="true">EF</div>
+                  <div>
+                    <strong>Emoline Fox</strong>
+                    <small>Manager, Student Experience &bull; Osgoode Professional Development, York University</small>
+                  </div>
+                </div>
+                <div class="chips" style="margin-top:14px; margin-bottom:0">
+                  <span class="chip">Workflow Automation &amp; Coding</span>
+                  <span class="chip">Management Upskilling</span>
                 </div>
               </div>
-              <div class="chips" style="margin-top:14px; margin-bottom:0">
-                <span class="chip">IT &amp; Innovation Leadership</span>
-                <span class="chip">Academic Systems Ops</span>
-              </div>
             </div>
-          </div>
 
-          <!-- Shanthuru Kalaiselvan, Career Centre (Division of Students) -->
-          <div class="card test-card">
-            <div>
-              <div class="quote-icon" aria-hidden="true">&ldquo;</div>
-              <blockquote class="test-quote">
-                &ldquo;It was amazing to work with you for almost a year now and I have never met someone so calm, composed and organized as you! You are literally one of the most hard working people I know and I learned so much from just watching your work habits—such a role model!&rdquo;
-              </blockquote>
-            </div>
-            <div>
-              <div class="test-author">
-                <div class="av-small" aria-hidden="true">SK</div>
-                <div>
-                  <strong>Shanthuru Kalaiselvan</strong>
-                  <small>Graphics &amp; Multimedia Designer &bull; Division of Students, York University</small>
+            <!-- Eric Wong, Manager, IT & Innovation, OsgoodePD -->
+            <div class="card test-card">
+              <div>
+                <div class="quote-icon" aria-hidden="true">&ldquo;</div>
+                <blockquote class="test-quote">
+                  &ldquo;It was a pleasure working with Saikat at OsgoodePD, and we truly appreciate the contributions he made to our academic operations and systems during his time with the team. Wishing him all the best and continued success in everything ahead.&rdquo;
+                </blockquote>
+              </div>
+              <div>
+                <div class="test-author">
+                  <div class="av-small" aria-hidden="true">EW</div>
+                  <div>
+                    <strong>Eric Wong, <span style="font-size:0.8rem; font-weight:500; color:var(--muted)">PMP CSM CSPO</span></strong>
+                    <small>Manager, Information Technology &amp; Innovation &bull; Osgoode Professional Development, York University</small>
+                  </div>
+                </div>
+                <div class="chips" style="margin-top:14px; margin-bottom:0">
+                  <span class="chip">IT &amp; Innovation Leadership</span>
+                  <span class="chip">Academic Systems Ops</span>
                 </div>
               </div>
-              <div class="chips" style="margin-top:14px; margin-bottom:0">
-                <span class="chip">Poise Under Pressure</span>
-                <span class="chip">Role Model Work Habits</span>
-              </div>
             </div>
-          </div>
 
-          <!-- Myla Cardenas, Division of Students -->
-          <div class="card test-card">
-            <div>
-              <div class="quote-icon" aria-hidden="true">&ldquo;</div>
-              <blockquote class="test-quote">
-                &ldquo;Thank you SO much for all your incredible work on the Career Centre website redevelopment. So happy to have had you on our team, and please let us know if we can do anything for you in the future!&rdquo;
-              </blockquote>
-            </div>
-            <div>
-              <div class="test-author">
-                <div class="av-small" aria-hidden="true">MC</div>
-                <div>
-                  <strong>Myla Cardenas</strong>
-                  <small>Website &amp; CRM Coordinator &bull; Division of Students, York University</small>
+            <!-- Shanthuru Kalaiselvan, Career Centre (Division of Students) -->
+            <div class="card test-card">
+              <div>
+                <div class="quote-icon" aria-hidden="true">&ldquo;</div>
+                <blockquote class="test-quote">
+                  &ldquo;It was amazing to work with you for almost a year now and I have never met someone so calm, composed and organized as you! You are literally one of the most hard working people I know and I learned so much from just watching your work habits—such a role model!&rdquo;
+                </blockquote>
+              </div>
+              <div>
+                <div class="test-author">
+                  <div class="av-small" aria-hidden="true">SK</div>
+                  <div>
+                    <strong>Shanthuru Kalaiselvan</strong>
+                    <small>Graphics &amp; Multimedia Designer &bull; Division of Students, York University</small>
+                  </div>
+                </div>
+                <div class="chips" style="margin-top:14px; margin-bottom:0">
+                  <span class="chip">Poise Under Pressure</span>
+                  <span class="chip">Role Model Work Habits</span>
                 </div>
               </div>
-              <div class="chips" style="margin-top:14px; margin-bottom:0">
-                <span class="chip">Website &amp; CRM Coordination</span>
-                <span class="chip">Standing Reference</span>
-              </div>
             </div>
-          </div>
 
-          <!-- Shanthini Jeyakumar, Career Centre -->
-          <div class="card test-card">
-            <div>
-              <div class="quote-icon" aria-hidden="true">&ldquo;</div>
-              <blockquote class="test-quote">
-                &ldquo;Thank you for all your help and support! You are a rock star and will be missed. It has been great collaborating on our employer events, calendar logistics, and website updates.&rdquo;
-              </blockquote>
-            </div>
-            <div>
-              <div class="test-author">
-                <div class="av-small" aria-hidden="true">SJ</div>
-                <div>
-                  <strong>Shanthini Jeyakumar</strong>
-                  <small>Employer Services &amp; Events Coordinator &bull; Career Centre, York University</small>
+            <!-- Myla Cardenas, Division of Students -->
+            <div class="card test-card">
+              <div>
+                <div class="quote-icon" aria-hidden="true">&ldquo;</div>
+                <blockquote class="test-quote">
+                  &ldquo;Thank you SO much for all your incredible work on the Career Centre website redevelopment. So happy to have had you on our team, and please let us know if we can do anything for you in the future!&rdquo;
+                </blockquote>
+              </div>
+              <div>
+                <div class="test-author">
+                  <div class="av-small" aria-hidden="true">MC</div>
+                  <div>
+                    <strong>Myla Cardenas</strong>
+                    <small>Website &amp; CRM Coordinator &bull; Division of Students, York University</small>
+                  </div>
+                </div>
+                <div class="chips" style="margin-top:14px; margin-bottom:0">
+                  <span class="chip">Website &amp; CRM Coordination</span>
+                  <span class="chip">Standing Reference</span>
                 </div>
               </div>
-              <div class="chips" style="margin-top:14px; margin-bottom:0">
-                <span class="chip">Employer Events Support</span>
-                <span class="chip">Rapid Service Delivery</span>
+            </div>
+
+            <!-- Shanthini Jeyakumar, Career Centre -->
+            <div class="card test-card">
+              <div>
+                <div class="quote-icon" aria-hidden="true">&ldquo;</div>
+                <blockquote class="test-quote">
+                  &ldquo;Thank you for all your help and support! You are a rock star and will be missed. It has been great collaborating on our employer events, calendar logistics, and website updates.&rdquo;
+                </blockquote>
+              </div>
+              <div>
+                <div class="test-author">
+                  <div class="av-small" aria-hidden="true">SJ</div>
+                  <div>
+                    <strong>Shanthini Jeyakumar</strong>
+                    <small>Employer Services &amp; Events Coordinator &bull; Career Centre, York University</small>
+                  </div>
+                </div>
+                <div class="chips" style="margin-top:14px; margin-bottom:0">
+                  <span class="chip">Employer Events Support</span>
+                  <span class="chip">Rapid Service Delivery</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Set 2 (Cloned for Infinite Marquee Loop) -->
+            <!-- Emoline Fox, Manager, Student Experience, OsgoodePD -->
+            <div class="card test-card" aria-hidden="true">
+              <div>
+                <div class="quote-icon" aria-hidden="true">&ldquo;</div>
+                <blockquote class="test-quote">
+                  &ldquo;It was a pleasure having Saikat on the team... I don’t think I’ll ever forget his interview, especially the avatar! He made an impression right from the beginning. I also really appreciated all the cool coding and little tricks he showed us to make our work easier. I know I learned a few things from him that I’ll continue to use! Thank you for everything you contributed.&rdquo;
+                </blockquote>
+              </div>
+              <div>
+                <div class="test-author">
+                  <div class="av-small" aria-hidden="true">EF</div>
+                  <div>
+                    <strong>Emoline Fox</strong>
+                    <small>Manager, Student Experience &bull; Osgoode Professional Development, York University</small>
+                  </div>
+                </div>
+                <div class="chips" style="margin-top:14px; margin-bottom:0">
+                  <span class="chip">Workflow Automation &amp; Coding</span>
+                  <span class="chip">Management Upskilling</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Eric Wong, Manager, IT & Innovation, OsgoodePD -->
+            <div class="card test-card" aria-hidden="true">
+              <div>
+                <div class="quote-icon" aria-hidden="true">&ldquo;</div>
+                <blockquote class="test-quote">
+                  &ldquo;It was a pleasure working with Saikat at OsgoodePD, and we truly appreciate the contributions he made to our academic operations and systems during his time with the team. Wishing him all the best and continued success in everything ahead.&rdquo;
+                </blockquote>
+              </div>
+              <div>
+                <div class="test-author">
+                  <div class="av-small" aria-hidden="true">EW</div>
+                  <div>
+                    <strong>Eric Wong, <span style="font-size:0.8rem; font-weight:500; color:var(--muted)">PMP CSM CSPO</span></strong>
+                    <small>Manager, Information Technology &amp; Innovation &bull; Osgoode Professional Development, York University</small>
+                  </div>
+                </div>
+                <div class="chips" style="margin-top:14px; margin-bottom:0">
+                  <span class="chip">IT &amp; Innovation Leadership</span>
+                  <span class="chip">Academic Systems Ops</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shanthuru Kalaiselvan, Career Centre (Division of Students) -->
+            <div class="card test-card" aria-hidden="true">
+              <div>
+                <div class="quote-icon" aria-hidden="true">&ldquo;</div>
+                <blockquote class="test-quote">
+                  &ldquo;It was amazing to work with you for almost a year now and I have never met someone so calm, composed and organized as you! You are literally one of the most hard working people I know and I learned so much from just watching your work habits—such a role model!&rdquo;
+                </blockquote>
+              </div>
+              <div>
+                <div class="test-author">
+                  <div class="av-small" aria-hidden="true">SK</div>
+                  <div>
+                    <strong>Shanthuru Kalaiselvan</strong>
+                    <small>Graphics &amp; Multimedia Designer &bull; Division of Students, York University</small>
+                  </div>
+                </div>
+                <div class="chips" style="margin-top:14px; margin-bottom:0">
+                  <span class="chip">Poise Under Pressure</span>
+                  <span class="chip">Role Model Work Habits</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Myla Cardenas, Division of Students -->
+            <div class="card test-card" aria-hidden="true">
+              <div>
+                <div class="quote-icon" aria-hidden="true">&ldquo;</div>
+                <blockquote class="test-quote">
+                  &ldquo;Thank you SO much for all your incredible work on the Career Centre website redevelopment. So happy to have had you on our team, and please let us know if we can do anything for you in the future!&rdquo;
+                </blockquote>
+              </div>
+              <div>
+                <div class="test-author">
+                  <div class="av-small" aria-hidden="true">MC</div>
+                  <div>
+                    <strong>Myla Cardenas</strong>
+                    <small>Website &amp; CRM Coordinator &bull; Division of Students, York University</small>
+                  </div>
+                </div>
+                <div class="chips" style="margin-top:14px; margin-bottom:0">
+                  <span class="chip">Website &amp; CRM Coordination</span>
+                  <span class="chip">Standing Reference</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shanthini Jeyakumar, Career Centre -->
+            <div class="card test-card" aria-hidden="true">
+              <div>
+                <div class="quote-icon" aria-hidden="true">&ldquo;</div>
+                <blockquote class="test-quote">
+                  &ldquo;Thank you for all your help and support! You are a rock star and will be missed. It has been great collaborating on our employer events, calendar logistics, and website updates.&rdquo;
+                </blockquote>
+              </div>
+              <div>
+                <div class="test-author">
+                  <div class="av-small" aria-hidden="true">SJ</div>
+                  <div>
+                    <strong>Shanthini Jeyakumar</strong>
+                    <small>Employer Services &amp; Events Coordinator &bull; Career Centre, York University</small>
+                  </div>
+                </div>
+                <div class="chips" style="margin-top:14px; margin-bottom:0">
+                  <span class="chip">Employer Events Support</span>
+                  <span class="chip">Rapid Service Delivery</span>
+                </div>
               </div>
             </div>
           </div>
@@ -1306,6 +1432,6 @@
   </footer>
 
   <!-- Core Script -->
-  <script src="js/main.js?v=1.3" defer></script>
+  <script src="js/main.js?v=1.4" defer></script>
 </body>
 </html>
