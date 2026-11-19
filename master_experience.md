@@ -231,7 +231,7 @@ Business Systems, Operations, and Workflow Automation Specialist with a Computer
 * **Core Competencies Validated**: IT & Innovation Leadership, Academic Systems Operations, Process Execution, PMP/Agile Project Governance.
 
 ### Shanthuru Kalaiselvan — Graphics & Multimedia Designer
-* **Organization**: Career Centre, Division of Students, York University
+* **Organization**: Division of Students, York University
 * **Verified Quote**:
   > *"It was amazing to work with you for almost a year now and I have never met someone so calm, composed and organized as you! You are literally one of the most hard working people I know and I learned so much from just watching your work habits—such a role model! Good luck on everything, you will achieve great things and hope to see you around!"*
 * **Core Competencies Validated**: Poise & Composure Under Pressure, Rigorous Work Ethic, Peer Role Model & Cultural Anchor, High-Volume Digital & Creative Collaboration.
