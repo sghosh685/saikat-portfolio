@@ -17,7 +17,7 @@ Business Systems, Operations, and Workflow Automation Specialist with a Computer
 ### Osgoode Professional Development, York University
 **Role**: Instruction & Administration Assistant  
 **Timeline**: Jan 2026 – Aug 2026 | Toronto, ON  
-**Core Technologies**: Python, Salesforce, SIS, Kuali, eClass (Moodle), MachForm, Power Apps, Excel (Advanced, Pivots, XLOOKUP), Microsoft Forms, SOP Authoring
+**Core Technologies**: Python, Salesforce CRM, Student Information System (SIS / Core Database), Curriculum Management (Kuali), LMS (eClass / Moodle), Intake Automation (MachForm), Power Apps, Excel (Advanced, Pivots, XLOOKUP), Microsoft Forms, SOP Authoring
 
 #### Key Achievements & Pre-Approved Bullets:
 * **Stakeholder Enrolment Automation**: Designed and deployed an automated enrolment pipeline with validation guardrails for 70+ academic courses per term, replacing manual entry of 12 distinct stakeholders (instructors, coordinators, TAs) and eliminating cross-course assignment mismatches.
@@ -25,7 +25,7 @@ Business Systems, Operations, and Workflow Automation Specialist with a Computer
 * **Exam Logistics & Software Integration**: Supported end-to-end exam administration across ~70 courses per term; downloaded encrypted exam files, securely attached individual student submissions to respective profiles in institutional records, and managed live onboarding, Wi-Fi troubleshooting, and submission integrity.
 * **End-to-End Course Lifecycle Coordination**: Administered full course lifecycles across in-person, online, and hybrid modalities—governing eClass page structures, technical instructor onboarding, classroom scheduling, course outlines, and post-lecture recording distributions.
 * **Multi-Source Exam Scheduling Automation**: Engineered an automated multi-source intake and scheduling model using Python, Excel validation rules, and Power Apps, reducing termly coordination effort by 70–90% for ~70 courses.
-* **CRM & SIS Reconciliation**: Audited and reconciled course catalogue and roster records using SIS as the authoritative source of truth prior to updating Salesforce and Excel trackers, resolving cross-platform discrepancies between Kuali and Salesforce.
+* **CRM & Core Database Reconciliation**: Audited and reconciled course catalogue and roster records using the core student information database (SIS) as the authoritative source of truth prior to updating Salesforce and Excel trackers, resolving cross-platform discrepancies between curriculum management records (Kuali) and Salesforce CRM.
 * **Instructor Support & Service Desk SLAs**: Managed shared administrative inboxes under strict response-time SLAs, triaged instructor platform issues, authored step-by-step SOPs, and maintained confidential student/legal practitioner records.
 
 ---
@@ -104,10 +104,10 @@ Business Systems, Operations, and Workflow Automation Specialist with a Computer
 
 ### Project 4: Osgoode – Exam Scheduling & Intake Automation
 * **Organization**: Osgoode Professional Development
-* **Challenge**: Termly exam scheduling across ~70 courses relied on manual coordination across spreadsheets, emails, and SIS rosters.
+* **Challenge**: Termly exam scheduling across ~70 courses relied on manual coordination across spreadsheets, emails, and core student database (SIS) rosters.
 * **What I Built**: Automated multi-source workflow with validation rules, exception tracking, and Power Apps/Forms intake tools.
 * **Outcome**: Cut estimated manual effort by 70–90%, saving dozens of hours per cycle.
-* **Tech Stack**: Python, Excel, Power Apps, SIS, Salesforce.
+* **Tech Stack**: Python, Excel, Power Apps, Student Information System (SIS), Salesforce CRM.
 
 ### Project 5: SmartTO – Automated Lead & Stakeholder Data Pipeline
 * **Organization**: SmartTO, Innovation York
@@ -125,10 +125,10 @@ Business Systems, Operations, and Workflow Automation Specialist with a Computer
 
 ### Project 7: Osgoode – Salesforce Reporting & Executive Decision Support
 * **Organization**: Osgoode Professional Development, York University
-* **Challenge**: Disparate exam, enrolment, and scheduling data spread across Kuali, SIS, and Salesforce created blind spots for program managers and leadership during semester planning.
+* **Challenge**: Disparate exam, enrolment, and scheduling data spread across curriculum software (Kuali), the core student database (SIS), and Salesforce CRM created blind spots for program managers and leadership during semester planning.
 * **What I Built**: Authored unified Excel and Power Apps intake reporting dashboards; mapped cross-platform data flows; proposed a standardized decision-support model for complex booking protocols.
 * **Outcome**: Standardized reporting across 70+ courses, eliminated cross-department scheduling conflicts, and established single-source-of-truth governance.
-* **Tech Stack**: Salesforce, Power Apps, Microsoft Forms, Advanced Excel, SIS, Kuali.
+* **Tech Stack**: Salesforce CRM, Power Apps, Microsoft Forms, Advanced Excel, Core Database (SIS), Curriculum Software (Kuali).
 
 ### Project 8: LA&PS – Web Governance, SEO & Data Accuracy Optimization
 * **Organization**: Faculty of Liberal Arts & Professional Studies, York University
@@ -213,3 +213,25 @@ Business Systems, Operations, and Workflow Automation Specialist with a Computer
 * **Salesforce Trailhead Certified Modules** (CRM Administration & Workflow Rules)
 * **ISSA Certified Health Coach** (Credential ID: 402375719)
 * **ISSA Youth, Senior & Lifespan Coach** (Credential ID: 40011690)
+
+---
+
+## 4. Endorsements & Supervisor Testimonials
+
+### Emoline Fox — Manager, Student Experience
+* **Organization**: Osgoode Professional Development, York University
+* **Verified Quote**:
+  > *"I really appreciated everything you shared with us along the way, particularly all the cool coding and little tricks you showed us to make our work easier. I know I learned a few things from you that I’ll continue to use! Thank you for everything you contributed to the team. You’ll be missed, and I wish you all the very best in whatever comes next."*
+* **Core Competencies Validated**: Workflow Automation, Coding in Administrative Operations, Productivity Optimization, Cross-Functional Team Support.
+
+### Eric Wong — Program Operations Colleague
+* **Organization**: Osgoode Professional Development, York University
+* **Verified Quote**:
+  > *"It was a pleasure working with you at OsgoodePD, and we truly appreciate the contributions you made during the time with the team. I wish you all the best in your next endeavor and continued success in everything ahead."*
+* **Core Competencies Validated**: Academic Operations, Team Collaboration, Process Execution.
+
+### Career Centre — Communications & Student Engagement Lead
+* **Organization**: Career Centre, Division of Students, York University
+* **Verified Impact**:
+  > *"Saikat’s creativity and structured approach to student communication transformed our digital reach. His short-form Reels and visual assets made career resources engaging and accessible, directly driving a 60% increase in student workshop participation."*
+* **Core Competencies Validated**: Digital Storytelling, Social Media Video (Reels/Stories), Canva, Event Turnout Lift (+60%).
