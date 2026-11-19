@@ -248,6 +248,48 @@
     }
   }
 
+  // Endorsements & Credentials Dossier Modal
+  const openEndorsementsBtn = document.getElementById('openEndorsementsModal');
+  const closeEndorsementsBtn = document.getElementById('closeEndorsementsModal');
+  const endorsementsModal = document.getElementById('endorsementsModal');
+  const closeDossierFooterBtn = document.getElementById('closeDossierFooterBtn');
+
+  if (openEndorsementsBtn && endorsementsModal) {
+    function openModal() {
+      endorsementsModal.showModal();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      endorsementsModal.close();
+      document.body.style.overflow = '';
+      if (openEndorsementsBtn) {
+        openEndorsementsBtn.focus();
+      }
+    }
+
+    openEndorsementsBtn.addEventListener('click', openModal);
+
+    if (closeEndorsementsBtn) {
+      closeEndorsementsBtn.addEventListener('click', closeModal);
+    }
+    if (closeDossierFooterBtn) {
+      closeDossierFooterBtn.addEventListener('click', closeModal);
+    }
+
+    // Dismiss on backdrop click
+    endorsementsModal.addEventListener('click', function (e) {
+      if (e.target === endorsementsModal) {
+        closeModal();
+      }
+    });
+
+    // Native cancel event (ESC key) restores body overflow
+    endorsementsModal.addEventListener('cancel', function () {
+      document.body.style.overflow = '';
+    });
+  }
+
   window.addEventListener('DOMContentLoaded', handleDeepLinkHash);
   window.addEventListener('load', handleDeepLinkHash);
   window.addEventListener('hashchange', handleDeepLinkHash);

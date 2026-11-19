@@ -1212,6 +1212,237 @@ section, .proj, .card, article {
 }
 
 /* ==========================================================================
+   Endorsements & Credentials Dossier Modal
+   ========================================================================== */
+.endorsements-action-wrap {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.endorsements-modal {
+  max-width: 960px;
+  width: 92vw;
+  max-height: 88vh;
+  margin: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--text);
+  padding: 0;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+.endorsements-modal::backdrop {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.endorsements-modal[open] {
+  display: flex;
+  flex-direction: column;
+  animation: modal-appear 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.modal-header-text h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-header-text p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 1.25rem;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.modal-close-btn:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.modal-body {
+  padding: 24px 28px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.modal-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-card:hover {
+  border-color: var(--accent);
+}
+
+.modal-card-rel {
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+.modal-card-rel strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.modal-creds-strip {
+  background: var(--accent-soft);
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  border-radius: 12px;
+  padding: 20px 22px;
+}
+
+.modal-creds-strip h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 12px 0;
+}
+
+.modal-creds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.modal-cred-item {
+  font-size: 0.86rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.modal-cred-item strong {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.modal-cred-item span {
+  font-size: 0.80rem;
+  color: var(--muted);
+}
+
+.modal-footer {
+  padding: 16px 28px;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+.modal-footer-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-footer-note strong {
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .modal-header {
+    padding: 18px 20px 14px;
+  }
+  .modal-body {
+    padding: 18px 20px;
+    gap: 18px;
+  }
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-footer {
+    padding: 14px 20px;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .modal-footer-note {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
    Print Stylesheet for Portfolio Page
    ========================================================================== */
 @media print {
