@@ -268,6 +268,7 @@ nav ul a.act {
 .hero {
   padding: 88px 0 56px;
   position: relative;
+  overflow-x: clip;
 }
 .hero::before {
   content: "";
