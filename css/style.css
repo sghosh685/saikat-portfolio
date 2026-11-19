@@ -1239,10 +1239,20 @@ section, .proj, .card, article {
   -webkit-backdrop-filter: blur(8px);
 }
 
+.endorsements-modal:not([open]) {
+  display: none !important;
+}
+
 .endorsements-modal[open] {
-  display: flex;
-  flex-direction: column;
-  animation: modal-appear 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex !important;
+  flex-direction: column !important;
+  position: fixed !important;
+  inset: 0 !important;
+  margin: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 100000 !important;
+  animation: modal-appear 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes modal-appear {
