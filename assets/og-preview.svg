@@ -21,13 +21,13 @@
 
   <!-- Tag -->
   <rect x="170" y="93" width="310" height="42" rx="21" fill="#16332f" stroke="#0f766e" stroke-width="1.5" />
-  <text x="325" y="120" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#4fd1c0" text-anchor="middle">Business Systems &amp; Operations</text>
+  <text x="325" y="120" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600" fill="#4fd1c0" text-anchor="middle">Systems &amp; Operations Specialist</text>
 
   <!-- Title & Headline -->
   <text x="80" y="240" font-family="Georgia, serif" font-size="64" font-weight="700" fill="#ffffff">Saikat Ghosh</text>
   <text x="80" y="305" font-family="Georgia, serif" font-size="32" font-weight="500" fill="#4fd1c0">Turning manual processes into reliable, automated workflows.</text>
 
-  <text x="80" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="22" fill="#9aa4af">Salesforce &amp; CRM Operations · Workflow Automation · Data Quality · Web Governance</text>
+  <text x="80" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="22" fill="#9aa4af">Workflow Automation · Salesforce &amp; CRM · Data Integrity · Process Guardrails</text>
   <text x="80" y="405" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="20" fill="#717c8a">York University (OsgoodePD · SmartTO · Career Centre · LA&amp;PS) · B.Sc. Computer Science</text>
 
   <!-- Metric Badges -->
