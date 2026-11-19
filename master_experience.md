@@ -221,8 +221,14 @@ Business Systems, Operations, and Workflow Automation Specialist with a Computer
 ### Emoline Fox — Manager, Student Experience
 * **Organization**: Osgoode Professional Development, York University
 * **Verified Quote**:
-  > *"I really appreciated everything you shared with us along the way, particularly all the cool coding and little tricks you showed us to make our work easier. I know I learned a few things from you that I’ll continue to use! Thank you for everything you contributed to the team. You’ll be missed, and I wish you all the very best in whatever comes next."*
+  > *"I really appreciated everything you shared with us along the way, particularly all the cool coding and little tricks you showed us to make our work easier. I know I learned a few things from him that I’ll continue to use! Thank you for everything you contributed to the team. You’ll be missed, and I wish you all the very best in whatever comes next."*
 * **Core Competencies Validated**: Workflow Automation, Coding in Administrative Operations, Productivity Optimization, Cross-Functional Team Support.
+
+### Shanthuru Kalaiselvan — DMD Student Team Colleague
+* **Organization**: Faculty of Liberal Arts & Professional Studies, York University
+* **Verified Quote**:
+  > *"It was amazing to work with you for almost a year now and I have never met someone so calm, composed and organized as you! You are literally one of the most hard working people I know and I learned so much from just watching your work habits—such a role model! Good luck on everything, you will achieve great things and hope to see you around!"*
+* **Core Competencies Validated**: Work Ethic, Organizational Composure, Team Role Model, High-Volume Web & Database Administration.
 
 ### Eric Wong — Program Operations Colleague
 * **Organization**: Osgoode Professional Development, York University
