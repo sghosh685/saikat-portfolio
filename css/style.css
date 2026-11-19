@@ -1136,27 +1136,6 @@ section, .proj, .card, article {
   50% { opacity: 1; transform: scale(1.15); }
 }
 
-.slider-btn {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  color: var(--text);
-  padding: 5px 12px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.slider-btn:hover {
-  background: var(--surface-hover);
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
 @keyframes marquee-drift {
   0% {
     transform: translateX(0);

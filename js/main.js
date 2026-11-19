@@ -254,22 +254,4 @@
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
     handleDeepLinkHash();
   }
-  // Endorsements slider pause/resume toggle
-  function initEndorsementsSlider() {
-    const sliderToggle = document.getElementById('sliderToggle');
-    const endorsementsTrack = document.querySelector('.endorsements-track');
-    if (sliderToggle && endorsementsTrack) {
-      sliderToggle.addEventListener('click', function () {
-        const isPaused = endorsementsTrack.classList.toggle('is-paused');
-        endorsementsTrack.style.animationPlayState = isPaused ? 'paused' : 'running';
-        sliderToggle.innerHTML = isPaused ? '▶ Play' : '⏸ Pause';
-        sliderToggle.setAttribute('aria-label', isPaused ? 'Play motion' : 'Pause motion');
-      });
-    }
-  }
-
-  window.addEventListener('DOMContentLoaded', initEndorsementsSlider);
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    initEndorsementsSlider();
-  }
 })();
