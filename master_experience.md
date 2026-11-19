@@ -224,39 +224,26 @@ Business Systems, Operations, and Workflow Automation Specialist with a Computer
   > *"I don’t think I’ll ever forget your interview, especially the avatar! You made an impression right from the beginning. 😊 I also really appreciated everything you shared with us along the way, particularly all the cool coding and little tricks you showed us to make our work easier. I know I learned a few things from you that I’ll continue to use! Thank you for everything you contributed to the team. You’ll be missed, and I wish you all the very best in whatever comes next."*
 * **Core Competencies Validated**: Workflow Automation, Practical Scripting/Coding in Administration, Staff & Management Upskilling, Memorable Technical Branding.
 
-### Shanthuru Kalaiselvan — DMD Digital Media & Web Team Colleague
+### Eric Wong, PMP CSM CSPO — Manager, Information Technology & Innovation
+* **Organization**: Osgoode Professional Development, York University
+* **Verified Quote**:
+  > *"It was a pleasure working with you at OsgoodePD, and we truly appreciate the contributions you made during the time with the team. I wish you all the best in your next endeavor and continued success in everything ahead, and hope our paths cross again."*
+* **Core Competencies Validated**: IT & Innovation Leadership, Academic Systems Operations, Process Execution, PMP/Agile Project Governance.
+
+### Shanthuru Kalaiselvan — Graphics & Multimedia Designer
 * **Organization**: Faculty of Liberal Arts & Professional Studies, York University
 * **Verified Quote**:
   > *"It was amazing to work with you for almost a year now and I have never met someone so calm, composed and organized as you! You are literally one of the most hard working people I know and I learned so much from just watching your work habits—such a role model! Good luck on everything, you will achieve great things and hope to see you around!"*
 * **Core Competencies Validated**: Poise & Composure Under Pressure, Rigorous Work Ethic, Peer Role Model & Cultural Anchor, High-Volume Web (95+ sites) & Database Administration.
+
+### Myla Cardenas — Website & CRM Coordinator
+* **Organization**: Career Centre, York University
+* **Verified Quote**:
+  > *"Thank you SO much for all your incredible work on the Career Centre website redevelopment. I wish you nothing but the best and please let us know if we can do anything for you in the future. So happy to have had you on our team!"*
+* **Core Competencies Validated**: Website & CRM Operations, Enterprise CMS Redevelopment, Cross-Functional Project Coordination, Standing Reference.
 
 ### Shanthini Jeyakumar — Employer Services & Events Coordinator
 * **Organization**: Career Centre, Division of Students, York University
 * **Verified Quote**:
   > *"Thank you for all your help and support! You are a rock star and will be missed. Warm regards, Shanthini."*
 * **Core Competencies Validated**: Rapid Operational Turnaround, Event Logistics & Calendar Coordination, Employer Relations Support, High-Reliability Customer Service.
-
-### Michael Tam — Program Lawyer, Professional Graduate & International Programs
-* **Organization**: Osgoode Professional Development, Osgoode Hall Law School, York University
-* **Verified Quote**:
-  > *"Stay in touch! I’m always around. You can also always reach me with my personal email: michael.wh.tam@gmail.com. Sincerely, Michael."*
-* **Core Competencies Validated**: Senior Legal Academic Stakeholder Trust, Professional Graduate Program Governance, Direct Executive Rapport & Mentorship.
-
-### Myla Cardenas & Bindu Balakrishnan — Web Redevelopment Team & Vice-Provost Students (VPS)
-* **Organization**: Career Centre & Division of Vice-Provost Students (VPS), York University
-* **Verified Quotes**:
-  > *"Thank you SO much for all your incredible work on the Career Centre website redevelopment. I wish you nothing but the best and please let us know if we can do anything for you in the future. So happy to have had you on our team!"* (Myla Cardenas)
-  > *"All the best to you Saikat... Thank you for all the work you have done for VPS!"* (Bindu Balakrishnan)
-* **Core Competencies Validated**: Enterprise CMS Redevelopment, University-wide Division (VPS) Digital Contributions, Open Professional References.
-
-### Brittany Maguire — Employer & Student Experiential Learning Coordinator
-* **Organization**: Career Centre, Division of Students, York University
-* **Verified Quote**:
-  > *"It was great working with you too. Thanks for all your work on the website and videos, it was very much appreciated. All the best! Brittany."*
-* **Core Competencies Validated**: Website Maintenance, Multimedia & Video Production for Career Resources, Experiential Education Collaboration.
-
-### Eric Wong — Program Operations Colleague
-* **Organization**: Osgoode Professional Development, York University
-* **Verified Quote**:
-  > *"It was a pleasure working with you at OsgoodePD, and we truly appreciate the contributions you made during the time with the team. I wish you all the best in your next endeavor and continued success in everything ahead."*
-* **Core Competencies Validated**: Academic Operations, Team Collaboration, Process Execution.
