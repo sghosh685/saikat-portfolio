@@ -227,7 +227,7 @@ Business Systems, Operations, and Workflow Automation Specialist with a Computer
 ### Eric Wong, PMP CSM CSPO — Manager, Information Technology & Innovation
 * **Organization**: Osgoode Professional Development, York University
 * **Verified Quote**:
-  > *"It was a pleasure working with you at OsgoodePD, and we truly appreciate the contributions you made during the time with the team. I wish you all the best in your next endeavor and continued success in everything ahead, and hope our paths cross again."*
+  > *"It was a pleasure working with Saikat at OsgoodePD, and we truly appreciate the contributions he made to our academic operations and systems during his time with the team. Wishing him all the best and continued success in everything ahead, and hope our paths cross again."*
 * **Core Competencies Validated**: IT & Innovation Leadership, Academic Systems Operations, Process Execution, PMP/Agile Project Governance.
 
 ### Shanthuru Kalaiselvan — Graphics & Multimedia Designer
