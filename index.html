@@ -40,7 +40,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=2.2">
+  <link rel="stylesheet" href="css/style.css?v=3.0">
 
   <!-- FOUC Prevention for Theme -->
   <script>
@@ -409,39 +409,10 @@
               <span class="chip">Power Apps</span>
               <span class="chip">Student Info Database (SIS) &amp; Salesforce CRM</span>
             </div>
-            <details class="proj-case-study">
-              <summary>View Architecture &amp; Sanitized Pipeline Logic</summary>
-              <div class="cs-body">
-                <span class="cs-badge">Sanitized Multi-Source Engine &bull; Conflict Matrix Architecture</span>
-                <p>To eliminate 70–90% of manual coordination overhead across ~70 courses per term, I architected an automated multi-source intake and scheduling engine:</p>
-                <div class="cs-flow">
-                  <div class="cs-step">
-                    <strong>Stage 1: Multi-Source Ingestion</strong>
-                    Federates exam parameters from Core SIS (student rosters), Salesforce CRM (course status), Kuali (syllabus format), and Power Apps/Forms (instructor requests).
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 2: Conflict &amp; Constraint Matrix</strong>
-                    Validates room capacity thresholds, instructor availability windows, and student accessibility accommodation requirements (extra time / private proctoring).
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 3: Exception Quarantine</strong>
-                    Isolates cross-listed multi-section courses and deferred exam petitions into an administrative human-in-the-loop review queue.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 4: Automated Schedule Dispatch</strong>
-                    Generates conflict-free timetable exports, automated calendar bookings (25Live), and standardized instructor packets with near one-click execution.
-                  </div>
-                </div>
-                <div class="cs-spec">
-                  // SANITIZED AUDIT &amp; TRANSACTION LOG<br>
-                  &gt; STATUS: SCHEDULING_ENGINE_COMPLETE<br>
-                  &gt; DATA_SOURCES: SIS (Core DB) &bull; Salesforce CRM &bull; Kuali (Curriculum) &bull; Power Apps Intake<br>
-                  &gt; SCOPE: ~70 Academic Courses Reconciled &bull; 40+ Instructors Verified<br>
-                  &gt; CONFLICT_DETECTION: 0 Time-Block or Room-Capacity Overlaps<br>
-                  &gt; OPERATIONAL_IMPACT: 70–90% Reduction in Administrative Hours per Cycle
-                </div>
-              </div>
-            </details>
+            <button type="button" class="btn-case-study" onclick="openCaseStudyModal('proj-01', this)" aria-haspopup="dialog" aria-controls="caseStudyModal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              <span>Explore Architecture &amp; Pipeline Logic ↗</span>
+            </button>
           </div>
         </article>
 
@@ -485,38 +456,10 @@
               <span class="chip">Error Prevention</span>
               <span class="chip">Academic Operations</span>
             </div>
-            <details class="proj-case-study">
-              <summary>View Architecture &amp; Sanitized Pipeline Logic</summary>
-              <div class="cs-body">
-                <span class="cs-badge">Sanitized Architectural Blueprint &bull; FIPPA Compliant</span>
-                <p>To eliminate manual enrolment fatigue across 70+ academic courses and safeguard instructor allocations, I engineered an automated 4-stage pipeline with validation guardrails:</p>
-                <div class="cs-flow">
-                  <div class="cs-step">
-                    <strong>Stage 1: Ingestion</strong>
-                    Term course catalogue &amp; 12 designated role targets ingested into standardized matrix.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 2: Validation</strong>
-                    Automated schema check verifies course code formats, cross-listed sections &amp; role permissions.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 3: Guardrail</strong>
-                    Cross-references SIS as authoritative source to prevent cross-course instructor misallocation.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 4: Execution</strong>
-                    Automated batch provisioning generates time-stamped transaction audit logs with 100% verified allocation.
-                  </div>
-                </div>
-                <div class="cs-spec">
-                  // SANITIZED TRANSACTION LOG<br>
-                  &gt; STATUS: PROVISIONING_COMPLETE<br>
-                  &gt; SCOPE: 70+ Course Sections &bull; 12 Stakeholder Roles/Course (840+ Total Allocations)<br>
-                  &gt; GUARDRAIL AUDIT: 0 Course Misallocations &bull; 100% Roster Consistency Achieved<br>
-                  &gt; ADMINISTRATIVE BANDWIDTH SAVED: ~40 Hours per Academic Term
-                </div>
-              </div>
-            </details>
+            <button type="button" class="btn-case-study" onclick="openCaseStudyModal('proj-02', this)" aria-haspopup="dialog" aria-controls="caseStudyModal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              <span>Explore Architecture &amp; Pipeline Logic ↗</span>
+            </button>
           </div>
         </article>
 
@@ -564,38 +507,10 @@
               <span class="chip">Exam Logistics</span>
               <span class="chip">Lifecycle Management</span>
             </div>
-            <details class="proj-case-study">
-              <summary>View Architecture &amp; Sanitized Pipeline Logic</summary>
-              <div class="cs-body">
-                <span class="cs-badge">Sanitized Data Pipeline &bull; Anomaly Intelligence Model</span>
-                <p>Termly course evaluation audits across 70+ courses required handling large MachForm datasets without risking cross-instructor evaluation leaks or unvetted data distortions:</p>
-                <div class="cs-flow">
-                  <div class="cs-step">
-                    <strong>Stage 1: Bulk Ingestion</strong>
-                    Extracts raw student survey records from MachForm across all multi-modal delivery formats.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 2: IP Deduplication</strong>
-                    Hashes origin IP addresses and flags multi-submission clusters submitted in narrow timestamp windows.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 3: Quarantine Queue</strong>
-                    Isolates flagged IP anomalies into a human-in-the-loop review queue before downstream report generation.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 4: Isolated Reports</strong>
-                    Compiles 70+ isolated, instructor-specific evaluation summaries with zero cross-course data contamination.
-                  </div>
-                </div>
-                <div class="cs-spec">
-                  // SANITIZED AUDIT LOG<br>
-                  &gt; STATUS: EVALUATION_PIPELINE_COMPLETE<br>
-                  &gt; INGESTION: 70+ Course Evaluation Batches Processed &bull; Multi-Modal (In-Person / Online / Hybrid)<br>
-                  &gt; ANOMALY AUDIT: Duplicate IP clusters detected &bull; Quarantined for review prior to aggregation<br>
-                  &gt; PRIVACY AUDIT: 70+ Isolated Instructor Reports Generated &bull; 0% Cross-Course Data Contamination
-                </div>
-              </div>
-            </details>
+            <button type="button" class="btn-case-study" onclick="openCaseStudyModal('proj-03', this)" aria-haspopup="dialog" aria-controls="caseStudyModal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              <span>Explore Architecture &amp; Pipeline Logic ↗</span>
+            </button>
           </div>
         </article>
 
@@ -632,39 +547,10 @@
               <span class="chip">Dashboards</span>
               <span class="chip">Excel</span>
             </div>
-            <details class="proj-case-study">
-              <summary>View Architecture &amp; Sanitized Pipeline Logic</summary>
-              <div class="cs-body">
-                <span class="cs-badge">Sanitized Cross-System Reconciliation Engine &bull; Tri-Source Audit Architecture</span>
-                <p>To resolve cross-system data discrepancies across ~70 courses per term and give leadership clear capacity visibility, I architected an automated multi-source reconciliation pipeline:</p>
-                <div class="cs-flow">
-                  <div class="cs-step">
-                    <strong>Stage 1: Multi-Source Data Federation</strong>
-                    Ingests disparate extracts from Salesforce CRM (course enrollment states), Core SIS / ERP Database (source of truth for student rosters &amp; grades), and Kuali (official curriculum syllabus parameters).
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 2: Cross-System Discrepancy Reconciliation</strong>
-                    Executes automated record matching across Course Codes, Section IDs, and Instructor Allocations, auto-flagging misalignments between CRM rosters and database records.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 3: Decision-Support Matrix &amp; Capacity Modeling</strong>
-                    Calculates room occupancy ratios, deferred exam petition thresholds, and staffing allocations against institutional policy limits.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 4: Executive Dashboard &amp; Audit Dispatch</strong>
-                    Feeds structured data into automated Excel KPI dashboards, generating weekly operational readiness packs for senior academic leadership.
-                  </div>
-                </div>
-                <div class="cs-spec">
-                  // SANITIZED CROSS-SYSTEM RECONCILIATION LOG<br>
-                  &gt; STATUS: RECONCILIATION_ENGINE_ACTIVE<br>
-                  &gt; FEDERATED_SOURCES: Core SIS (ERP) &bull; Salesforce CRM &bull; Kuali (Curriculum) &bull; Excel Roster Feeds<br>
-                  &gt; MATCH_RATE: 100% Course-to-Catalogue Verification Across ~70 Courses / Term<br>
-                  &gt; EXCEPTION_HANDLING: Zero Unreconciled Cross-System Instructor or Section Misallocations<br>
-                  &gt; LEADERSHIP_IMPACT: Real-Time Operational Visibility for Complex Academic Exam Decision Support
-                </div>
-              </div>
-            </details>
+            <button type="button" class="btn-case-study" onclick="openCaseStudyModal('proj-04', this)" aria-haspopup="dialog" aria-controls="caseStudyModal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              <span>Explore Architecture &amp; Pipeline Logic ↗</span>
+            </button>
           </div>
         </article>
 
@@ -704,38 +590,10 @@
               <span class="chip">CSV workflow</span>
               <span class="chip">CRM Data Quality</span>
             </div>
-            <details class="proj-case-study">
-              <summary>View Architecture &amp; Sanitized Pipeline Logic</summary>
-              <div class="cs-body">
-                <span class="cs-badge">Sanitized Python ETL Pipeline &bull; Data Quality &amp; Deduplication</span>
-                <p>To prepare heterogeneous stakeholder lists from events, webinars, and partner forms for clean CRM ingestion, I built an automated Python ETL pipeline:</p>
-                <div class="cs-flow">
-                  <div class="cs-step">
-                    <strong>Stage 1: Schema Ingestion &amp; Parsing</strong>
-                    Batches multi-source CSV and spreadsheet exports into a unified Pandas DataFrame with strict column typing and header alignment.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 2: Regex Normalization</strong>
-                    Sanitizes phone numbers to E.164 standard, validates RFC 5322 email syntax, and canonicalizes corporate domains (stripping prefixes and subdomains).
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 3: Fuzzy Deduplication</strong>
-                    Applies string distance and domain-matching algorithms to merge fragmented contact histories into a single authoritative master record.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 4: CRM Staging &amp; Quality Audit</strong>
-                    Outputs clean, verified CSV batches with data quality confidence scores ready for automated Salesforce/HubSpot loading.
-                  </div>
-                </div>
-                <div class="cs-spec">
-                  // SANITIZED ETL AUDIT LOG<br>
-                  &gt; STATUS: DATA_PIPELINE_COMPLETE<br>
-                  &gt; INGESTION: Multi-Source Spreadsheets (Webinars, Events, Partner Inquiries)<br>
-                  &gt; DEDUPLICATION_AUDIT: Redundant Records Identified &amp; Merged into Golden Profiles<br>
-                  &gt; PIPELINE_PERFORMANCE: +30% Qualified Lead Volume &bull; +15% Outreach Conversion Lift
-                </div>
-              </div>
-            </details>
+            <button type="button" class="btn-case-study" onclick="openCaseStudyModal('proj-05', this)" aria-haspopup="dialog" aria-controls="caseStudyModal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              <span>Explore Architecture &amp; Pipeline Logic ↗</span>
+            </button>
           </div>
         </article>
 
@@ -818,39 +676,10 @@
               <span class="chip">Google Analytics</span>
               <span class="chip">AODA / SEO</span>
             </div>
-            <details class="proj-case-study">
-              <summary>View Architecture &amp; Sanitized Pipeline Logic</summary>
-              <div class="cs-body">
-                <span class="cs-badge">Sanitized Automated Web Governance &bull; AODA / WCAG 2.1 AA Compliance Suite</span>
-                <p>To eliminate navigation friction across 95+ institutional web properties and 60+ academic databases while ensuring strict provincial accessibility compliance (AODA / WCAG 2.1 AA), I deployed an automated governance framework:</p>
-                <div class="cs-flow">
-                  <div class="cs-step">
-                    <strong>Stage 1: Multi-Property Discovery &amp; Crawl</strong>
-                    Automated crawler inventories 95+ institutional website properties and 60+ databases across WordPress and Drupal CMS architectures.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 2: WCAG 2.1 AA Rule Engine</strong>
-                    Runs programmatic checks against colour contrast thresholds (min 4.5:1), landmark semantic hierarchies, aria-label completeness, and keyboard focus trap prevention.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 3: Information Architecture &amp; SEO Optimization</strong>
-                    Ingests Google Analytics user flows and heatmaps to identify high-dropoff navigation bottlenecks, optimizing pathing and canonical metadata.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 4: Remediation SOPs &amp; Governance Logging</strong>
-                    Generates plain-language remediation tickets, step-by-step publisher checklists, and compliance audit certificates for academic departments.
-                  </div>
-                </div>
-                <div class="cs-spec">
-                  // SANITIZED WEB GOVERNANCE &amp; COMPLIANCE AUDIT LOG<br>
-                  &gt; STATUS: ACCESSIBILITY_GOVERNANCE_CERTIFIED<br>
-                  &gt; SCOPE_COVERED: 95+ Institutional Web Properties &bull; 60+ Academic Databases<br>
-                  &gt; COMPLIANCE_BENCHMARK: Strict AODA / WCAG 2.1 AA Standards Verified<br>
-                  &gt; AUDIT_METRICS: 17% Reduction in User Bounce Rates &bull; +20% Faster Page Speeds<br>
-                  &gt; ORGANIC_GROWTH: +25% Organic Search Traffic Lift Through Structured Metadata Audits
-                </div>
-              </div>
-            </details>
+            <button type="button" class="btn-case-study" onclick="openCaseStudyModal('proj-07', this)" aria-haspopup="dialog" aria-controls="caseStudyModal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              <span>Explore Architecture &amp; Pipeline Logic ↗</span>
+            </button>
           </div>
         </article>
 
@@ -890,39 +719,10 @@
               <span class="chip">Team lead</span>
               <span class="chip">Process design</span>
             </div>
-            <details class="proj-case-study">
-              <summary>View Architecture &amp; Sanitized Pipeline Logic</summary>
-              <div class="cs-body">
-                <span class="cs-badge">Sanitized Digital Transformation Framework &bull; Legacy-to-CRM Consolidation</span>
-                <p>As Team Lead for the York University &times; Salesforce &times; RBC Future Launch initiative, I architected a strategic roadmap to consolidate fragmented legacy data and unify multi-stakeholder tracking:</p>
-                <div class="cs-flow">
-                  <div class="cs-step">
-                    <strong>Stage 1: Legacy Data &amp; Workflow Discovery</strong>
-                    Maps fragmented spreadsheets, legacy database silos, and ad-hoc email communications across student, partner, and funding allocation streams.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 2: Entity Schema Design &amp; Standardization</strong>
-                    Defines unified Salesforce custom objects, field-level security protocols, canonical contact schemas, and deduplication rules.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 3: Lifecycle Tracking &amp; Automation</strong>
-                    Architects automated stakeholder progression stages, touchpoint follow-up triggers, and grant milestone tracking pipelines.
-                  </div>
-                  <div class="cs-step">
-                    <strong>Stage 4: Executive BI &amp; Impact Analytics</strong>
-                    Delivers centralized reporting dashboards tracking cohort engagement, partnership KPIs, and program conversion metrics in a unified single pane of glass.
-                  </div>
-                </div>
-                <div class="cs-spec">
-                  // SANITIZED DIGITAL TRANSFORMATION ARCHITECTURE LOG<br>
-                  &gt; STATUS: CRM_TRANSFORMATION_FRAMEWORK_DELIVERED<br>
-                  &gt; ROLE: Team Lead (Cross-Functional Coordination: York University &times; Salesforce &times; RBC Future Launch)<br>
-                  &gt; LEGACY_MAPPING: Fragmented Multi-Unit Spreadsheets Consolidated into Unified Data Architecture<br>
-                  &gt; STAKEHOLDER_LIFECYCLE: End-to-End Tracking Across Academic, Industry &amp; Funding Partners<br>
-                  &gt; STRATEGY_OUTCOME: Executive-Ready Data Governance Framework with 100% Unified Pipeline Visibility
-                </div>
-              </div>
-            </details>
+            <button type="button" class="btn-case-study" onclick="openCaseStudyModal('proj-08', this)" aria-haspopup="dialog" aria-controls="caseStudyModal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              <span>Explore Architecture &amp; Pipeline Logic ↗</span>
+            </button>
           </div>
         </article>
       </div>
@@ -1779,7 +1579,958 @@
     </div>
   </dialog>
 
+    <!-- Cinematic Engineering Case Study Modal -->
+  <dialog id="caseStudyModal" class="case-study-modal" aria-labelledby="csModalTitle" aria-modal="true" onclick="if(event.target===this){closeCaseStudyModal();}">
+    <div class="cs-modal-header">
+      <div class="cs-modal-header-main">
+        <div class="cs-modal-meta">
+          <span class="cs-modal-badge" id="csModalBadge">ARCHITECTURE CASE STUDY</span>
+          <span class="cs-modal-unit" id="csModalUnit">York University Unit</span>
+        </div>
+        <h2 id="csModalTitle" class="cs-modal-title">Project Title</h2>
+        <div class="chips cs-modal-chips" id="csModalChips"></div>
+      </div>
+      <div class="cs-modal-controls">
+        <div class="cs-stepper" role="group" aria-label="Case study stepper navigation">
+          <button type="button" class="cs-step-btn" id="csPrevBtn" onclick="navigateCaseStudy(-1)" aria-label="Previous case study">← Prev</button>
+          <span class="cs-counter" id="csCounter" aria-live="polite">1 of 7</span>
+          <button type="button" class="cs-step-btn" id="csNextBtn" onclick="navigateCaseStudy(1)" aria-label="Next case study">Next →</button>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closeCaseStudyModal()" aria-label="Close case study dialog">✕</button>
+      </div>
+    </div>
+
+    <div class="cs-modal-body">
+      <!-- Project View: proj-01 -->
+      <article class="cs-view" id="cs-view-proj-01" data-project-id="proj-01" data-badge="Multi-Source Fan-In • Conflict Matrix Architecture" data-unit="Osgoode Professional Development, York University" data-title="Exam Scheduling & Intake Automation" data-chips='['Salesforce CRM', 'SIS Database', 'Kuali (Curriculum)', 'Power Apps', '25Live']' data-index="1" hidden>
+        <!-- 1. System Topology Canvas -->
+        <section class="cs-topology-card" aria-labelledby="cs-topo-title-proj-01">
+          <div class="cs-card-header">
+            <span class="cs-card-tag" id="cs-topo-title-proj-01">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              SYSTEM ARCHITECTURE TOPOLOGY
+            </span>
+            <span class="cs-card-sub">Interactive Data Flow &bull; Component Map</span>
+          </div>
+          <div class="cs-svg-wrap">
+            <svg class="cs-diagram-svg" viewBox="0 0 840 250" role="img" aria-label="Architecture Topology: Fan-in Multi-Source Intake to Constraint Matrix to Automated Dispatch">
+  <defs>
+    <marker id="cs-arrow-1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+  <!-- Multi-Source Inputs (Left) -->
+  <g class="topo-inputs">
+    <rect x="20" y="15" width="160" height="42" rx="6" class="topo-node"/>
+    <text x="100" y="36" class="topo-txt" text-anchor="middle">SIS Core Database</text>
+    <text x="100" y="48" class="topo-sub" text-anchor="middle">Student Rosters &amp; Grades</text>
+
+    <rect x="20" y="70" width="160" height="42" rx="6" class="topo-node"/>
+    <text x="100" y="91" class="topo-txt" text-anchor="middle">Salesforce CRM</text>
+    <text x="100" y="103" class="topo-sub" text-anchor="middle">Course &amp; Term Statuses</text>
+
+    <rect x="20" y="125" width="160" height="42" rx="6" class="topo-node"/>
+    <text x="100" y="146" class="topo-txt" text-anchor="middle">Kuali Curriculum</text>
+    <text x="100" y="158" class="topo-sub" text-anchor="middle">Syllabus &amp; Exam Formats</text>
+
+    <rect x="20" y="180" width="160" height="42" rx="6" class="topo-node"/>
+    <text x="100" y="201" class="topo-txt" text-anchor="middle">Power Apps Intake</text>
+    <text x="100" y="213" class="topo-sub" text-anchor="middle">Instructor Constraints</text>
+  </g>
+
+  <!-- Connectors from Inputs to Central Solver -->
+  <path d="M 180 36 C 230 36, 230 115, 275 115" class="topo-line" marker-end="url(#cs-arrow-1)"/>
+  <path d="M 180 91 C 220 91, 235 120, 275 120" class="topo-line" marker-end="url(#cs-arrow-1)"/>
+  <path d="M 180 146 C 220 146, 235 130, 275 130" class="topo-line" marker-end="url(#cs-arrow-1)"/>
+  <path d="M 180 201 C 230 201, 230 135, 275 135" class="topo-line" marker-end="url(#cs-arrow-1)"/>
+
+  <!-- Central Constraint & Conflict Solver Engine -->
+  <rect x="280" y="55" width="250" height="140" rx="10" class="topo-hub"/>
+  <rect x="290" y="68" width="230" height="26" rx="5" class="topo-badge-hub"/>
+  <text x="405" y="85" class="topo-hub-title" text-anchor="middle">CONSTRAINT &amp; CONFLICT MATRIX</text>
+  <text x="405" y="116" class="topo-hub-txt" text-anchor="middle">Room Capacity &amp; Seat Quota Solver</text>
+  <text x="405" y="136" class="topo-hub-txt" text-anchor="middle">Instructor Availability Windows</text>
+  <text x="405" y="156" class="topo-hub-txt" text-anchor="middle">Accessibility Extra-Time Guardrails</text>
+  <text x="405" y="176" class="topo-hub-txt" text-anchor="middle">Cross-Listed Section Detection</text>
+
+  <!-- Outputs (Right) -->
+  <!-- Top: Exception Quarantine Branch -->
+  <path d="M 530 95 C 570 95, 570 50, 605 50" class="topo-line-alt" marker-end="url(#cs-arrow-1)"/>
+  <rect x="610" y="20" width="210" height="60" rx="8" class="topo-quarantine"/>
+  <text x="715" y="44" class="topo-alert-title" text-anchor="middle">Exception Quarantine Queue</text>
+  <text x="715" y="62" class="topo-sub" text-anchor="middle">Cross-listed &amp; Deferred Exam Petitions</text>
+
+  <!-- Bottom: Automated Dispatch Engine -->
+  <path d="M 530 155 C 570 155, 570 175, 605 175" class="topo-line" marker-end="url(#cs-arrow-1)"/>
+  <rect x="610" y="135" width="210" height="85" rx="8" class="topo-hub-hi"/>
+  <text x="715" y="160" class="topo-hi-title" text-anchor="middle">Automated Schedule Dispatch</text>
+  <text x="715" y="180" class="topo-sub" text-anchor="middle">25Live Bookings • Timetable Exports</text>
+  <text x="715" y="198" class="topo-metric" text-anchor="middle">70–90% Coordination Time Cut</text>
+</svg>
+          </div>
+        </section>
+
+        <!-- 2. Four-Stage Pipeline Specification -->
+        <section class="cs-stages-card" aria-label="Operational Pipeline Stages">
+          <div class="cs-card-header">
+            <span class="cs-card-tag">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              FOUR-STAGE PIPELINE SPECIFICATION
+            </span>
+            <span class="cs-card-sub">End-to-End Operational Execution</span>
+          </div>
+          <div class="cs-stages-grid">
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 01</div>
+              <h3 class="cs-stage-title">Multi-Source Ingestion</h3>
+              <p class="cs-stage-desc">Federates exam parameters from Core SIS (student rosters), Salesforce CRM (course status), Kuali (syllabus format), and Power Apps/Forms (instructor requests).</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 02</div>
+              <h3 class="cs-stage-title">Constraint & Conflict Matrix</h3>
+              <p class="cs-stage-desc">Validates room capacity thresholds, instructor availability windows, and student accessibility accommodation requirements (extra time / private proctoring).</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 03</div>
+              <h3 class="cs-stage-title">Exception Quarantine</h3>
+              <p class="cs-stage-desc">Isolates cross-listed multi-section courses and deferred exam petitions into an administrative human-in-the-loop review queue.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 04</div>
+              <h3 class="cs-stage-title">Automated Schedule Dispatch</h3>
+              <p class="cs-stage-desc">Generates conflict-free timetable exports, automated calendar bookings (25Live), and standardized instructor packets with near one-click execution.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Key Architectural Guardrails -->
+        <section class="cs-guardrails-grid" aria-label="Architecture Guardrails and Impact">
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">AUTHORITATIVE SOURCE</span>
+            <strong>Core SIS Database</strong>
+            <span>Student information system acts as immutable single source of truth for course rosters and grading status.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">EXCEPTION GUARDRAIL</span>
+            <strong>Zero Overlap Enforcement</strong>
+            <span>Automated collision solver flags time-block conflicts and accessibility petition deviations prior to scheduling.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">MEASURED OUTCOME</span>
+            <strong>70–90% Time Saved</strong>
+            <span>Dramatically reduced manual administrative coordination hours across ~70 courses per term.</span>
+          </div>
+        </section>
+
+        <!-- 4. Sanitized Live Audit & Telemetry Log -->
+        <section class="cs-terminal-card" aria-label="Sanitized Audit and Telemetry Log">
+          <div class="cs-terminal-head">
+            <div class="cs-terminal-status">
+              <span class="cs-term-dot" aria-hidden="true"></span>
+              <span>LIVE SANITIZED AUDIT TELEMETRY</span>
+            </div>
+            <button type="button" class="cs-copy-log-btn" onclick="copyCaseStudyLog(this)" aria-label="Copy sanitized audit telemetry log">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy Telemetry</span>
+            </button>
+          </div>
+          <pre class="cs-terminal-code"><code>// SANITIZED AUDIT &amp; TRANSACTION LOG
+&gt; STATUS: SCHEDULING_ENGINE_COMPLETE
+&gt; DATA_SOURCES: SIS (Core DB) • Salesforce CRM • Kuali (Curriculum) • Power Apps Intake
+&gt; SCOPE: ~70 Academic Courses Reconciled • 40+ Instructors Verified
+&gt; CONFLICT_DETECTION: 0 Time-Block or Room-Capacity Overlaps
+&gt; OPERATIONAL_IMPACT: 70–90% Reduction in Administrative Hours per Cycle</code></pre>
+        </section>
+      </article>
+
+      <!-- Project View: proj-02 -->
+      <article class="cs-view" id="cs-view-proj-02" data-project-id="proj-02" data-badge="1-to-N Batch Role Provisioning • Bilateral SIS Guardrail" data-unit="Osgoode Professional Development, York University" data-title="Stakeholder Enrolment Automation" data-chips='['Process Automation', 'Validation Guardrails', 'SIS / ERP', 'FIPPA Compliance']' data-index="2" hidden>
+        <!-- 1. System Topology Canvas -->
+        <section class="cs-topology-card" aria-labelledby="cs-topo-title-proj-02">
+          <div class="cs-card-header">
+            <span class="cs-card-tag" id="cs-topo-title-proj-02">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              SYSTEM ARCHITECTURE TOPOLOGY
+            </span>
+            <span class="cs-card-sub">Interactive Data Flow &bull; Component Map</span>
+          </div>
+          <div class="cs-svg-wrap">
+            <svg class="cs-diagram-svg" viewBox="0 0 840 240" role="img" aria-label="Architecture Topology: 1-to-N Batch Role Provisioning with Bilateral SIS Verification Guardrail">
+  <defs>
+    <marker id="cs-arrow-2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+  <!-- Ingestion (Left) -->
+  <rect x="20" y="55" width="180" height="125" rx="8" class="topo-node"/>
+  <rect x="30" y="68" width="160" height="24" rx="4" class="topo-badge-hub"/>
+  <text x="110" y="84" class="topo-hub-title" text-anchor="middle">TERM CATALOGUE INGESTION</text>
+  <text x="110" y="112" class="topo-txt" text-anchor="middle">70+ Course Sections</text>
+  <text x="110" y="132" class="topo-txt" text-anchor="middle">12 Roles per Course</text>
+  <text x="110" y="152" class="topo-metric" text-anchor="middle">840 Target Endpoints</text>
+
+  <!-- Connect to Matrix Expansion -->
+  <path d="M 200 115 L 265 115" class="topo-line" marker-end="url(#cs-arrow-2)"/>
+
+  <!-- Center Top: Matrix Expansion Engine -->
+  <rect x="270" y="30" width="250" height="80" rx="8" class="topo-hub"/>
+  <text x="395" y="58" class="topo-hub-title" text-anchor="middle">1-to-12 MATRIX ROLE EXPANSION</text>
+  <text x="395" y="78" class="topo-sub" text-anchor="middle">Auto-maps Instructors, TAs, Graders &amp; Admins</text>
+  <text x="395" y="94" class="topo-sub" text-anchor="middle">Cross-section course code validation</text>
+
+  <!-- Center Bottom: Bilateral SIS Guardrail Check -->
+  <rect x="270" y="135" width="250" height="80" rx="8" class="topo-hub-hi"/>
+  <text x="395" y="162" class="topo-hi-title" text-anchor="middle">BILATERAL SIS GUARDRAIL CHECK</text>
+  <text x="395" y="182" class="topo-sub" text-anchor="middle">Core DB Authoritative Cross-Reference</text>
+  <text x="395" y="198" class="topo-metric" text-anchor="middle">Hard Stop on Section Misallocation</text>
+
+  <!-- Vertical Guardrail Interconnect -->
+  <path d="M 395 110 L 395 130" class="topo-line-both"/>
+
+  <!-- Output Arrow -->
+  <path d="M 520 80 C 560 80, 560 115, 595 115" class="topo-line" marker-end="url(#cs-arrow-2)"/>
+
+  <!-- Right: Verified Provisioning -->
+  <rect x="600" y="45" width="220" height="145" rx="8" class="topo-hub-hi"/>
+  <rect x="612" y="58" width="196" height="24" rx="4" class="topo-badge-hub"/>
+  <text x="710" y="74" class="topo-hub-title" text-anchor="middle">100% VERIFIED PROVISIONING</text>
+  <text x="710" y="106" class="topo-txt" text-anchor="middle">Zero Course Misallocations</text>
+  <text x="710" y="128" class="topo-sub" text-anchor="middle">Time-stamped audit records</text>
+  <text x="710" y="148" class="topo-sub" text-anchor="middle">FIPPA Compliant Architecture</text>
+  <text x="710" y="170" class="topo-metric" text-anchor="middle">~40 Admin Hours Saved / Term</text>
+</svg>
+          </div>
+        </section>
+
+        <!-- 2. Four-Stage Pipeline Specification -->
+        <section class="cs-stages-card" aria-label="Operational Pipeline Stages">
+          <div class="cs-card-header">
+            <span class="cs-card-tag">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              FOUR-STAGE PIPELINE SPECIFICATION
+            </span>
+            <span class="cs-card-sub">End-to-End Operational Execution</span>
+          </div>
+          <div class="cs-stages-grid">
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 01</div>
+              <h3 class="cs-stage-title">Catalogue Ingestion</h3>
+              <p class="cs-stage-desc">Term course catalogue and 12 designated role targets ingested into standardized matrix.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 02</div>
+              <h3 class="cs-stage-title">Schema Validation</h3>
+              <p class="cs-stage-desc">Automated schema check verifies course code formats, cross-listed sections, and role permissions.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 03</div>
+              <h3 class="cs-stage-title">Authoritative Guardrail</h3>
+              <p class="cs-stage-desc">Cross-references SIS as authoritative source to prevent cross-course instructor misallocation.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 04</div>
+              <h3 class="cs-stage-title">Batch Execution & Audit</h3>
+              <p class="cs-stage-desc">Automated batch provisioning generates time-stamped transaction audit logs with 100% verified allocation.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Key Architectural Guardrails -->
+        <section class="cs-guardrails-grid" aria-label="Architecture Guardrails and Impact">
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">AUTHORITATIVE SOURCE</span>
+            <strong>SIS Core Database</strong>
+            <span>Cross-checks course catalogue codes against authoritative SIS records before updating permissions.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">EXCEPTION GUARDRAIL</span>
+            <strong>Bilateral Verification Guardrail</strong>
+            <span>Enforces strict course-to-instructor mapping; automatically halts provisioning on section code mismatch.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">MEASURED OUTCOME</span>
+            <strong>100% Roster Consistency</strong>
+            <span>840+ verified role allocations per term with 0 cross-course misallocations and ~40 hours saved.</span>
+          </div>
+        </section>
+
+        <!-- 4. Sanitized Live Audit & Telemetry Log -->
+        <section class="cs-terminal-card" aria-label="Sanitized Audit and Telemetry Log">
+          <div class="cs-terminal-head">
+            <div class="cs-terminal-status">
+              <span class="cs-term-dot" aria-hidden="true"></span>
+              <span>LIVE SANITIZED AUDIT TELEMETRY</span>
+            </div>
+            <button type="button" class="cs-copy-log-btn" onclick="copyCaseStudyLog(this)" aria-label="Copy sanitized audit telemetry log">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy Telemetry</span>
+            </button>
+          </div>
+          <pre class="cs-terminal-code"><code>// SANITIZED TRANSACTION LOG
+&gt; STATUS: PROVISIONING_COMPLETE
+&gt; SCOPE: 70+ Course Sections • 12 Stakeholder Roles/Course (840+ Total Allocations)
+&gt; GUARDRAIL AUDIT: 0 Course Misallocations • 100% Roster Consistency Achieved
+&gt; ADMINISTRATIVE BANDWIDTH SAVED: ~40 Hours per Academic Term</code></pre>
+        </section>
+      </article>
+
+      <!-- Project View: proj-03 -->
+      <article class="cs-view" id="cs-view-proj-03" data-project-id="proj-03" data-badge="Cryptographic Anomaly Filter • Isolated Report Compiler" data-unit="Osgoode Professional Development, York University" data-title="Course Lifecycle & Evaluation Intelligence Pipeline" data-chips='['MachForm Intake', 'Anomaly Detection', 'eClass / Moodle', 'Data Privacy']' data-index="3" hidden>
+        <!-- 1. System Topology Canvas -->
+        <section class="cs-topology-card" aria-labelledby="cs-topo-title-proj-03">
+          <div class="cs-card-header">
+            <span class="cs-card-tag" id="cs-topo-title-proj-03">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              SYSTEM ARCHITECTURE TOPOLOGY
+            </span>
+            <span class="cs-card-sub">Interactive Data Flow &bull; Component Map</span>
+          </div>
+          <div class="cs-svg-wrap">
+            <svg class="cs-diagram-svg" viewBox="0 0 840 245" role="img" aria-label="Architecture Topology: Cryptographic Evaluation Data Processing and Isolated Report Pipeline">
+  <defs>
+    <marker id="cs-arrow-3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+  <!-- Ingestion (Left) -->
+  <rect x="20" y="60" width="180" height="115" rx="8" class="topo-node"/>
+  <text x="110" y="88" class="topo-txt" text-anchor="middle">MachForm Survey Stream</text>
+  <text x="110" y="110" class="topo-sub" text-anchor="middle">70+ Academic Courses</text>
+  <text x="110" y="128" class="topo-sub" text-anchor="middle">In-Person • Online • Hybrid</text>
+  <text x="110" y="148" class="topo-metric" text-anchor="middle">Raw Student Responses</text>
+
+  <!-- Connect to Anomaly Engine -->
+  <path d="M 200 115 L 265 115" class="topo-line" marker-end="url(#cs-arrow-3)"/>
+
+  <!-- Center: Cryptographic IP & Anomaly Filter -->
+  <rect x="270" y="45" width="250" height="145" rx="10" class="topo-hub"/>
+  <rect x="282" y="58" width="226" height="24" rx="4" class="topo-badge-hub"/>
+  <text x="395" y="74" class="topo-hub-title" text-anchor="middle">ANOMALY INTELLIGENCE ENGINE</text>
+  <text x="395" y="106" class="topo-hub-txt" text-anchor="middle">Field Normalization &amp; Typing</text>
+  <text x="395" y="126" class="topo-hub-txt" text-anchor="middle">SHA-256 IP Origin Hashing</text>
+  <text x="395" y="146" class="topo-hub-txt" text-anchor="middle">Timestamp Burst Cluster Filter</text>
+  <text x="395" y="168" class="topo-metric" text-anchor="middle">Automated Duplicate Flagging</text>
+
+  <!-- Branch 1: Quarantine Queue (Top Right) -->
+  <path d="M 520 95 C 560 95, 560 50, 595 50" class="topo-line-alt" marker-end="url(#cs-arrow-3)"/>
+  <rect x="600" y="20" width="220" height="65" rx="8" class="topo-quarantine"/>
+  <text x="710" y="44" class="topo-alert-title" text-anchor="middle">Flagged Anomaly Quarantine</text>
+  <text x="710" y="62" class="topo-sub" text-anchor="middle">Identical IP Bursts • Human-in-Loop</text>
+
+  <!-- Branch 2: Isolated Compiler (Bottom Right) -->
+  <path d="M 520 145 C 560 145, 560 165, 595 165" class="topo-line" marker-end="url(#cs-arrow-3)"/>
+  <rect x="600" y="120" width="220" height="100" rx="8" class="topo-hub-hi"/>
+  <text x="710" y="146" class="topo-hi-title" text-anchor="middle">Isolated Report Compiler</text>
+  <text x="710" y="168" class="topo-sub" text-anchor="middle">70+ Course-Specific Packets</text>
+  <text x="710" y="188" class="topo-metric" text-anchor="middle">0% Cross-Course Data Contamination</text>
+</svg>
+          </div>
+        </section>
+
+        <!-- 2. Four-Stage Pipeline Specification -->
+        <section class="cs-stages-card" aria-label="Operational Pipeline Stages">
+          <div class="cs-card-header">
+            <span class="cs-card-tag">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              FOUR-STAGE PIPELINE SPECIFICATION
+            </span>
+            <span class="cs-card-sub">End-to-End Operational Execution</span>
+          </div>
+          <div class="cs-stages-grid">
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 01</div>
+              <h3 class="cs-stage-title">Bulk Stream Ingestion</h3>
+              <p class="cs-stage-desc">Extracts raw student survey records from MachForm across in-person, online, and hybrid delivery formats.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 02</div>
+              <h3 class="cs-stage-title">IP Deduplication & Hashing</h3>
+              <p class="cs-stage-desc">Hashes origin IP addresses and flags multi-submission clusters submitted in narrow timestamp windows.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 03</div>
+              <h3 class="cs-stage-title">Quarantine Review Queue</h3>
+              <p class="cs-stage-desc">Isolates flagged IP anomalies into a human-in-the-loop review queue before downstream report generation.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 04</div>
+              <h3 class="cs-stage-title">Isolated Report Compilation</h3>
+              <p class="cs-stage-desc">Compiles 70+ isolated, instructor-specific evaluation summaries with zero cross-course data contamination.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Key Architectural Guardrails -->
+        <section class="cs-guardrails-grid" aria-label="Architecture Guardrails and Impact">
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">AUTHORITATIVE SOURCE</span>
+            <strong>MachForm Survey Engine</strong>
+            <span>Direct extraction of raw termly student evaluations across all multi-modal delivery models.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">EXCEPTION GUARDRAIL</span>
+            <strong>Cryptographic IP Isolation</strong>
+            <span>SHA-256 origin hashing detects submission clusters while preserving strict student anonymity.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">MEASURED OUTCOME</span>
+            <strong>0% Data Contamination</strong>
+            <span>70+ isolated instructor packets generated under strict university privacy guidelines.</span>
+          </div>
+        </section>
+
+        <!-- 4. Sanitized Live Audit & Telemetry Log -->
+        <section class="cs-terminal-card" aria-label="Sanitized Audit and Telemetry Log">
+          <div class="cs-terminal-head">
+            <div class="cs-terminal-status">
+              <span class="cs-term-dot" aria-hidden="true"></span>
+              <span>LIVE SANITIZED AUDIT TELEMETRY</span>
+            </div>
+            <button type="button" class="cs-copy-log-btn" onclick="copyCaseStudyLog(this)" aria-label="Copy sanitized audit telemetry log">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy Telemetry</span>
+            </button>
+          </div>
+          <pre class="cs-terminal-code"><code>// SANITIZED AUDIT LOG
+&gt; STATUS: EVALUATION_PIPELINE_COMPLETE
+&gt; INGESTION: 70+ Course Evaluation Batches Processed • Multi-Modal (In-Person / Online / Hybrid)
+&gt; ANOMALY AUDIT: Duplicate IP clusters detected • Quarantined for review prior to aggregation
+&gt; PRIVACY AUDIT: 70+ Isolated Instructor Reports Generated • 0% Cross-Course Data Contamination</code></pre>
+        </section>
+      </article>
+
+      <!-- Project View: proj-04 -->
+      <article class="cs-view" id="cs-view-proj-04" data-project-id="proj-04" data-badge="Tri-Source Entity Reconciliation Engine • Decision Support" data-unit="Osgoode Professional Development, York University" data-title="Salesforce Reporting & Decision Support" data-chips='['Salesforce CRM', 'SIS Core Database', 'Kuali Curriculum', 'Excel KPI Dashboards']' data-index="4" hidden>
+        <!-- 1. System Topology Canvas -->
+        <section class="cs-topology-card" aria-labelledby="cs-topo-title-proj-04">
+          <div class="cs-card-header">
+            <span class="cs-card-tag" id="cs-topo-title-proj-04">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              SYSTEM ARCHITECTURE TOPOLOGY
+            </span>
+            <span class="cs-card-sub">Interactive Data Flow &bull; Component Map</span>
+          </div>
+          <div class="cs-svg-wrap">
+            <svg class="cs-diagram-svg" viewBox="0 0 840 250" role="img" aria-label="Architecture Topology: Tri-Source Entity Reconciliation and Decision Support Pipeline">
+  <defs>
+    <marker id="cs-arrow-4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+  <!-- Tri-Source Inputs (Left) -->
+  <rect x="20" y="20" width="170" height="52" rx="6" class="topo-node"/>
+  <text x="105" y="42" class="topo-txt" text-anchor="middle">Salesforce CRM</text>
+  <text x="105" y="56" class="topo-sub" text-anchor="middle">Course Enrolments &amp; Stages</text>
+
+  <rect x="20" y="95" width="170" height="52" rx="6" class="topo-hub-hi"/>
+  <text x="105" y="117" class="topo-hi-title" text-anchor="middle">Core SIS / ERP</text>
+  <text x="105" y="131" class="topo-sub" text-anchor="middle">Authoritative Rosters &amp; Grades</text>
+
+  <rect x="20" y="170" width="170" height="52" rx="6" class="topo-node"/>
+  <text x="105" y="192" class="topo-txt" text-anchor="middle">Kuali Curriculum</text>
+  <text x="105" y="206" class="topo-sub" text-anchor="middle">Official Syllabus Parameters</text>
+
+  <!-- Connectors to Center Diff Engine -->
+  <path d="M 190 46 C 235 46, 235 110, 265 110" class="topo-line" marker-end="url(#cs-arrow-4)"/>
+  <path d="M 190 121 L 265 121" class="topo-line" marker-end="url(#cs-arrow-4)"/>
+  <path d="M 190 196 C 235 196, 235 132, 265 132" class="topo-line" marker-end="url(#cs-arrow-4)"/>
+
+  <!-- Center Reconciliation Diff Engine -->
+  <rect x="270" y="45" width="260" height="145" rx="10" class="topo-hub"/>
+  <rect x="282" y="58" width="236" height="24" rx="4" class="topo-badge-hub"/>
+  <text x="400" y="74" class="topo-hub-title" text-anchor="middle">TRI-SOURCE RECONCILIATION DIFF</text>
+  <text x="400" y="106" class="topo-hub-txt" text-anchor="middle">Automated Section &amp; Code Matching</text>
+  <text x="400" y="126" class="topo-hub-txt" text-anchor="middle">Instructor Cross-Allocation Audit</text>
+  <text x="400" y="146" class="topo-hub-txt" text-anchor="middle">Capacity Ratio &amp; Petition Modeling</text>
+  <text x="400" y="168" class="topo-metric" text-anchor="middle">Zero Unreconciled Discrepancies</text>
+
+  <!-- Connect to Executive Decision Support -->
+  <path d="M 530 121 L 595 121" class="topo-line" marker-end="url(#cs-arrow-4)"/>
+
+  <!-- Right: Executive KPI Pack & Decision Support -->
+  <rect x="600" y="50" width="220" height="135" rx="8" class="topo-hub-hi"/>
+  <rect x="612" y="62" width="196" height="24" rx="4" class="topo-badge-hub"/>
+  <text x="710" y="78" class="topo-hub-title" text-anchor="middle">EXECUTIVE DECISION SUPPORT</text>
+  <text x="710" y="110" class="topo-txt" text-anchor="middle">Automated Excel KPI Pack</text>
+  <text x="710" y="130" class="topo-sub" text-anchor="middle">Complex Exam Decision Rules</text>
+  <text x="710" y="150" class="topo-sub" text-anchor="middle">100% Catalogue Verification</text>
+  <text x="710" y="170" class="topo-metric" text-anchor="middle">Real-Time Dean Visibility</text>
+</svg>
+          </div>
+        </section>
+
+        <!-- 2. Four-Stage Pipeline Specification -->
+        <section class="cs-stages-card" aria-label="Operational Pipeline Stages">
+          <div class="cs-card-header">
+            <span class="cs-card-tag">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              FOUR-STAGE PIPELINE SPECIFICATION
+            </span>
+            <span class="cs-card-sub">End-to-End Operational Execution</span>
+          </div>
+          <div class="cs-stages-grid">
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 01</div>
+              <h3 class="cs-stage-title">Multi-Source Data Federation</h3>
+              <p class="cs-stage-desc">Ingests disparate extracts from Salesforce CRM (course enrollment states), Core SIS/ERP Database, and Kuali curriculum software.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 02</div>
+              <h3 class="cs-stage-title">Cross-System Reconciliation</h3>
+              <p class="cs-stage-desc">Executes automated record matching across Course Codes, Section IDs, and Instructor Allocations, auto-flagging misalignments.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 03</div>
+              <h3 class="cs-stage-title">Decision-Support Modeling</h3>
+              <p class="cs-stage-desc">Calculates room occupancy ratios, deferred exam petition thresholds, and staffing allocations against policy limits.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 04</div>
+              <h3 class="cs-stage-title">Executive Dashboard Dispatch</h3>
+              <p class="cs-stage-desc">Feeds structured data into automated Excel KPI dashboards, generating weekly operational readiness packs for leadership.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Key Architectural Guardrails -->
+        <section class="cs-guardrails-grid" aria-label="Architecture Guardrails and Impact">
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">AUTHORITATIVE SOURCE</span>
+            <strong>SIS Core DB & Kuali</strong>
+            <span>Curriculum software defines official course format while SIS database governs verified student rosters.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">EXCEPTION GUARDRAIL</span>
+            <strong>Tri-Source Reconciliation Diff</strong>
+            <span>Cross-compares CRM enrollment status against backend database to eliminate ghost sections and unverified instructors.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">MEASURED OUTCOME</span>
+            <strong>Single Source of Truth</strong>
+            <span>Standardized decision-support across ~70 courses; eliminated cross-department scheduling conflicts.</span>
+          </div>
+        </section>
+
+        <!-- 4. Sanitized Live Audit & Telemetry Log -->
+        <section class="cs-terminal-card" aria-label="Sanitized Audit and Telemetry Log">
+          <div class="cs-terminal-head">
+            <div class="cs-terminal-status">
+              <span class="cs-term-dot" aria-hidden="true"></span>
+              <span>LIVE SANITIZED AUDIT TELEMETRY</span>
+            </div>
+            <button type="button" class="cs-copy-log-btn" onclick="copyCaseStudyLog(this)" aria-label="Copy sanitized audit telemetry log">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy Telemetry</span>
+            </button>
+          </div>
+          <pre class="cs-terminal-code"><code>// SANITIZED CROSS-SYSTEM RECONCILIATION LOG
+&gt; STATUS: RECONCILIATION_ENGINE_ACTIVE
+&gt; FEDERATED_SOURCES: Core SIS (ERP) • Salesforce CRM • Kuali (Curriculum) • Excel Roster Feeds
+&gt; MATCH_RATE: 100% Course-to-Catalogue Verification Across ~70 Courses / Term
+&gt; EXCEPTION_HANDLING: Zero Unreconciled Cross-System Instructor or Section Misallocations
+&gt; LEADERSHIP_IMPACT: Real-Time Operational Visibility for Complex Academic Exam Decision Support</code></pre>
+        </section>
+      </article>
+
+      <!-- Project View: proj-05 -->
+      <article class="cs-view" id="cs-view-proj-05" data-project-id="proj-05" data-badge="Python ETL Pipeline • Fuzzy String Deduplication Factory" data-unit="SmartTO, Innovation York, York University" data-title="Automated Lead & Stakeholder Data Pipeline" data-chips='['Python', 'Pandas', 'Regex Sanitizers', 'Fuzzy Matching', 'CRM Data Quality']' data-index="5" hidden>
+        <!-- 1. System Topology Canvas -->
+        <section class="cs-topology-card" aria-labelledby="cs-topo-title-proj-05">
+          <div class="cs-card-header">
+            <span class="cs-card-tag" id="cs-topo-title-proj-05">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              SYSTEM ARCHITECTURE TOPOLOGY
+            </span>
+            <span class="cs-card-sub">Interactive Data Flow &bull; Component Map</span>
+          </div>
+          <div class="cs-svg-wrap">
+            <svg class="cs-diagram-svg" viewBox="0 0 840 240" role="img" aria-label="Architecture Topology: Python ETL Pipeline with Regex Normalization and Fuzzy Deduplication">
+  <defs>
+    <marker id="cs-arrow-5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+  <!-- Stage 1: Ingestion -->
+  <rect x="20" y="60" width="170" height="110" rx="8" class="topo-node"/>
+  <text x="105" y="88" class="topo-txt" text-anchor="middle">Multi-Source CSV Intake</text>
+  <text x="105" y="110" class="topo-sub" text-anchor="middle">Webinars, Events, Forms</text>
+  <text x="105" y="128" class="topo-sub" text-anchor="middle">Heterogeneous Column Headers</text>
+  <text x="105" y="148" class="topo-metric" text-anchor="middle">Pandas Schema Typing</text>
+
+  <path d="M 190 115 L 235 115" class="topo-line" marker-end="url(#cs-arrow-5)"/>
+
+  <!-- Stage 2: Regex Cleaners -->
+  <rect x="240" y="60" width="175" height="110" rx="8" class="topo-hub"/>
+  <text x="327" y="88" class="topo-hub-title" text-anchor="middle">REGEX NORMALIZATION</text>
+  <text x="327" y="110" class="topo-hub-txt" text-anchor="middle">E.164 Phone Sanitization</text>
+  <text x="327" y="130" class="topo-hub-txt" text-anchor="middle">RFC 5322 Email Validation</text>
+  <text x="327" y="150" class="topo-sub" text-anchor="middle">Corporate Domain Strip</text>
+
+  <path d="M 415 115 L 460 115" class="topo-line" marker-end="url(#cs-arrow-5)"/>
+
+  <!-- Stage 3: Fuzzy Deduplication -->
+  <rect x="465" y="60" width="175" height="110" rx="8" class="topo-hub"/>
+  <text x="552" y="88" class="topo-hub-title" text-anchor="middle">FUZZY DEDUPLICATION</text>
+  <text x="552" y="110" class="topo-hub-txt" text-anchor="middle">Levenshtein Distance</text>
+  <text x="552" y="130" class="topo-hub-txt" text-anchor="middle">Domain-Matching Matrix</text>
+  <text x="552" y="150" class="topo-metric" text-anchor="middle">Golden Master Profiles</text>
+
+  <path d="M 640 115 L 685 115" class="topo-line" marker-end="url(#cs-arrow-5)"/>
+
+  <!-- Stage 4: CRM Staging -->
+  <rect x="690" y="50" width="130" height="130" rx="8" class="topo-hub-hi"/>
+  <text x="755" y="78" class="topo-hi-title" text-anchor="middle">CRM READY</text>
+  <text x="755" y="102" class="topo-txt" text-anchor="middle">Clean CSV</text>
+  <text x="755" y="122" class="topo-sub" text-anchor="middle">Validated Batches</text>
+  <text x="755" y="146" class="topo-metric" text-anchor="middle">+30% Leads</text>
+  <text x="755" y="164" class="topo-metric" text-anchor="middle">+15% Outreach</text>
+</svg>
+          </div>
+        </section>
+
+        <!-- 2. Four-Stage Pipeline Specification -->
+        <section class="cs-stages-card" aria-label="Operational Pipeline Stages">
+          <div class="cs-card-header">
+            <span class="cs-card-tag">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              FOUR-STAGE PIPELINE SPECIFICATION
+            </span>
+            <span class="cs-card-sub">End-to-End Operational Execution</span>
+          </div>
+          <div class="cs-stages-grid">
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 01</div>
+              <h3 class="cs-stage-title">Schema Ingestion & Parsing</h3>
+              <p class="cs-stage-desc">Batches multi-source CSV and spreadsheet exports into a unified Pandas DataFrame with strict column typing and header alignment.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 02</div>
+              <h3 class="cs-stage-title">Regex Normalization</h3>
+              <p class="cs-stage-desc">Sanitizes phone numbers to E.164 standard, validates RFC 5322 email syntax, and canonicalizes corporate domains.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 03</div>
+              <h3 class="cs-stage-title">Fuzzy Deduplication</h3>
+              <p class="cs-stage-desc">Applies string distance and domain-matching algorithms to merge fragmented contact histories into a single authoritative master record.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 04</div>
+              <h3 class="cs-stage-title">CRM Staging & Quality Audit</h3>
+              <p class="cs-stage-desc">Outputs clean, verified CSV batches with data quality confidence scores ready for automated Salesforce/HubSpot loading.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Key Architectural Guardrails -->
+        <section class="cs-guardrails-grid" aria-label="Architecture Guardrails and Impact">
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">AUTHORITATIVE SOURCE</span>
+            <strong>Normalized Golden Records</strong>
+            <span>Consolidates multiple disparate lead captures into one master contact profile per stakeholder.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">EXCEPTION GUARDRAIL</span>
+            <strong>Deterministic Syntax Cleaners</strong>
+            <span>Automated rejection of malformed emails and unparseable international phone formats.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">MEASURED OUTCOME</span>
+            <strong>+30% Qualified Leads</strong>
+            <span>+15% outreach conversion lift and clean CRM readiness for enterprise outreach.</span>
+          </div>
+        </section>
+
+        <!-- 4. Sanitized Live Audit & Telemetry Log -->
+        <section class="cs-terminal-card" aria-label="Sanitized Audit and Telemetry Log">
+          <div class="cs-terminal-head">
+            <div class="cs-terminal-status">
+              <span class="cs-term-dot" aria-hidden="true"></span>
+              <span>LIVE SANITIZED AUDIT TELEMETRY</span>
+            </div>
+            <button type="button" class="cs-copy-log-btn" onclick="copyCaseStudyLog(this)" aria-label="Copy sanitized audit telemetry log">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy Telemetry</span>
+            </button>
+          </div>
+          <pre class="cs-terminal-code"><code>// SANITIZED ETL AUDIT LOG
+&gt; STATUS: DATA_PIPELINE_COMPLETE
+&gt; INGESTION: Multi-Source Spreadsheets (Webinars, Events, Partner Inquiries)
+&gt; DEDUPLICATION_AUDIT: Redundant Records Identified &amp; Merged into Golden Profiles
+&gt; PIPELINE_PERFORMANCE: +30% Qualified Lead Volume • +15% Outreach Conversion Lift</code></pre>
+        </section>
+      </article>
+
+      <!-- Project View: proj-07 -->
+      <article class="cs-view" id="cs-view-proj-07" data-project-id="proj-07" data-badge="Automated Discovery Crawler • Tri-Heuristic Governance Engine" data-unit="York University Career Centre & LA&PS" data-title="Web Governance & Analytics Improvements" data-chips='['WordPress', 'Drupal', 'WCAG 2.1 AA / AODA', 'Google Analytics', 'SEO Metadata']' data-index="6" hidden>
+        <!-- 1. System Topology Canvas -->
+        <section class="cs-topology-card" aria-labelledby="cs-topo-title-proj-07">
+          <div class="cs-card-header">
+            <span class="cs-card-tag" id="cs-topo-title-proj-07">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              SYSTEM ARCHITECTURE TOPOLOGY
+            </span>
+            <span class="cs-card-sub">Interactive Data Flow &bull; Component Map</span>
+          </div>
+          <div class="cs-svg-wrap">
+            <svg class="cs-diagram-svg" viewBox="0 0 840 250" role="img" aria-label="Architecture Topology: Multi-Property Discovery Crawler and Tri-Heuristic Governance Engine">
+  <defs>
+    <marker id="cs-arrow-7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+  <!-- Discovery Crawler (Left) -->
+  <rect x="20" y="60" width="180" height="120" rx="8" class="topo-node"/>
+  <rect x="30" y="72" width="160" height="24" rx="4" class="topo-badge-hub"/>
+  <text x="110" y="88" class="topo-hub-title" text-anchor="middle">DISCOVERY CRAWLER</text>
+  <text x="110" y="116" class="topo-txt" text-anchor="middle">95+ Institutional Sites</text>
+  <text x="110" y="136" class="topo-sub" text-anchor="middle">60+ Academic Databases</text>
+  <text x="110" y="156" class="topo-metric" text-anchor="middle">WordPress • Drupal CMS</text>
+
+  <!-- Connectors to 3 Pillars -->
+  <path d="M 200 100 C 235 100, 235 46, 265 46" class="topo-line" marker-end="url(#cs-arrow-7)"/>
+  <path d="M 200 120 L 265 120" class="topo-line" marker-end="url(#cs-arrow-7)"/>
+  <path d="M 200 140 C 235 140, 235 196, 265 196" class="topo-line" marker-end="url(#cs-arrow-7)"/>
+
+  <!-- Center: 3 Parallel Auditing Pillars -->
+  <rect x="270" y="20" width="260" height="54" rx="6" class="topo-hub-hi"/>
+  <text x="400" y="42" class="topo-hi-title" text-anchor="middle">AODA / WCAG 2.1 AA ENGINE</text>
+  <text x="400" y="58" class="topo-sub" text-anchor="middle">4.5:1 Contrast • ARIA Semantics • Focus Traps</text>
+
+  <rect x="270" y="94" width="260" height="54" rx="6" class="topo-hub"/>
+  <text x="400" y="116" class="topo-hub-title" text-anchor="middle">SEO &amp; TAXONOMY AUDITOR</text>
+  <text x="400" y="132" class="topo-sub" text-anchor="middle">Canonical Metadata • Course Catalogue Sync</text>
+
+  <rect x="270" y="168" width="260" height="54" rx="6" class="topo-hub"/>
+  <text x="400" y="190" class="topo-hub-title" text-anchor="middle">GOOGLE ANALYTICS HEATMAPS</text>
+  <text x="400" y="206" class="topo-sub" text-anchor="middle">High-Dropoff Funnels • Navigation Pathing</text>
+
+  <!-- Connectors to Delivery -->
+  <path d="M 530 46 C 560 46, 560 110, 595 110" class="topo-line" marker-end="url(#cs-arrow-7)"/>
+  <path d="M 530 120 L 595 120" class="topo-line" marker-end="url(#cs-arrow-7)"/>
+  <path d="M 530 196 C 560 196, 560 132, 595 132" class="topo-line" marker-end="url(#cs-arrow-7)"/>
+
+  <!-- Right: Verified Compliance Delivery -->
+  <rect x="600" y="55" width="220" height="130" rx="8" class="topo-hub-hi"/>
+  <rect x="612" y="68" width="196" height="24" rx="4" class="topo-badge-hub"/>
+  <text x="710" y="84" class="topo-hub-title" text-anchor="middle">GOVERNANCE DELIVERY</text>
+  <text x="710" y="114" class="topo-txt" text-anchor="middle">Prioritized Remediation SOPs</text>
+  <text x="710" y="134" class="topo-metric" text-anchor="middle">17% Drop in Bounce Rate</text>
+  <text x="710" y="154" class="topo-metric" text-anchor="middle">+25% Organic Search Lift</text>
+  <text x="710" y="172" class="topo-sub" text-anchor="middle">AODA Compliant Certified</text>
+</svg>
+          </div>
+        </section>
+
+        <!-- 2. Four-Stage Pipeline Specification -->
+        <section class="cs-stages-card" aria-label="Operational Pipeline Stages">
+          <div class="cs-card-header">
+            <span class="cs-card-tag">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              FOUR-STAGE PIPELINE SPECIFICATION
+            </span>
+            <span class="cs-card-sub">End-to-End Operational Execution</span>
+          </div>
+          <div class="cs-stages-grid">
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 01</div>
+              <h3 class="cs-stage-title">Multi-Property Discovery & Crawl</h3>
+              <p class="cs-stage-desc">Automated crawler inventories 95+ institutional website properties and 60+ databases across WordPress and Drupal CMS architectures.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 02</div>
+              <h3 class="cs-stage-title">WCAG 2.1 AA Rule Engine</h3>
+              <p class="cs-stage-desc">Runs programmatic checks against colour contrast thresholds (min 4.5:1), landmark semantic hierarchies, and keyboard focus trap prevention.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 03</div>
+              <h3 class="cs-stage-title">Information Architecture & SEO</h3>
+              <p class="cs-stage-desc">Ingests Google Analytics user flows and heatmaps to identify high-dropoff navigation bottlenecks, optimizing pathing and canonical metadata.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 04</div>
+              <h3 class="cs-stage-title">Remediation SOPs & Logging</h3>
+              <p class="cs-stage-desc">Generates plain-language remediation tickets, step-by-step publisher checklists, and compliance audit certificates for academic departments.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Key Architectural Guardrails -->
+        <section class="cs-guardrails-grid" aria-label="Architecture Guardrails and Impact">
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">AUTHORITATIVE SOURCE</span>
+            <strong>Provincial AODA Standards</strong>
+            <span>Audits every DOM tree against strict WCAG 2.1 AA success criteria and institutional content design systems.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">EXCEPTION GUARDRAIL</span>
+            <strong>Automated Contrast & ARIA Linters</strong>
+            <span>Pre-publish scanning isolates inaccessible PDF embeds, missing alt tags, and missing focus indicators.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">MEASURED OUTCOME</span>
+            <strong>17% Drop in Bounce Rate</strong>
+            <span>+60% event attendance lift and +25% organic search traffic growth across Faculty sites.</span>
+          </div>
+        </section>
+
+        <!-- 4. Sanitized Live Audit & Telemetry Log -->
+        <section class="cs-terminal-card" aria-label="Sanitized Audit and Telemetry Log">
+          <div class="cs-terminal-head">
+            <div class="cs-terminal-status">
+              <span class="cs-term-dot" aria-hidden="true"></span>
+              <span>LIVE SANITIZED AUDIT TELEMETRY</span>
+            </div>
+            <button type="button" class="cs-copy-log-btn" onclick="copyCaseStudyLog(this)" aria-label="Copy sanitized audit telemetry log">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy Telemetry</span>
+            </button>
+          </div>
+          <pre class="cs-terminal-code"><code>// SANITIZED WEB GOVERNANCE &amp; COMPLIANCE AUDIT LOG
+&gt; STATUS: ACCESSIBILITY_GOVERNANCE_CERTIFIED
+&gt; SCOPE_COVERED: 95+ Institutional Web Properties • 60+ Academic Databases
+&gt; COMPLIANCE_BENCHMARK: Strict AODA / WCAG 2.1 AA Standards Verified
+&gt; AUDIT_METRICS: 17% Reduction in User Bounce Rates • +20% Faster Page Speeds
+&gt; ORGANIC_GROWTH: +25% Organic Search Traffic Lift Through Structured Metadata Audits</code></pre>
+        </section>
+      </article>
+
+      <!-- Project View: proj-08 -->
+      <article class="cs-view" id="cs-view-proj-08" data-project-id="proj-08" data-badge="Legacy-to-Cloud CRM Architecture • Multi-Stakeholder Lifecycle" data-unit="York University × Salesforce × RBC Future Launch" data-title="Salesforce Digital Transformation Strategy" data-chips='['Salesforce Core', 'CRM Architecture', 'Process Design', 'Executive BI']' data-index="7" hidden>
+        <!-- 1. System Topology Canvas -->
+        <section class="cs-topology-card" aria-labelledby="cs-topo-title-proj-08">
+          <div class="cs-card-header">
+            <span class="cs-card-tag" id="cs-topo-title-proj-08">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              SYSTEM ARCHITECTURE TOPOLOGY
+            </span>
+            <span class="cs-card-sub">Interactive Data Flow &bull; Component Map</span>
+          </div>
+          <div class="cs-svg-wrap">
+            <svg class="cs-diagram-svg" viewBox="0 0 840 240" role="img" aria-label="Architecture Topology: Legacy-to-Cloud CRM Digital Transformation Framework">
+  <defs>
+    <marker id="cs-arrow-8" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent)" />
+    </marker>
+  </defs>
+  <!-- Legacy Data Silos (Left) -->
+  <rect x="20" y="50" width="180" height="135" rx="8" class="topo-node"/>
+  <text x="110" y="78" class="topo-txt" text-anchor="middle">Fragmented Legacy Silos</text>
+  <text x="110" y="102" class="topo-sub" text-anchor="middle">Multi-Unit Spreadsheets</text>
+  <text x="110" y="122" class="topo-sub" text-anchor="middle">Ad-Hoc Email Communications</text>
+  <text x="110" y="142" class="topo-sub" text-anchor="middle">Unstructured Partner Rosters</text>
+  <text x="110" y="165" class="topo-alert-title" text-anchor="middle">Data Inconsistency &amp; Lag</text>
+
+  <path d="M 200 115 L 265 115" class="topo-line" marker-end="url(#cs-arrow-8)"/>
+
+  <!-- Center: Salesforce Custom Core -->
+  <rect x="270" y="45" width="250" height="145" rx="10" class="topo-hub"/>
+  <rect x="282" y="58" width="226" height="24" rx="4" class="topo-badge-hub"/>
+  <text x="395" y="74" class="topo-hub-title" text-anchor="middle">UNIFIED SALESFORCE ARCHITECTURE</text>
+  <text x="395" y="106" class="topo-hub-txt" text-anchor="middle">Custom Objects &amp; Entity Schemas</text>
+  <text x="395" y="126" class="topo-hub-txt" text-anchor="middle">Field-Level Security Protocols</text>
+  <text x="395" y="146" class="topo-hub-txt" text-anchor="middle">Automated Milestone Triggers</text>
+  <text x="395" y="168" class="topo-metric" text-anchor="middle">Canonical Contact Deduplication</text>
+
+  <path d="M 520 115 L 595 115" class="topo-line" marker-end="url(#cs-arrow-8)"/>
+
+  <!-- Right: Executive BI Single-Pane -->
+  <rect x="600" y="50" width="220" height="135" rx="8" class="topo-hub-hi"/>
+  <rect x="612" y="62" width="196" height="24" rx="4" class="topo-badge-hub"/>
+  <text x="710" y="78" class="topo-hub-title" text-anchor="middle">EXECUTIVE BI ANALYTICS</text>
+  <text x="710" y="108" class="topo-hi-title" text-anchor="middle">Single Pane of Glass</text>
+  <text x="710" y="128" class="topo-sub" text-anchor="middle">Cohort Engagement Tracking</text>
+  <text x="710" y="148" class="topo-sub" text-anchor="middle">York U • Salesforce • RBC</text>
+  <text x="710" y="168" class="topo-metric" text-anchor="middle">100% Pipeline Visibility</text>
+</svg>
+          </div>
+        </section>
+
+        <!-- 2. Four-Stage Pipeline Specification -->
+        <section class="cs-stages-card" aria-label="Operational Pipeline Stages">
+          <div class="cs-card-header">
+            <span class="cs-card-tag">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              FOUR-STAGE PIPELINE SPECIFICATION
+            </span>
+            <span class="cs-card-sub">End-to-End Operational Execution</span>
+          </div>
+          <div class="cs-stages-grid">
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 01</div>
+              <h3 class="cs-stage-title">Legacy Data & Workflow Discovery</h3>
+              <p class="cs-stage-desc">Maps fragmented spreadsheets, legacy database silos, and ad-hoc email communications across student, partner, and funding allocation streams.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 02</div>
+              <h3 class="cs-stage-title">Entity Schema Design</h3>
+              <p class="cs-stage-desc">Defines unified Salesforce custom objects, field-level security protocols, canonical contact schemas, and deduplication rules.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 03</div>
+              <h3 class="cs-stage-title">Lifecycle Tracking & Automation</h3>
+              <p class="cs-stage-desc">Architects automated stakeholder progression stages, touchpoint follow-up triggers, and grant milestone tracking pipelines.</p>
+            </div>
+            <div class="cs-stage-box">
+              <div class="cs-stage-num">STAGE 04</div>
+              <h3 class="cs-stage-title">Executive BI & Impact Analytics</h3>
+              <p class="cs-stage-desc">Delivers centralized reporting dashboards tracking cohort engagement, partnership KPIs, and program conversion metrics in a unified single pane.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Key Architectural Guardrails -->
+        <section class="cs-guardrails-grid" aria-label="Architecture Guardrails and Impact">
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">AUTHORITATIVE SOURCE</span>
+            <strong>Unified Salesforce Core</strong>
+            <span>Replaces scattered multi-unit Excel sheets with a canonical enterprise relational schema.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">EXCEPTION GUARDRAIL</span>
+            <strong>Role-Based Access Control</strong>
+            <span>Field-level security permissions and automated deduplication guardrails protect student and partner data.</span>
+          </div>
+          <div class="cs-guardrail-item">
+            <span class="cs-gr-label">MEASURED OUTCOME</span>
+            <strong>100% Pipeline Visibility</strong>
+            <span>Executive-ready data governance framework connecting academic, industry, and funding stakeholders.</span>
+          </div>
+        </section>
+
+        <!-- 4. Sanitized Live Audit & Telemetry Log -->
+        <section class="cs-terminal-card" aria-label="Sanitized Audit and Telemetry Log">
+          <div class="cs-terminal-head">
+            <div class="cs-terminal-status">
+              <span class="cs-term-dot" aria-hidden="true"></span>
+              <span>LIVE SANITIZED AUDIT TELEMETRY</span>
+            </div>
+            <button type="button" class="cs-copy-log-btn" onclick="copyCaseStudyLog(this)" aria-label="Copy sanitized audit telemetry log">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Copy Telemetry</span>
+            </button>
+          </div>
+          <pre class="cs-terminal-code"><code>// SANITIZED DIGITAL TRANSFORMATION ARCHITECTURE LOG
+&gt; STATUS: CRM_TRANSFORMATION_FRAMEWORK_DELIVERED
+&gt; ROLE: Team Lead (Cross-Functional Coordination: York University × Salesforce × RBC Future Launch)
+&gt; LEGACY_MAPPING: Fragmented Multi-Unit Spreadsheets Consolidated into Unified Data Architecture
+&gt; STAKEHOLDER_LIFECYCLE: End-to-End Tracking Across Academic, Industry &amp; Funding Partners
+&gt; STRATEGY_OUTCOME: Executive-Ready Data Governance Framework with 100% Unified Pipeline Visibility</code></pre>
+        </section>
+      </article>
+
+    </div>
+
+    <div class="cs-modal-footer">
+      <div class="cs-footer-hint">
+        <span>💡 Keyboard: <code>←</code> <code>→</code> to cycle projects • <code>Esc</code> to close</span>
+      </div>
+      <div class="cs-footer-actions">
+        <button type="button" class="btn s" onclick="closeCaseStudyModal()">Close Case Study</button>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Core Script -->
-  <script src="js/main.js?v=2.2" defer></script>
+  <script src="js/main.js?v=3.0" defer></script>
 </body>
 </html>

@@ -296,4 +296,146 @@
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
     handleDeepLinkHash();
   }
+
+  // --- Case Study Modal Controller (Model C) ---
+  const caseStudyModal = document.getElementById('caseStudyModal');
+  const csModalTitle = document.getElementById('csModalTitle');
+  const csModalBadge = document.getElementById('csModalBadge');
+  const csModalUnit = document.getElementById('csModalUnit');
+  const csModalChips = document.getElementById('csModalChips');
+  const csCounter = document.getElementById('csCounter');
+  let currentCaseStudyIndex = 0;
+  let lastActiveCaseStudyTrigger = null;
+
+  const CASE_STUDY_ORDER = [
+    'proj-01',
+    'proj-02',
+    'proj-03',
+    'proj-04',
+    'proj-05',
+    'proj-07',
+    'proj-08'
+  ];
+
+  function showCaseStudyByIndex(index) {
+    if (!caseStudyModal) return;
+    if (index < 0) index = CASE_STUDY_ORDER.length - 1;
+    if (index >= CASE_STUDY_ORDER.length) index = 0;
+    currentCaseStudyIndex = index;
+
+    const targetId = CASE_STUDY_ORDER[index];
+    const allViews = caseStudyModal.querySelectorAll('.cs-view');
+    allViews.forEach(function (v) {
+      v.hidden = true;
+    });
+
+    const activeView = document.getElementById('cs-view-' + targetId);
+    if (!activeView) return;
+
+    activeView.hidden = false;
+
+    // Update Header Metadata
+    if (csModalTitle) csModalTitle.innerHTML = activeView.dataset.title || '';
+    if (csModalBadge) csModalBadge.textContent = activeView.dataset.badge || 'ARCHITECTURE CASE STUDY';
+    if (csModalUnit) csModalUnit.textContent = activeView.dataset.unit || '';
+    if (csCounter) csCounter.textContent = (index + 1) + ' of ' + CASE_STUDY_ORDER.length;
+
+    // Render chips
+    if (csModalChips && activeView.dataset.chips) {
+      try {
+        const chips = JSON.parse(activeView.dataset.chips);
+        csModalChips.innerHTML = chips.map(function (c) {
+          return '<span class="chip">' + c + '</span>';
+        }).join('');
+      } catch (e) {
+        csModalChips.innerHTML = '';
+      }
+    }
+
+    // Scroll modal body to top
+    const modalBody = caseStudyModal.querySelector('.cs-modal-body');
+    if (modalBody) modalBody.scrollTop = 0;
+  }
+
+  function openCaseStudyModal(projectId, triggerEl) {
+    if (!caseStudyModal) return;
+    lastActiveCaseStudyTrigger = triggerEl || document.activeElement;
+
+    let index = CASE_STUDY_ORDER.indexOf(projectId);
+    if (index === -1) index = 0;
+
+    showCaseStudyByIndex(index);
+
+    if (typeof caseStudyModal.showModal === 'function') {
+      caseStudyModal.showModal();
+    } else {
+      caseStudyModal.setAttribute('open', '');
+    }
+    document.body.style.overflow = 'hidden';
+
+    // Focus close button
+    const closeBtn = caseStudyModal.querySelector('.modal-close-btn');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeCaseStudyModal() {
+    if (!caseStudyModal) return;
+    if (typeof caseStudyModal.close === 'function') {
+      caseStudyModal.close();
+    } else {
+      caseStudyModal.removeAttribute('open');
+    }
+    document.body.style.overflow = '';
+    if (lastActiveCaseStudyTrigger && typeof lastActiveCaseStudyTrigger.focus === 'function') {
+      lastActiveCaseStudyTrigger.focus();
+    }
+  }
+
+  function navigateCaseStudy(direction) {
+    showCaseStudyByIndex(currentCaseStudyIndex + direction);
+  }
+
+  function copyCaseStudyLog(btn) {
+    if (!caseStudyModal) return;
+    const currentId = CASE_STUDY_ORDER[currentCaseStudyIndex];
+    const activeView = document.getElementById('cs-view-' + currentId);
+    if (!activeView) return;
+    const code = activeView.querySelector('.cs-terminal-code code');
+    if (!code) return;
+
+    const text = code.innerText || code.textContent;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        const origHTML = btn.innerHTML;
+        btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg><span>✓ Copied!</span>';
+        setTimeout(function () {
+          btn.innerHTML = origHTML;
+        }, 2000);
+      });
+    }
+  }
+
+  // Keyboard navigation for Case Study Modal
+  window.addEventListener('keydown', function (e) {
+    if (!caseStudyModal || !caseStudyModal.open) return;
+    if (e.key === 'ArrowRight') {
+      navigateCaseStudy(1);
+    } else if (e.key === 'ArrowLeft') {
+      navigateCaseStudy(-1);
+    }
+  });
+
+  // Native cancel event (ESC key) restores body overflow
+  if (caseStudyModal) {
+    caseStudyModal.addEventListener('cancel', function () {
+      document.body.style.overflow = '';
+    });
+  }
+
+  // Expose methods globally for inline triggers
+  window.openCaseStudyModal = openCaseStudyModal;
+  window.closeCaseStudyModal = closeCaseStudyModal;
+  window.navigateCaseStudy = navigateCaseStudy;
+  window.copyCaseStudyLog = copyCaseStudyLog;
+
 })();
