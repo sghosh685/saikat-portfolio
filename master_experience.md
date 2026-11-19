@@ -123,6 +123,85 @@ Business Systems, Operations, and Workflow Automation Specialist with a Computer
 * **Outcome**: Delivered a unified CRM architecture connecting legacy records with real-time reporting.
 * **Tech Stack**: Salesforce, CRM Architecture, Team Leadership, Process Design.
 
+### Project 7: Osgoode – Salesforce Reporting & Executive Decision Support
+* **Organization**: Osgoode Professional Development, York University
+* **Challenge**: Disparate exam, enrolment, and scheduling data spread across Kuali, SIS, and Salesforce created blind spots for program managers and leadership during semester planning.
+* **What I Built**: Authored unified Excel and Power Apps intake reporting dashboards; mapped cross-platform data flows; proposed a standardized decision-support model for complex booking protocols.
+* **Outcome**: Standardized reporting across 70+ courses, eliminated cross-department scheduling conflicts, and established single-source-of-truth governance.
+* **Tech Stack**: Salesforce, Power Apps, Microsoft Forms, Advanced Excel, SIS, Kuali.
+
+### Project 8: LA&PS – Web Governance, SEO & Data Accuracy Optimization
+* **Organization**: Faculty of Liberal Arts & Professional Studies, York University
+* **Challenge**: 95+ decentralized institutional websites and 60+ legacy databases had accumulated accessibility violations (WCAG/AODA), fragmented course catalogue information, and inconsistent SEO metadata.
+* **What I Built**: Led comprehensive accessibility and information architecture audits; established structured Excel tracking for data ownership; optimized metadata and content taxonomy across WordPress and Drupal.
+* **Outcome**: Achieved 100% AODA/WCAG 2.1 AA compliance across 95+ web properties, boosted organic search traffic by 25%, and reduced ad-hoc administrative support inquiries.
+* **Tech Stack**: WordPress, Drupal, Google Analytics, Excel, SEO Audits, AODA/WCAG 2.1 AA.
+
+### Project 9: TAKIAS GATEKEEPER – FinTech Discipline & Risk Management System
+* **Category**: FinTech / Algorithmic Risk Management
+* **Challenge**: Retail traders frequently suffer severe capital drawdowns due to emotional trading, sizing violations, and failure to follow pre-trade risk checklists.
+* **What I Built**: Standalone web application enforcing pre-trade rules, position sizing calculators, drawdown circuit breakers, and options backtesting parameters before order execution.
+* **Outcome**: Eliminates impulsive trade entry through hard-coded financial logic, discipline tracking, and real-time risk simulation.
+* **Tech Stack**: Python (FastAPI/Pandas), React/Next.js, Risk Modeling, Financial Analytics.
+* **Status**: Private code / Deployed application.
+
+### Project 10: MotionOM360 – Neuro-Athletic Health & Biomechanics Platform
+* **Category**: Health Tech / Biomechanics & Coaching
+* **Challenge**: Health and fitness coaching often lacks biomechanical precision, habit tracking rigor, and scientific adherence protocols.
+* **What I Built**: A digital platform and web application integrating ISSA health coaching methodologies into a structured "neuro-athletic operating system" for client milestone tracking, movement mechanics, and behavioral adherence.
+* **Outcome**: Provides clients with transparent progress monitoring, biomechanical movement guidance, and structured accountability.
+* **Tech Stack**: Next.js, WebGL/Three.js, ISSA Protocols, Interactive UI.
+* **Status**: In development.
+
+### Project 11: Battery + Grid Economics – Clean Energy & Storage Simulator
+* **Category**: Clean Energy & Grid Economics
+* **Challenge**: Understanding how battery energy storage systems (BESS) integrate into high-renewable electricity grids requires complex modeling of degradation, wholesale price arbitrage, and capacity dispatch.
+* **What I Built**: Interactive clean energy learning and simulation platform featuring a drag-and-drop grid dispatcher, battery chemistry degradation modeling (LFP vs. NMC), duck curve visualization, and real-world case studies (e.g., South Australia Hornsdale Big Battery).
+* **Outcome**: Empowers students and energy analysts to calculate Levelized Cost of Storage (LCOS), arbitrage revenues, and grid stability impacts in real time.
+* **Tech Stack**: Next.js, TypeScript, Tailwind CSS, Financial/Physics Models, Vercel.
+* **Live Demo**: [https://battery-grid-economics.vercel.app/](https://battery-grid-economics.vercel.app/)
+
+### Project 12: Nuclear Safety Education – Reactor Physics & Containment Simulator
+* **Category**: Energy Education & Science Communication
+* **Challenge**: Nuclear energy principles, containment systems, and comparative reactor safety (CANDU vs. PWR vs. BWR vs. RBMK) are often opaque to the public and policy students.
+* **What I Built**: Interactive educational web portal featuring animated reactor physics diagrams, safety system walkthroughs, containment barrier inspections, and knowledge verification quizzes.
+* **Outcome**: Provides accessible, evidence-backed science communication on reactor safety and deep geological repositories for non-technical audiences.
+* **Tech Stack**: Next.js, Interactive SVG, Science Communication, Vercel.
+* **Live Demo**: [https://nuclear-safety-edu.vercel.app/](https://nuclear-safety-edu.vercel.app/)
+
+### Project 13: Ontario Workforce Snapshot (2021–2026) – Labour Market Analytics
+* **Category**: Labour Market & Data Analytics
+* **Challenge**: Rapid structural shifts in Ontario's economy created fragmented visibility across regional employment, sector shifts, and workforce participation post-pandemic.
+* **What I Built**: Interactive public labour market dashboard parsing Statistics Canada tables 14-10-0287-01 and 14-10-0355-01, providing year-over-year watchlists, demographic filtering, and sector transition trends.
+* **Outcome**: Enables workforce planners and policy analysts to track regional employment momentum, participation rates, and industry sector transitions across Ontario.
+* **Tech Stack**: Python (ETL/Data Cleaning), JavaScript, Chart.js, Statistics Canada Open Data, GitHub Pages.
+* **Live Demo**: [https://sghosh685.github.io/Ontario-Workforce-Analytics/](https://sghosh685.github.io/Ontario-Workforce-Analytics/)
+
+### Project 14: Natural Gas Market Analysis – Regional Basis & Monte Carlo Engine
+* **Category**: Commodity Economics & Monte Carlo Analytics
+* **Challenge**: Volatile regional price spreads between Henry Hub, Dawn Hub (Ontario), and AECO create severe budgeting and commodity hedging risks for industrial energy consumers.
+* **What I Built**: Full-scale market analyst dashboard featuring historical price spread analytics, regional transport basis modeling, and a 1,000-iteration Monte Carlo procurement cost simulation based on EIA, NGI, and OEB public datasets.
+* **Outcome**: Delivers probabilistic procurement cost distributions, downside price risk exposure, and seasonal hedging recommendations.
+* **Tech Stack**: Next.js, TypeScript, Monte Carlo Engine, Chart.js, EIA/OEB Datasets.
+* **Live Demo**: [https://natural-gas-analytics.vercel.app/](https://natural-gas-analytics.vercel.app/)
+* **Video Walkthrough**: [https://youtu.be/gthBFSZ3Ln4](https://youtu.be/gthBFSZ3Ln4)
+
+### Project 15: NetZeroX Policy Pulse – Energy Regulatory Compliance Engine
+* **Category**: Energy Policy & Regulatory Compliance
+* **Challenge**: Decarbonization and clean fuels developers struggle to track overlapping federal and provincial/state energy regulations across North America.
+* **What I Built**: Regulatory intelligence prototype organizing 127 cross-jurisdictional records (EPA, FERC, Alberta Energy Regulator, Canada Gazette) with compliance timelines, agency filters, and an exposure risk calculator.
+* **Outcome**: Streamlines compliance tracking for energy project developers, quantifying exposure indices and regulatory milestones.
+* **Tech Stack**: Next.js, TypeScript, Compliance Rule Engine, Vercel.
+* **Live Demo**: [https://policy-pulse-engine.vercel.app/](https://policy-pulse-engine.vercel.app/)
+
+### Project 16: My Canada: Travel Map – Geospatial Exploration Platform
+* **Category**: Geospatial Web Application
+* **Challenge**: Domestic travellers lacked an interactive, visual way to track provincial/territorial exploration and share curated regional travel achievements.
+* **What I Built**: Interactive SVG-powered geospatial web application allowing users to mark visited Canadian provinces/territories, calculate exploration scores, and download high-resolution customized travel badges.
+* **Outcome**: High user engagement and shareability, featuring zero-dependency client-side vector rendering and accessible responsive controls.
+* **Tech Stack**: Next.js, Interactive SVG Geo-Mapping, HTML5 Canvas Export, Vercel.
+* **Live Demo**: [https://unseencanada.vercel.app/](https://unseencanada.vercel.app/)
+
 ---
 
 ## 3. Education & Credentials
