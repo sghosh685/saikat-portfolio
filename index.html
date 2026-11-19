@@ -409,6 +409,39 @@
               <span class="chip">Power Apps</span>
               <span class="chip">Student Info Database (SIS) &amp; Salesforce CRM</span>
             </div>
+            <details class="proj-case-study">
+              <summary>View Architecture &amp; Sanitized Pipeline Logic</summary>
+              <div class="cs-body">
+                <span class="cs-badge">Sanitized Multi-Source Engine &bull; Conflict Matrix Architecture</span>
+                <p>To eliminate 70–90% of manual coordination overhead across ~70 courses per term, I architected an automated multi-source intake and scheduling engine:</p>
+                <div class="cs-flow">
+                  <div class="cs-step">
+                    <strong>Stage 1: Multi-Source Ingestion</strong>
+                    Federates exam parameters from Core SIS (student rosters), Salesforce CRM (course status), Kuali (syllabus format), and Power Apps/Forms (instructor requests).
+                  </div>
+                  <div class="cs-step">
+                    <strong>Stage 2: Conflict &amp; Constraint Matrix</strong>
+                    Validates room capacity thresholds, instructor availability windows, and student accessibility accommodation requirements (extra time / private proctoring).
+                  </div>
+                  <div class="cs-step">
+                    <strong>Stage 3: Exception Quarantine</strong>
+                    Isolates cross-listed multi-section courses and deferred exam petitions into an administrative human-in-the-loop review queue.
+                  </div>
+                  <div class="cs-step">
+                    <strong>Stage 4: Automated Schedule Dispatch</strong>
+                    Generates conflict-free timetable exports, automated calendar bookings (25Live), and standardized instructor packets with near one-click execution.
+                  </div>
+                </div>
+                <div class="cs-spec">
+                  // SANITIZED AUDIT &amp; TRANSACTION LOG<br>
+                  &gt; STATUS: SCHEDULING_ENGINE_COMPLETE<br>
+                  &gt; DATA_SOURCES: SIS (Core DB) &bull; Salesforce CRM &bull; Kuali (Curriculum) &bull; Power Apps Intake<br>
+                  &gt; SCOPE: ~70 Academic Courses Reconciled &bull; 40+ Instructors Verified<br>
+                  &gt; CONFLICT_DETECTION: 0 Time-Block or Room-Capacity Overlaps<br>
+                  &gt; OPERATIONAL_IMPACT: 70–90% Reduction in Administrative Hours per Cycle
+                </div>
+              </div>
+            </details>
           </div>
         </article>
 
@@ -638,6 +671,38 @@
               <span class="chip">CSV workflow</span>
               <span class="chip">CRM Data Quality</span>
             </div>
+            <details class="proj-case-study">
+              <summary>View Architecture &amp; Sanitized Pipeline Logic</summary>
+              <div class="cs-body">
+                <span class="cs-badge">Sanitized Python ETL Pipeline &bull; Data Quality &amp; Deduplication</span>
+                <p>To prepare heterogeneous stakeholder lists from events, webinars, and partner forms for clean CRM ingestion, I built an automated Python ETL pipeline:</p>
+                <div class="cs-flow">
+                  <div class="cs-step">
+                    <strong>Stage 1: Schema Ingestion &amp; Parsing</strong>
+                    Batches multi-source CSV and spreadsheet exports into a unified Pandas DataFrame with strict column typing and header alignment.
+                  </div>
+                  <div class="cs-step">
+                    <strong>Stage 2: Regex Normalization</strong>
+                    Sanitizes phone numbers to E.164 standard, validates RFC 5322 email syntax, and canonicalizes corporate domains (stripping prefixes and subdomains).
+                  </div>
+                  <div class="cs-step">
+                    <strong>Stage 3: Fuzzy Deduplication</strong>
+                    Applies string distance and domain-matching algorithms to merge fragmented contact histories into a single authoritative master record.
+                  </div>
+                  <div class="cs-step">
+                    <strong>Stage 4: CRM Staging &amp; Quality Audit</strong>
+                    Outputs clean, verified CSV batches with data quality confidence scores ready for automated Salesforce/HubSpot loading.
+                  </div>
+                </div>
+                <div class="cs-spec">
+                  // SANITIZED ETL AUDIT LOG<br>
+                  &gt; STATUS: DATA_PIPELINE_COMPLETE<br>
+                  &gt; INGESTION: Multi-Source Spreadsheets (Webinars, Events, Partner Inquiries)<br>
+                  &gt; DEDUPLICATION_AUDIT: Redundant Records Identified &amp; Merged into Golden Profiles<br>
+                  &gt; PIPELINE_PERFORMANCE: +30% Qualified Lead Volume &bull; +15% Outreach Conversion Lift
+                </div>
+              </div>
+            </details>
           </div>
         </article>
 
